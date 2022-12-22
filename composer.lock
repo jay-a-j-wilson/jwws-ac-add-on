@@ -1,0 +1,50 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ef4d8bf1ad69aa4b4ed2b38aa6f537f4",
+    "packages": [
+        {
+            "name": "jay-a-j-wilson/jwws-wp-plugin-framework",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework.git",
+                "reference": "46596f74fc90428837f34b9899bbb3efbf4b2ffa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/46596f74fc90428837f34b9899bbb3efbf4b2ffa",
+                "reference": "46596f74fc90428837f34b9899bbb3efbf4b2ffa",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions/alias.php",
+                    "src/functions/debug.php"
+                ],
+                "psr-4": {
+                    "JWWS\\WP_Plugin_Framework\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/issues",
+                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/1.0.0"
+            },
+            "time": "2022-11-26T00:56:37+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

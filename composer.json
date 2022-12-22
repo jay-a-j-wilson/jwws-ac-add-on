@@ -1,0 +1,15 @@
+{
+    "require": {
+        "jay-a-j-wilson/jwws-wp-plugin-framework": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JWWS\\Admin_Columns_Add_On\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JWWS\\Admin_Columns_Add_On\\Tests\\": "test/"
+        }
+    }
+}
