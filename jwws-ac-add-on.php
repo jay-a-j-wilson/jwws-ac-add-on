@@ -1,77 +1,38 @@
 <?php
 /*
-Plugin Name:    Admin Columns - PLUGIN_NAME
-Plugin URI:     PLUGIN_URL
-Description:    DESCRIPTION
+Plugin Name:    Admin Columns - Add On
+Description:    Extra Columns.
 Version:        1.0
-Author:         AUTHOR_NAME
-Author URI:     AUTHOR_URL
+Author:         Jay Wilson
 License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
-*/
+ */
 
-// 1. Set text domain
-/* @link https://codex.wordpress.org/Function_Reference/load_plugin_textdomain */
-load_plugin_textdomain( 'ac-CUSTOM_NAMESPACE', false, plugin_dir_path( __FILE__ ) . '/languages/' );
+namespace JWWS\Admin_Columns_Add_On;
 
-add_action( 'ac/ready', function () {
+if (! defined('ABSPATH')) {
+    return;
+}
 
-	// Use the hook below if you only want a free column
-	add_action( 'ac/column_types', function ( \AC\ListScreen $list_screen ) {
-		require_once( __DIR__ . '/classes/Column/Free/COLUMN_NAME.php' );
+require __DIR__ . '/vendor/autoload.php';
 
-		// For more example, see the implementation for the pro column below
+if (is_admin()) {
+    if (! function_exists(function: 'get_plugin_data')) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
 
-		if ( 'page' === $list_screen->get_key() ) {
-			// Register a column for the Free version WITHOUT pro features
-			$list_screen->register_column_type( new \CUSTOM_NAMESPACE\Column\Free\COLUMN_NAME() );
-		}
-	} );
+    define(__NAMESPACE__ . '\PLUGIN_DATA', get_plugin_data(plugin_file: __FILE__));
+    define(__NAMESPACE__ . '\PLUGIN_NAME', PLUGIN_DATA['Name']);
+}
 
-	// Register the pro column that extends the free column
-	add_action( 'acp/column_types', function ( \AC\ListScreen $list_screen ) {
-		// Load all necessary classes or use an autoloader
-		require_once( __DIR__ . '/classes/Column/Free/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/Column/Pro/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/Editing/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/Export/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/Filtering/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/SmartFiltering/COLUMN_NAME.php' );
-		require_once( __DIR__ . '/classes/Sorting/COLUMN_NAME.php' );
+define(__NAMESPACE__ . '\PLUGIN_DIR', basename(path: plugin_dir_path(file: __FILE__)));
+define(__NAMESPACE__ . '\PLUGIN_DIR_URL', plugin_dir_url(file: __FILE__));
 
-		// Make your custom column available to a specific WordPress list table:
+define(__NAMESPACE__ . '\DOMAIN', 'jwws');
+define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 
-		// Example #1 - for the custom post type 'page'
-		if ( 'page' === $list_screen->get_key() ) {
-			// Register column
+// App::hook();
 
-			// Register a column WITHOUT pro features
-			//$list_screen->register_column_type( new \CUSTOM_NAMESPACE\Column\Free\COLUMN_NAME() );
-
-			// Register a column WITH pro features
-			$list_screen->register_column_type( new \CUSTOM_NAMESPACE\Column\Pro\COLUMN_NAME() );
-		}
-
-		// Example #2 - for media
-		// if ( 'attachment' === $list_screen->get_key() ) {
-		// Register column
-		// }
-
-		// Example #3 - for all post types
-		// if ( \AC\MetaType::POST === $list_screen->get_meta_type() ) {
-		// Register column
-		// }
-
-		// Example #4 - for users
-		// if ( \AC\MetaType::USER === $list_screen->get_meta_type() ) {
-		// Register column
-		// }
-
-		// Example #4 - for categories on the taxonomy list table
-		// if ( $list_screen instanceof \ACP\ListScreen\Taxonomy && 'category' === $list_screen->get_taxonomy()) {
-		// Register column
-		// }
-
-	} );
-
-} );
+add_action('ac/ready', function(): void {
+    Modules\Categories_Hierarchy\Root::hook();
+});
