@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Categories_Hierarchy\Column\Pro;
+namespace JWWS\Admin_Columns_Add_On\Modules\Breadcrumbs_Title\Column\Pro;
 
 use ACP;
 use JWWS\Admin_Columns_Add_On\Modules\Column_Name;

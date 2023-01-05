@@ -47,12 +47,6 @@ class Root extends \AC\Column {
      */
     public function get_value(mixed $post_id): string {
         return $this->get_raw_value(post_id: $post_id);
-
-        // get raw value
-        $value = $this->get_raw_value(post_id: $post_id);
-
-        // optionally you can change the display of the value. In this example we added a post link.
-        return '<a href="' . esc_url(url: get_permalink(post: $post_id)) . '">' . $value . '</a>';
     }
 
     /**
@@ -99,7 +93,7 @@ class Root extends \AC\Column {
         // return 'something';
     }
 
-        /**
+    /**
      * @param array $ancestor_ids 
      * 
      * @return array 
