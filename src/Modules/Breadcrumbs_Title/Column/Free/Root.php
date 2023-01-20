@@ -2,15 +2,13 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Breadcrumbs_Title\Column\Free;
 
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
-
 class Root extends \AC\Column {
     /**
      * @return void
      */
     public static function hook(): void {
         add_action(
-            'acp/column_types',
+            'ac/column_types',
             [__CLASS__, 'register'],
         );
     }
@@ -22,7 +20,7 @@ class Root extends \AC\Column {
      */
     public static function register(\AC\ListScreen $list_screen): void {
         if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
-            $list_screen->register_column_type(new self());
+            $list_screen->register_column_type(column: new self());
         }
     }
 
@@ -59,9 +57,7 @@ class Root extends \AC\Column {
      * @return mixed Value
      */
     public function get_raw_value(mixed $post_id): mixed {
-        log_error($post_id);
-        log_error(get_term($post_id));
-        return 'x';
+        return get_option(option: 'wpseo_taxonomy_meta')['product_cat'][$post_id]['wpseo_bctitle'] ?? '';
     }
 
     /**

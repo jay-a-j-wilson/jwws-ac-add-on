@@ -3,20 +3,41 @@
 namespace JWWS\Admin_Columns_Add_On\Modules\Breadcrumbs_Title\Column\Pro;
 
 use ACP;
-use JWWS\Admin_Columns_Add_On\Modules\Column_Name;
+use JWWS\Admin_Columns_Add_On\Modules\Breadcrumbs_Title;
 
 // In this example we extend the free version, but if you only want a pro version, there is no need to write a separate free column
-class Root extends Column_Name\Column\Free\Root implements
+class Root extends Breadcrumbs_Title\Column\Free\Root implements
     ACP\Editing\Editable,
     ACP\Sorting\Sortable,
     ACP\Filtering\Filterable,
     ACP\Export\Exportable,
     ACP\Search\Searchable {
     /**
+     * @return void
+     */
+    public static function hook(): void {
+        add_action(
+            'acp/column_types',
+            [__CLASS__, 'register'],
+        );
+    }
+
+    /**
+     * @param \AC\ListScreen $list_screen
+     *
+     * @return void
+     */
+    public static function register(\AC\ListScreen $list_screen): void {
+        if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
+            $list_screen->register_column_type(column: new self());
+        }
+    }
+
+    /**
      *
      */
     public function editing() {
-        return new Column_Name\Editing\Root($this);
+        return new Breadcrumbs_Title\Editing\Root($this);
     }
 
     /**
@@ -24,7 +45,7 @@ class Root extends Column_Name\Column\Free\Root implements
      */
     public function sorting() {
         // Example #1 - Sort any value
-        return new Column_Name\Sorting\Root($this);
+        return new Breadcrumbs_Title\Sorting\Root($this);
         // The following examples are recommended for large datasets. They are optimised queries and much faster.
 
         // Example #2 - Sorting by custom field values on the posts table
@@ -45,20 +66,20 @@ class Root extends Column_Name\Column\Free\Root implements
      *
      */
     public function export() {
-        return new Column_Name\Export\Root($this);
+        return new Breadcrumbs_Title\Export\Root($this);
     }
 
     /**
      *
      */
     public function filtering() {
-        return new Column_Name\Filtering\Root($this);
+        return new Breadcrumbs_Title\Filtering\Root($this);
     }
 
     /**
      * Smart Filtering (internally named: Search).
      */
     public function search() {
-        return new Column_Name\Smart_Filtering\Root();
+        return new Breadcrumbs_Title\Smart_Filtering\Root();
     }
 }

@@ -34,6 +34,15 @@ define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 // App::hook();
 
 add_action('ac/ready', function(): void {
-    Modules\Categories_Hierarchy\Root::hook();
-    Modules\Breadcrumbs_Title\Root::hook();
+    add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
+        if ('product' === $list_screen->get_key()) {
+            $list_screen->register_column_type(column: new Modules\Categories_Hierarchy\Column\Pro\Root());
+        }
+    });
+
+    add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
+        if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
+            $list_screen->register_column_type(column: new Modules\Breadcrumbs_Title\Column\Pro\Root());
+        }
+    });
 });

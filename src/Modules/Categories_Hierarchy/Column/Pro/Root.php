@@ -3,10 +3,10 @@
 namespace JWWS\Admin_Columns_Add_On\Modules\Categories_Hierarchy\Column\Pro;
 
 use ACP;
-use JWWS\Admin_Columns_Add_On\Modules\Column_Name;
+use JWWS\Admin_Columns_Add_On\Modules\Categories_Hierarchy;
 
 // In this example we extend the free version, but if you only want a pro version, there is no need to write a separate free column
-class Root extends Column_Name\Column\Free\Root implements
+class Root extends Categories_Hierarchy\Column\Free\Root implements
     ACP\Editing\Editable,
     ACP\Sorting\Sortable,
     ACP\Filtering\Filterable,
@@ -16,7 +16,7 @@ class Root extends Column_Name\Column\Free\Root implements
      *
      */
     public function editing() {
-        return new Column_Name\Editing\Root($this);
+        return new Categories_Hierarchy\Editing\Root($this);
     }
 
     /**
@@ -24,7 +24,7 @@ class Root extends Column_Name\Column\Free\Root implements
      */
     public function sorting() {
         // Example #1 - Sort any value
-        return new Column_Name\Sorting\Root($this);
+        return new Categories_Hierarchy\Sorting\Root($this);
         // The following examples are recommended for large datasets. They are optimised queries and much faster.
 
         // Example #2 - Sorting by custom field values on the posts table
@@ -45,20 +45,20 @@ class Root extends Column_Name\Column\Free\Root implements
      *
      */
     public function export() {
-        return new Column_Name\Export\Root($this);
+        return new Categories_Hierarchy\Export\Root($this);
     }
 
     /**
      *
      */
     public function filtering() {
-        return new Column_Name\Filtering\Root($this);
+        return new Categories_Hierarchy\Filtering\Root($this);
     }
 
     /**
      * Smart Filtering (internally named: Search).
      */
     public function search() {
-        return new Column_Name\Smart_Filtering\Root();
+        return new Categories_Hierarchy\Smart_Filtering\Root();
     }
 }

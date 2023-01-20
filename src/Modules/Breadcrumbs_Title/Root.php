@@ -14,6 +14,6 @@ Class Root {
      * @return void
      */
     public static function hook(): void {
-        Column\Free\Root::hook();
+        Column\Pro\Root::hook();
     }
 }
