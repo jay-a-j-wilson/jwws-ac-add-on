@@ -34,15 +34,19 @@ define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 // App::hook();
 
 add_action('ac/ready', function(): void {
-    add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
-        if ('product' === $list_screen->get_key()) {
-            $list_screen->register_column_type(column: new Modules\Categories_Hierarchy\Column\Pro\Root());
-        }
-    });
+    if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
+        add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
+            if ('product' === $list_screen->get_key()) {
+                $list_screen->register_column_type(column: new Modules\Categories_Hierarchy\Column\Pro\Root());
+            }
+        });
 
-    add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
-        if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
-            $list_screen->register_column_type(column: new Modules\Breadcrumbs_Title\Column\Pro\Root());
+        if (is_plugin_active(plugin: 'ac-addon-yoast-seo/ac-addon-yoast-seo.php')) {
+            add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
+                if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
+                    $list_screen->register_column_type(column: new Modules\Breadcrumbs_Title\Column\Pro\Root());
+                }
+            });
         }
-    });
+    }
 });

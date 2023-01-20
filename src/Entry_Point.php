@@ -74,10 +74,5 @@ class Entry_Point {
             10,
             1,
         );
-
-        add_action( 'ac/ready', function () {
-            Modules\Categories_Hierarchy\Root::hook();
-            Modules\Breadcrumbs_Title\Root::hook();
-        });
     }
 }
