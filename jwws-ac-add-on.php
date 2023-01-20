@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name:    Admin Columns - Add On
+Plugin Name:    Admin Columns Pro - Add On
 Description:    Extra Columns.
-Version:        1.0.0
+Version:        1.1.0
 Author:         Jay Wilson
 License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,20 +33,22 @@ define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 
 // App::hook();
 
-add_action('ac/ready', function(): void {
-    if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
-        add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
-            if ('product' === $list_screen->get_key()) {
-                $list_screen->register_column_type(column: new Modules\Categories_Hierarchy\Column\Pro\Root());
-            }
-        });
-
-        if (is_plugin_active(plugin: 'ac-addon-yoast-seo/ac-addon-yoast-seo.php')) {
+if (is_plugin_active(plugin: 'admin-columns-pro/admin-columns-pro.php')) {
+    add_action('ac/ready', function(): void {
+        if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
             add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
-                if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
-                    $list_screen->register_column_type(column: new Modules\Breadcrumbs_Title\Column\Pro\Root());
+                if ('product' === $list_screen->get_key()) {
+                    $list_screen->register_column_type(column: new Modules\Categories_Hierarchy\Column\Pro\Root());
                 }
             });
+
+            if (is_plugin_active(plugin: 'ac-addon-yoast-seo/ac-addon-yoast-seo.php')) {
+                add_action('acp/column_types', function(\AC\ListScreen $list_screen): void {
+                    if ('wp-taxonomy_product_cat' === $list_screen->get_key()) {
+                        $list_screen->register_column_type(column: new Modules\Breadcrumbs_Title\Column\Pro\Root());
+                    }
+                });
+            }
         }
-    }
-});
+    });
+}
