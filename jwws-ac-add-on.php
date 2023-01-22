@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name:    Admin Columns Pro - Add On
+Plugin Name:    Admin Columns - Add On
 Description:    Extra Columns.
 Version:        1.1.0
 Author:         Jay Wilson
