@@ -27,7 +27,6 @@ Class Root {
      */
     public function register(\AC\ListScreen $list_screen): void {
         $screens = [
-            'product',
             'wp-taxonomy_product_cat',
         ];
 
