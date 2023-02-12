@@ -15,9 +15,6 @@ Class Root {
      */
     public static function hook(): void {
         if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
-            if (is_plugin_active(plugin: 'wordpress-seo/wp-seo.php')) {
-                Breadcrumbs_Title\Root::hook();
-            }
             Categories_Hierarchy\Root::hook();
         }
     }

@@ -34,10 +34,10 @@ class Root implements Editing\Service {
     /**
      * Saves the value after using inline-edit.
      *
-     * @param int   $id   Object ID
-     * @param mixed $data Value to be saved
+     * @param int   $id
+     * @param mixed $data
      */
-    public function update($request) {
+    public function update(int $id, $data): void {
         // Store the value that has been entered with inline-edit
         // For example: update_post_meta( $id, '_my_custom_field_example', $value );
     }
