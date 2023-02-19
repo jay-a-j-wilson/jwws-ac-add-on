@@ -6,17 +6,14 @@ if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Root.
- */
-Class Root {
+trait Hook {
     /**
      * @return void
      */
     public static function hook(): void {
-        if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
-            Attribute_Visibility\Root::hook();
-            Categories_Hierarchy\Root::hook();
-        }
+        add_action(
+            'acp/column_types',
+            [new self(), 'register'],
+        );
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy;
+namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility;
 
 use JWWS\Admin_Columns_Add_On\Modules\Columns;
 
