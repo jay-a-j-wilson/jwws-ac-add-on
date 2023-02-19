@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name:    Admin Columns - Add On
-Description:    Extra Columns.
-Version:        1.2.0
-Author:         Jay Wilson
-License:        GPLv2 or later
-License URI:    http://www.gnu.org/licenses/gpl-2.0.html
- */
+Plugin Name: Admin Columns - Add On
+Description: Extra Columns.
+Version:     1.2.1
+Author:      Jay Wilson
+License:     GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
 
 namespace JWWS\Admin_Columns_Add_On;
 
