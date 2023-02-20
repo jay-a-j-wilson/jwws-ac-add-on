@@ -15,6 +15,7 @@ Class Root {
      */
     public static function hook(): void {
         if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
+            Attribute_Position\Root::hook();
             Attribute_Visibility\Root::hook();
             Categories_Hierarchy\Root::hook();
         }

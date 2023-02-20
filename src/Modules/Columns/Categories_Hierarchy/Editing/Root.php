@@ -11,7 +11,7 @@ class Root implements Editing\Service {
     /**
      * @param int $id
      */
-    public function get_value($id): void {
+    public function get_value(int $id): void {
         // Retrieve the value for editing
         // For example: get_post_meta( $id, '_my_custom_field_example', true );
     }
@@ -19,9 +19,9 @@ class Root implements Editing\Service {
     /**
      * @param string $context
      */
-    public function get_view($context): ?Editing\View {
+    public function get_view(string $context): ?Editing\View {
         // Available views: text, textarea, media, float, togglable, select, ajaxselect
-        return new Editing\View\Text();
+        // return new Editing\View\Text();
         // (Optional) use View specific modifiers
         //$view->set_clear_button( true );
         //$view->set_placeholder( 'Custom placeholder' );
@@ -29,6 +29,8 @@ class Root implements Editing\Service {
 
         // (Optional) return a different view or disable editin based on context: bulk or single (index)
         // $context === Service::CONTEXT_BULK
+
+        return null;
     }
 
     /**

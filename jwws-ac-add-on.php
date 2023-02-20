@@ -2,7 +2,7 @@
 /*
 Plugin Name: Admin Columns - Add On
 Description: Extra Columns.
-Version:     1.2.1
+Version:     1.3.0
 Author:      Jay Wilson
 License:     GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

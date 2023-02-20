@@ -13,7 +13,7 @@ class Root {
     public function register(\AC\Groups $groups): void {
         $groups->register_group(
             slug: 'jwws-woocommerce',
-            label: __('WooCommerce (JWWS)', 'jwws'),
+            label: __(text: 'WooCommerce (JWWS)', domain: 'jwws'),
             priority: 25,
         );
     }

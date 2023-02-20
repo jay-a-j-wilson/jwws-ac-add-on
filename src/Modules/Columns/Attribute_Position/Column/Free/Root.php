@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column\Free;
+namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Column\Free;
 
 use ACA\WC\Settings;
 use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
@@ -16,9 +16,9 @@ class Root extends \AC\Column {
      */
     public function __construct() {
         $this
-            ->set_type(type: 'column-attribute_visibility')  // Identifier, pick an unique name. Single word, no spaces. Underscores allowed.
+            ->set_type(type: 'column-attribute_position')  // Identifier, pick an unique name. Single word, no spaces. Underscores allowed.
             ->set_group(group: 'jwws-woocommerce')
-            ->set_label(label: __(text: 'Attribute Visibility', domain: 'jwws')) // Default column label.
+            ->set_label(label: __(text: 'Attribute Position', domain: 'jwws')) // Default column label.
         ;
     }
 
@@ -50,7 +50,10 @@ class Root extends \AC\Column {
         $attribute_key = $this->get_option(key: 'product_taxonomy_display');
 
         if (empty($attribute_key)) {
-            return __(text: 'Attribute not selected in column settings.', domain: 'jwws');
+            return __(
+                text: 'Attribute not selected in column settings.', 
+                domain: 'jwws'
+            );
         }
 
         $attributes = wc_get_product(the_product: $product_id)
@@ -61,9 +64,7 @@ class Root extends \AC\Column {
             return __(text: $this->error_message, domain: 'jwws');
         }
 
-        return ($attributes[$attribute_key]->get_visible() == 1)
-            ? __(text: 'Yes', domain: 'jwws')
-            : __(text: 'No', domain: 'jwws');
+        return $attributes[$attribute_key]->get_position();
     }
 
     /**

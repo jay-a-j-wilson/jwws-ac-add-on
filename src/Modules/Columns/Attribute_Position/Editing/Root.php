@@ -1,10 +1,9 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Editing;
+namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column;
+use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Column;
 use ACP\Editing;
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -25,12 +24,9 @@ class Root implements Editing\Service {
             return null;
         }
 
-        return (new Editing\View\Select(
-            options: [
-                '1' => __(text: 'Yes', domain: 'jwws'),
-                '0' => __(text: 'No', domain: 'jwws'),
-            ],
-        ))->set_clear_button(enable: true);
+        return (new Editing\View\Number())
+            ->set_min(min: 0)
+        ;
     }
 
     /**
@@ -58,14 +54,10 @@ class Root implements Editing\Service {
         foreach ($attributes as $attribute_key => $attribute_value) {
             // Target specific attribute by its name
             if ($attribute_value['name'] == $this->column->get_option(key: 'product_taxonomy_display')) {
-                if (empty($data)) {
-                    unset($attributes[$attribute_key]);
-                } else {
-                    // Set the new value in the array
-                    $attributes[$attribute_key]['is_visible'] = $data;
-                }
+                // Set the new value in the array
+                $attributes[$attribute_key]['position'] = $data;
 
-                break; // stop the loop
+                break;
             }
         }
 

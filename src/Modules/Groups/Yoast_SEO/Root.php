@@ -13,7 +13,7 @@ class Root {
     public function register(\AC\Groups $groups): void {
         $groups->register_group(
             slug: 'jwws-wpseo',
-            label: __('Yoast SEO (JWWS)', 'jwws'),
+            label: __(text: 'Yoast SEO (JWWS)', domain: 'jwws'),
             priority: 25,
         );
     }
