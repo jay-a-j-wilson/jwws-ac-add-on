@@ -2,9 +2,6 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Column\Free;
 
-use ACA\WC\Settings;
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
-
 class Root extends \AC\Column {
     /**
      *
