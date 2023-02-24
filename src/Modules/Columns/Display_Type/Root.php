@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy;
+namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type;
 
 use JWWS\Admin_Columns_Add_On\Modules\Columns;
 
@@ -20,7 +20,7 @@ Class Root {
      * @return void
      */
     public function register(\AC\ListScreen $list_screen): void {
-        if ($list_screen instanceof \ACA\WC\ListScreen\Product) {
+        if ($list_screen instanceof \ACA\WC\ListScreen\ProductCategory) {
             $list_screen->register_column_type(column: new Column\Pro\Root());
         }
     }

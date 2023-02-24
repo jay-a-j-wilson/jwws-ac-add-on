@@ -3,13 +3,15 @@
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Editing;
 
 use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column;
-use ACP\Editing;
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
+use ACP\Editing\ {
+    Service,
+    View
+};
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
-class Root implements Editing\Service {
+class Root implements Service {
     /**
      * @param privateColumn\Pro\Root $column
      */
@@ -19,18 +21,21 @@ class Root implements Editing\Service {
     /**
      * @param string $context
      */
-    public function get_view(string $context): ?Editing\View {
+    public function get_view(string $context): ?View {
         // Disables edit controls if attribute is not selected in column settings.
         if (empty($this->column->get_option(key: 'product_taxonomy_display'))) {
             return null;
         }
 
-        return (new Editing\View\Select(
-            options: [
-                '1' => __(text: 'Yes', domain: 'jwws'),
-                '0' => __(text: 'No', domain: 'jwws'),
-            ],
-        ))->set_clear_button(enable: true);
+        return (new View\Select())
+            ->set_clear_button(enable: true)
+            ->set_options(
+                options: [
+                    '1' => __(text: 'Yes', domain: 'jwws'),
+                    '0' => __(text: 'No', domain: 'jwws'),
+                ],
+            )
+        ;
     }
 
     /**

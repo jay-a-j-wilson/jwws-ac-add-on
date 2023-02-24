@@ -20,11 +20,7 @@ Class Root {
      * @return void
      */
     public function register(\AC\ListScreen $list_screen): void {
-        $screens = [
-            'product',
-        ];
-
-        if (in_array(needle: $list_screen->get_key(), haystack: $screens)) {
+        if ($list_screen instanceof \ACA\WC\ListScreen\Product) {
             $list_screen->register_column_type(column: new Column\Pro\Root());
         }
     }

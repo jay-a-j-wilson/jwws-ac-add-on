@@ -3,12 +3,15 @@
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Editing;
 
 use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Column;
-use ACP\Editing;
+use ACP\Editing\ {
+    Service,
+    View
+};
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
-class Root implements Editing\Service {
+class Root implements Service {
     /**
      * @param privateColumn\Pro\Root $column
      */
@@ -18,13 +21,13 @@ class Root implements Editing\Service {
     /**
      * @param string $context
      */
-    public function get_view(string $context): ?Editing\View {
+    public function get_view(string $context): ?View {
         // Disables edit controls if attribute is not selected in column settings.
         if (empty($this->column->get_option(key: 'product_taxonomy_display'))) {
             return null;
         }
 
-        return (new Editing\View\Number())
+        return (new View\Number())
             ->set_min(min: 0)
         ;
     }

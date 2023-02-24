@@ -18,6 +18,7 @@ Class Root {
             Attribute_Position\Root::hook();
             Attribute_Visibility\Root::hook();
             Categories_Hierarchy\Root::hook();
+            Display_Type\Root::hook();
         }
     }
 }

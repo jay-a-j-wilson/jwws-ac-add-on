@@ -2,57 +2,65 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column\Pro;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility;
-use ACP\{
-    ConditionalFormat,
+use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\{
+    Column,
     Editing,
     Export,
     Sorting,
-    Search,
-    Filtering,
+    Smart_Filtering,
+    Filtering
 };
-
-class Root extends Attribute_Visibility\Column\Free\Root implements
+use ACP\{
+    ConditionalFormat\ConditionalFormatTrait,
     ConditionalFormat\Formattable,
     Editing\Editable,
     Export\Exportable,
     Sorting\Sortable,
     Search\Searchable,
-    Filtering\Filterable {
-    use ConditionalFormat\ConditionalFormatTrait;
+    Filtering\Filterable,
+};
+
+class Root extends Column\Free\Root implements
+    Formattable,
+    Editable,
+    Exportable,
+    Sortable,
+    Searchable,
+    Filterable {
+    use ConditionalFormatTrait;
 
     /**
      *
      */
     public function editing() {
-        return new Attribute_Visibility\Editing\Root($this);
+        return new Editing\Root($this);
     }
 
     /**
      *
      */
     public function export() {
-        return new Attribute_Visibility\Export\Root(column: $this);
+        return new Export\Root(column: $this);
     }
 
     /**
      *
      */
     public function sorting() {
-        return new Attribute_Visibility\Sorting\Root(column: $this);
+        return new Sorting\Root(column: $this);
     }
 
     /**
      * Smart Filtering (internally named: Search).
      */
     public function search() {
-        return new Attribute_Visibility\Smart_Filtering\Root();
+        return new Smart_Filtering\Root();
     }
 
     /**
      *
      */
     public function filtering() {
-        return new Attribute_Visibility\Filtering\Root(column: $this);
+        return new Filtering\Root(column: $this);
     }
 }

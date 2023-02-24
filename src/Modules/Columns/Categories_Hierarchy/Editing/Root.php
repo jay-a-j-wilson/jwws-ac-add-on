@@ -2,12 +2,15 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Editing;
 
-use ACP\Editing;
+use ACP\Editing\ {
+    Service,
+    View
+};
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
-class Root implements Editing\Service {
+class Root implements Service {
     /**
      * @param int $id
      */
@@ -19,7 +22,7 @@ class Root implements Editing\Service {
     /**
      * @param string $context
      */
-    public function get_view(string $context): ?Editing\View {
+    public function get_view(string $context): ?View {
         // Available views: text, textarea, media, float, togglable, select, ajaxselect
         // return new Editing\View\Text();
         // (Optional) use View specific modifiers
