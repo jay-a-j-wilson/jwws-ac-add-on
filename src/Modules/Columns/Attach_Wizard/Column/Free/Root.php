@@ -2,8 +2,6 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Column\Free;
 
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
-
 class Root extends \AC\Column {
     /**
      *
@@ -46,12 +44,12 @@ class Root extends \AC\Column {
      * @return mixed
      */
     public function get_raw_value(mixed $product_id): mixed {
-        $product    = wc_get_product(the_product: $product_id);
-        $post       = get_post(post: $product->get_meta(key: '_wcpw_attach_wizard'));
-        $post_title = get_the_title(post: $post);
+        $wizard_id = wc_get_product(the_product: $product_id)
+            ->get_meta(key: '_wcpw_attach_wizard')
+        ;
 
-        log_error($post);
-
-        return $post_title;
+        return empty($wizard_id)
+            ? null
+            : get_the_title(post: get_post(post: $wizard_id));
     }
 }

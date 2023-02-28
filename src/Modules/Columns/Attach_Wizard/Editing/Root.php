@@ -7,6 +7,7 @@ use ACP\Editing\ {
     Service,
     View
 };
+use function JWWS\WP_Plugin_Framework\Functions\Debug\console_log;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -22,16 +23,25 @@ class Root implements Service {
      * @param string $context
      */
     public function get_view(string $context): ?View {
+        $wizards = get_posts(
+            args: [
+                'post_type'   => 'wc_product_wizard',
+                'post_status' => 'publish',
+                'numberposts' => -1,
+                'orderby'     => 'menu_order',
+                'order'       => 'ASC',
+            ],
+        );
+
+        $options = [];
+
+        foreach ($wizards as $wizard) {
+            $options[$wizard->ID] = __(text: $wizard->post_title, domain: 'jwws');
+        }
+
         return (new View\Select())
             ->set_clear_button(enable: true)
-            ->set_options(
-                options: [
-                    ''              => __(text: 'Standard', domain: 'jwws'),
-                    'products'      => __(text: 'Products', domain: 'jwws'),
-                    'subcategories' => __(text: 'Subcategories', domain: 'jwws'),
-                    'both'          => __(text: 'Both', domain: 'jwws'),
-                ],
-            )
+            ->set_options(options: $options)
         ;
     }
 
@@ -49,9 +59,9 @@ class Root implements Service {
      * @param mixed $data
      */
     public function update(int $product_id, mixed $data): void {
-        update_term_meta(
-            term_id: $product_id,
-            meta_key: 'display_type',
+        update_post_meta(
+            post_id: $product_id,
+            meta_key: '_wcpw_attach_wizard',
             meta_value: $data,
         );
     }

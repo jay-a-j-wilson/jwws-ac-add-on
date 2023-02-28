@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b76544785bc346697f898e81bb1aef3e",
+    "content-hash": "cb6a41903bee51808a71099e6e83b4ec",
     "packages": [
         {
             "name": "jay-a-j-wilson/jwws-wp-plugin-framework",
-            "version": "1.1.0",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework.git",
-                "reference": "04a1a2239df9cda7d5cfa69e0386e916d544ea4c"
+                "reference": "ec25413907eb57c223d82125ab9890b2d0ad4f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/04a1a2239df9cda7d5cfa69e0386e916d544ea4c",
-                "reference": "04a1a2239df9cda7d5cfa69e0386e916d544ea4c",
+                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/ec25413907eb57c223d82125ab9890b2d0ad4f8a",
+                "reference": "ec25413907eb57c223d82125ab9890b2d0ad4f8a",
                 "shasum": ""
             },
             "require": {
@@ -28,6 +28,7 @@
                 "files": [
                     "src/functions/alias.php",
                     "src/functions/debug.php",
+                    "src/functions/woocommerce.php",
                     "src/functions/wordpress.php"
                 ],
                 "psr-4": {
@@ -38,9 +39,9 @@
             "description": "A light-weight framework for WordPress plugins.",
             "support": {
                 "issues": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/issues",
-                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/1.1.0"
+                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/1.2.3"
             },
-            "time": "2022-11-26T10:43:49+00:00"
+            "time": "2023-02-27T01:03:02+00:00"
         }
     ],
     "packages-dev": [],
