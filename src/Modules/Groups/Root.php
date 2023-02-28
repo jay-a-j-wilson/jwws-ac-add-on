@@ -14,6 +14,7 @@ Class Root {
      * @return void
      */
     public static function hook(): void {
+        Products_Wizard\Root::hook();
         WooCommerce\Root::hook();
         Yoast_SEO\Root::hook();
     }

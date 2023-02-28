@@ -17,6 +17,7 @@ Class Root {
         if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
             if (is_plugin_active(plugin: 'woocommerce-products-wizard/woocommerce-products-wizard.php')) {
                 Attach_Wizard\Root::hook();
+                Discount\Root::hook();
             }
             Attribute_Position\Root::hook();
             Attribute_Visibility\Root::hook();

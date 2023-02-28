@@ -6,15 +6,10 @@ class Root extends \AC\Column {
     /**
      *
      */
-    private $error_message = 'Attribute not assigned';
-
-    /**
-     *
-     */
     public function __construct() {
         $this
             ->set_type(type: 'column-attach_wizard')  // Identifier, pick an unique name. Single word, no spaces. Underscores allowed.
-            ->set_group(group: 'jwws-woocommerce')
+            ->set_group(group: 'jwws-products_wizard')
             ->set_label(label: __(text: 'Attach Wizard', domain: 'jwws')) // Default column label.
         ;
     }
@@ -50,6 +45,6 @@ class Root extends \AC\Column {
 
         return empty($wizard_id)
             ? null
-            : get_the_title(post: get_post(post: $wizard_id));
+            : get_the_title(post: $wizard_id);
     }
 }
