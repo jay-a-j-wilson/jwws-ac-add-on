@@ -1,0 +1,27 @@
+.jwws-aca-wcpw-column-discount {
+    border-spacing: 10px 0;
+    width: 100%;
+}
+
+.jwws-aca-wcpw-column-discount th,
+.jwws-aca-wcpw-column-discount td {
+    padding: 0px;
+}
+
+.jwws-aca-wcpw-column-discount th {
+    font-weight: 600;
+    color: #999;
+    border-bottom: 1px dotted #999;
+}
+
+.jwws-aca-wcpw-column-discount td:nth-child(3) {
+    text-align: right;
+}
+
+.jwws-aca-wcpw-column-discount .jwws-bold {
+    font-weight: 600;
+}
+
+.jwws-aca-wcpw-column-discount .jwws-italic {
+    font-style: italic;
+}

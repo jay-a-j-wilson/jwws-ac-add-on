@@ -2,15 +2,21 @@
 
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Column\Free;
 
+use JWWS\WP_Plugin_Framework\Template_Engine\Template;
 use function JWWS\WP_Plugin_Framework\Functions\Debug\console_log;
 
 class Root extends \AC\Column {
     /**
-     *
+     * Identifier, pick an unique name.
+     * Single word, no spaces. Underscores allowed.
+     */
+    private string $uid = 'column-products_wizard_discount';
+
+    /**
      */
     public function __construct() {
         $this
-            ->set_type(type: 'column-products_wizard_discount')  // Identifier, pick an unique name. Single word, no spaces. Underscores allowed.
+            ->set_type(type: $this->uid)
             ->set_group(group: 'jwws-products_wizard')
             ->set_label(label: __(text: 'Discount', domain: 'jwws')) // Default column label.
         ;
@@ -27,12 +33,76 @@ class Root extends \AC\Column {
         $discounts = $this->get_raw_value(product_id: $product_id);
 
         if (empty($discounts)) {
-            return '-';
+            return '–';
         }
 
-        $output = implode(separator: '<br>', array: $discounts);
+        return (new Template(filename: __DIR__ . '/templates/column'))
+            ->assign(
+                names: 'discounts',
+                value: $this->format(discounts: $discounts),
+            )
+            ->output()
+        ;
+    }
 
-        return $output;
+    /**
+     * @param array $discounts
+     * 
+     * @return array
+     */
+    private function format(array $discounts): array {
+        foreach ($discounts as $key => $value) {
+            $discounts[$key]['id']    = $this->format_id(discount: $value);
+            $discounts[$key]['value'] = $this->format_value(discount: $value);
+            $discounts[$key]['type']  = $this->format_type(discount: $value);
+        }
+
+        return $discounts;
+    }
+
+    /**
+     * @param mixed $discount
+     * 
+     * @return string
+     */
+    private function format_id(mixed $discount): string {
+        return empty($discount['id'])
+            ? 'All'
+            : get_the_title(post: $discount['id']);
+    }
+
+    /**
+     * @param mixed $discount
+     * 
+     * @return string
+     */
+    private function format_value(mixed $discount): string {
+        switch ($discount['type']) {
+            case 'percentage':
+                return '-' . $discount['value'] . '%';
+
+            case 'precise_price':
+                return '$' . $discount['value'];
+
+            case 'fixed':
+                return '-$' . $discount['value'];
+
+            default:
+                return $discount['value'];
+        }
+    }
+
+    /**
+     * @param mixed $discount
+     * 
+     * @return string
+     */
+    private function format_type(mixed $discount): string {
+        return str_replace(
+            search: '_',
+            replace: ' ',
+            subject: ucfirst(string: $discount['type']),
+        );
     }
 
     /**
@@ -49,30 +119,35 @@ class Root extends \AC\Column {
             ->get_meta(key: '_wcpw_discount')
         ;
 
-        if (empty($discounts)) {
+        if ($this->is_empty(discounts: $discounts)) {
             return null;
         }
 
-        foreach ($discounts as $key => $discount) {
-            $discounts[$key]['id'] = empty($discounts[$key]['id'])
-                ? 'All'
-                : get_the_title(post: $discount['id']);
-
-            $discounts[$key]['id'] = '<strong>' . $discounts[$key]['id'] . ':</strong>';
-
-            $discounts[$key]['value'] = $discounts[$key]['type'] === 'percentage'
-                ? $discounts[$key]['value'] . '%'
-                : '$' . $discounts[$key]['value'];
-
-            $discounts[$key]['type'] = str_replace(
-                search: '_',
-                replace: ' ',
-                subject: ucfirst(string: $discounts[$key]['type']),
-            );
-
-            $discounts[$key] = implode(separator: ' ', array: $discounts[$key]);
-        }
-
         return $discounts;
+    }
+
+    /**
+     * Checks if discounts meta field has empty value.
+     * Required as discounts that have been edited have empty values in the
+     * database.
+     *
+     * @param mixed $discounts
+     * 
+     * @return bool
+     */
+    private function is_empty(mixed $discounts): bool {
+        return is_array(value: $discounts)
+        && sizeof(value: $discounts) === 1
+        && ! isset($discounts[0]['type']);
+    }
+
+    /**
+     * Enqueues CSS on the admin listings screen.
+     */
+    public function scripts(): void {
+        wp_enqueue_style(
+            handle: $this->uid,
+            src: plugin_dir_url(file: __FILE__) . '/assets/css/styles.css',
+        );
     }
 }
