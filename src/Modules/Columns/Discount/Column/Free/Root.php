@@ -3,7 +3,6 @@
 namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Column\Free;
 
 use JWWS\WP_Plugin_Framework\Template_Engine\Template;
-use function JWWS\WP_Plugin_Framework\Functions\Debug\console_log;
 
 class Root extends \AC\Column {
     /**
@@ -30,24 +29,35 @@ class Root extends \AC\Column {
      * @return string
      */
     public function get_value(mixed $product_id): string {
-        $discounts = $this->get_raw_value(product_id: $product_id);
+        return $this->render(
+            discounts: $this->get_raw_value(
+                product_id: $product_id,
+            ),
+        );
+    }
 
-        if (empty($discounts)) {
-            return '–';
-        }
-
-        return (new Template(filename: __DIR__ . '/templates/column'))
-            ->assign(
-                names: 'discounts',
-                value: $this->format(discounts: $discounts),
-            )
-            ->output()
+    /**
+     * Renders output.
+     *
+     * @param mixed $discounts
+     *
+     * @return string
+     */
+    private function render(mixed $discounts): string {
+        return empty($discounts)
+            ? '-'
+            : (new Template(filename: __DIR__ . '/templates/column'))
+                ->assign(
+                    names: 'discounts',
+                    value: $this->format(discounts: $discounts),
+                )
+                ->output()
         ;
     }
 
     /**
      * @param array $discounts
-     * 
+     *
      * @return array
      */
     private function format(array $discounts): array {
@@ -62,7 +72,7 @@ class Root extends \AC\Column {
 
     /**
      * @param mixed $discount
-     * 
+     *
      * @return string
      */
     private function format_id(mixed $discount): string {
@@ -73,7 +83,7 @@ class Root extends \AC\Column {
 
     /**
      * @param mixed $discount
-     * 
+     *
      * @return string
      */
     private function format_value(mixed $discount): string {
@@ -94,7 +104,7 @@ class Root extends \AC\Column {
 
     /**
      * @param mixed $discount
-     * 
+     *
      * @return string
      */
     private function format_type(mixed $discount): string {
@@ -119,11 +129,9 @@ class Root extends \AC\Column {
             ->get_meta(key: '_wcpw_discount')
         ;
 
-        if ($this->is_empty(discounts: $discounts)) {
-            return null;
-        }
-
-        return $discounts;
+        return $this->is_empty(discounts: $discounts)
+            ? null
+            : $discounts;
     }
 
     /**
@@ -132,13 +140,14 @@ class Root extends \AC\Column {
      * database.
      *
      * @param mixed $discounts
-     * 
+     *
      * @return bool
      */
     private function is_empty(mixed $discounts): bool {
         return is_array(value: $discounts)
         && sizeof(value: $discounts) === 1
-        && ! isset($discounts[0]['type']);
+        && empty($discounts[0]['value'])
+        && $discounts[0]['type'] === 'percentage';
     }
 
     /**
