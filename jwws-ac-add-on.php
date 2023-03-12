@@ -30,4 +30,3 @@ define(__NAMESPACE__ . '\DOMAIN', 'jwws');
 define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 
 App::hook();
-// Modules\Root::hook();

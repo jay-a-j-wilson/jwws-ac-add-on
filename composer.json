@@ -5,7 +5,11 @@
     },
     "autoload": {
         "psr-4": {
-            "JWWS\\ACA\\": "src/",
+            "JWWS\\ACA\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "JWWS\\ACA\\Tests\\": "test/"
         }
     },
@@ -20,5 +24,15 @@
             ],
             "delete_vendor_directories": true
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "\"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "\"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ]
     }
 }
