@@ -2,7 +2,7 @@
 
 namespace JWWS\ACA;
 
-use JWWS\ACA\DEPS\JWWS\WPPF\Loader\{
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\{
     Plugin\Plugin,
     Loader
 };
