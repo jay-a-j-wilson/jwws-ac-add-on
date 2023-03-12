@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility;
+namespace JWWS\ACA\Modules\Columns\Attribute_Visibility;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns;
+use JWWS\ACA\Modules\Columns;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

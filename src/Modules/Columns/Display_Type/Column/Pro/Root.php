@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Column\Pro;
+namespace JWWS\ACA\Modules\Columns\Display_Type\Column\Pro;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\{
+use JWWS\ACA\Modules\Columns\Display_Type\{
     Column,
     Editing,
     Export,

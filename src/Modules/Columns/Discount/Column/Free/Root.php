@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Column\Free;
+namespace JWWS\ACA\Modules\Columns\Discount\Column\Free;
 
-use JWWS\WP_Plugin_Framework\Template_Engine\Template;
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 
 class Root extends \AC\Column {
     /**
@@ -46,7 +46,7 @@ class Root extends \AC\Column {
     private function render(mixed $discounts): string {
         return empty($discounts)
             ? '-'
-            : (new Template(filename: __DIR__ . '/templates/column'))
+            : Template::create(filename: __DIR__ . '/templates/template')
                 ->assign(
                     names: 'discounts',
                     value: $this->format(discounts: $discounts),

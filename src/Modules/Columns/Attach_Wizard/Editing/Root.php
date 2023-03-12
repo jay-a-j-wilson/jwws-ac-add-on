@@ -1,13 +1,12 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Editing;
+namespace JWWS\ACA\Modules\Columns\Attach_Wizard\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Column;
+use JWWS\ACA\Modules\Columns\Attach_Wizard\Column;
 use ACP\Editing\ {
     Service,
     View
 };
-use function JWWS\WP_Plugin_Framework\Functions\Debug\console_log;
 
 /**
  * Editing class. Adds editing functionality to the column.

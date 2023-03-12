@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Column\Free;
+namespace JWWS\ACA\Modules\Columns\Display_Type\Column\Free;
 
 class Root extends \AC\Column {
     /**

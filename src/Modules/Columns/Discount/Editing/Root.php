@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Editing;
+namespace JWWS\ACA\Modules\Columns\Discount\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Column;
+use JWWS\ACA\Modules\Columns\Discount\Column;
 use ACP\Editing\ {
     Service,
     View

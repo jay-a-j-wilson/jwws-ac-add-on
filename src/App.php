@@ -1,8 +1,15 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On;
+namespace JWWS\ACA;
 
-use JWWS\WP_Plugin_Framework\Loader\Plugin;
+use JWWS\ACA\DEPS\JWWS\WPPF\Loader\{
+    Plugin\Plugin,
+    Loader
+};
+use JWWS\ACA\Modules\{
+    Groups,
+    Columns
+};
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -16,42 +23,38 @@ class App {
      * @return void
      */
     public static function hook(): void {
-        add_action(
-            'wp_loaded',
-            [__CLASS__, 'register'],
-        );
+        $self = new self();
+        add_action('wp_loaded', [$self, 'load']);
+        add_action('ac/ready', [$self, 'register']);
     }
 
     /**
      * @return void
      */
-    public static function register(): void {
-        (new self())->load_entry_point();
+    public function load(): void {
+        Loader::create(
+            plugin: Plugin::create_with_slug(slug: PLUGIN_DIR)
+                ->add_dependencies(
+                    Plugin::create_with_slug(
+                        slug: 'admin-columns-pro',
+                        fallback_name: 'Admin Columns Pro',
+                    ),
+                ),
+        )
+            ->hook_admin_init()
+            ->hook_deactivated_plugin()
+        ;
     }
 
     /**
      * @return void
      */
-    public function load_entry_point(): void {
-        $plugin = Plugin::create_with_slug(
-            name: 'WP Open Row Actions',
-            slug: PLUGIN_DIR,
-        );
+    public function register(): void {
+        if (! is_plugin_active(plugin: 'admin-columns-pro/admin-columns-pro.php')) {
+            return;
+        }
 
-        $dependant_plugins = [
-            Plugin::create_with_slug(
-                name: 'Admin Columns Pro',
-                slug: 'admin-columns-pro',
-            ),
-            Plugin::create_with_slug(
-                name: 'WooCommerce',
-                slug: 'woocommerce',
-            ),
-        ];
-
-        (new Entry_Point(
-            plugin: $plugin,
-            dependant_plugins: $dependant_plugins,
-        ))->load();
+        Groups\Root::hook();
+        Columns\Root::hook();
     }
 }

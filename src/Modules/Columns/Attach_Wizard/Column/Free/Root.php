@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Column\Free;
+namespace JWWS\ACA\Modules\Columns\Attach_Wizard\Column\Free;
 
 class Root extends \AC\Column {
     /**

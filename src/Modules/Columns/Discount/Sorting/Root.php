@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Sorting;
+namespace JWWS\ACA\Modules\Columns\Discount\Sorting;
 
 use AC;
 use ACP\Sorting;

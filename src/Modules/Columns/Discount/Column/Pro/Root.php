@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\Column\Pro;
+namespace JWWS\ACA\Modules\Columns\Discount\Column\Pro;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Discount\{
+use JWWS\ACA\Modules\Columns\Discount\{
     Column,
     Editing,
     Export,

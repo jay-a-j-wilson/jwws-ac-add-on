@@ -1,15 +1,24 @@
 {
     "require": {
-        "jay-a-j-wilson/jwws-wp-plugin-framework": "1.1.0"
+        "coenjacobs/mozart": "*",
+        "jay-a-j-wilson/jwws-wp-plugin-framework": "2.0.0"
     },
     "autoload": {
         "psr-4": {
-            "JWWS\\Admin_Columns_Add_On\\": "src/"
+            "JWWS\\ACA\\": "src/",
+            "JWWS\\ACA\\Tests\\": "test/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "JWWS\\Admin_Columns_Add_On\\Tests\\": "test/"
+    "extra": {
+        "mozart": {
+            "dep_namespace": "JWWS\\ACA\\Deps\\",
+            "dep_directory": "/src/Deps/",
+            "classmap_directory": "/src/Deps/classes/",
+            "classmap_prefix": "JWWS_ACA_",
+            "packages": [
+                "jay-a-j-wilson/jwws-wp-plugin-framework"
+            ],
+            "delete_vendor_directories": true
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Export;
+namespace JWWS\ACA\Modules\Columns\Attribute_Position\Export;
 
 /**
  * Export class. Adds export functionality to the column.

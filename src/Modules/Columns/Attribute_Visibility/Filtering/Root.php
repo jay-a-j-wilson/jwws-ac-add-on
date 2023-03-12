@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Filtering;
+namespace JWWS\ACA\Modules\Columns\Attribute_Visibility\Filtering;
 
 class Root extends \ACP\Filtering\Model {
     /**

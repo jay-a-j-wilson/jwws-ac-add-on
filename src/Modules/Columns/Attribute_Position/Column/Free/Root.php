@@ -1,15 +1,14 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Column\Free;
+namespace JWWS\ACA\Modules\Columns\Attribute_Position\Column\Free;
 
 use ACA\WC\Settings;
-use function JWWS\WP_Plugin_Framework\Functions\Debug\log_error;
 
 class Root extends \AC\Column {
     /**
-     *
+     * @var string
      */
-    private $error_message = 'Attribute not assigned';
+    private string $error_message = 'Attribute not assigned';
 
     /**
      *

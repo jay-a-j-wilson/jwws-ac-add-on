@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Export;
+namespace JWWS\ACA\Modules\Columns\Attach_Wizard\Export;
 
 /**
  * Export class. Adds export functionality to the column.

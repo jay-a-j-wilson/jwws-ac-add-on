@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Groups\Products_Wizard;
+namespace JWWS\ACA\Modules\Groups\Products_Wizard;
 
-use JWWS\Admin_Columns_Add_On\Modules\Groups;
+use JWWS\ACA\Modules\Groups;
 
 class Root {
     use Groups\Hook;

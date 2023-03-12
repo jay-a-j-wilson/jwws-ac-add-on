@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Export;
+namespace JWWS\ACA\Modules\Columns\Categories_Hierarchy\Export;
 
 /**
  * Export class. Adds export functionality to the column.

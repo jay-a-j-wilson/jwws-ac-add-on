@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Groups\WooCommerce;
+namespace JWWS\ACA\Modules\Groups\WooCommerce;
 
-use JWWS\Admin_Columns_Add_On\Modules\Groups;
+use JWWS\ACA\Modules\Groups;
 
 class Root {
     use Groups\Hook;

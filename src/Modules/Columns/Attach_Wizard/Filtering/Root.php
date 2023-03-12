@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Filtering;
+namespace JWWS\ACA\Modules\Columns\Attach_Wizard\Filtering;
 
 class Root extends \ACP\Filtering\Model {
     /**

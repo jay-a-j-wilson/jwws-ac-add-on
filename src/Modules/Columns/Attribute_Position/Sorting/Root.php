@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Sorting;
+namespace JWWS\ACA\Modules\Columns\Attribute_Position\Sorting;
 
 use AC;
 use ACP\Sorting;

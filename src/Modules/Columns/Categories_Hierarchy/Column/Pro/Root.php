@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Column\Pro;
+namespace JWWS\ACA\Modules\Columns\Categories_Hierarchy\Column\Pro;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\{
+use JWWS\ACA\Modules\Columns\Categories_Hierarchy\{
     Column,
     Editing,
     Export,

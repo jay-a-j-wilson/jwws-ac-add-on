@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Editing;
+namespace JWWS\ACA\Modules\Columns\Categories_Hierarchy\Editing;
 
 use ACP\Editing\ {
     Service,

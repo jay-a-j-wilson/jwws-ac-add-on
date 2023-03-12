@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Editing;
+namespace JWWS\ACA\Modules\Columns\Display_Type\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Column;
+use JWWS\ACA\Modules\Columns\Display_Type\Column;
 use ACP\Editing\ {
     Service,
     View

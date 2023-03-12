@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column\Pro;
+namespace JWWS\ACA\Modules\Columns\Attribute_Visibility\Column\Pro;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\{
+use JWWS\ACA\Modules\Columns\Attribute_Visibility\{
     Column,
     Editing,
     Export,

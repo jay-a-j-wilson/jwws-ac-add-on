@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Editing;
+namespace JWWS\ACA\Modules\Columns\Attribute_Position\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Position\Column;
+use JWWS\ACA\Modules\Columns\Attribute_Position\Column;
 use ACP\Editing\ {
     Service,
     View

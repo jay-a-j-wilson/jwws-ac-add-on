@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Smart_Filtering;
+namespace JWWS\ACA\Modules\Columns\Categories_Hierarchy\Smart_Filtering;
 
 class Root extends \ACP\Search\Comparison {
     /**

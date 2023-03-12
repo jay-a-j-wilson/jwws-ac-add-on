@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Editing;
+namespace JWWS\ACA\Modules\Columns\Attribute_Visibility\Editing;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns\Attribute_Visibility\Column;
+use JWWS\ACA\Modules\Columns\Attribute_Visibility\Column;
 use ACP\Editing\ {
     Service,
     View

@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Groups\Yoast_SEO;
+namespace JWWS\ACA\Modules\Groups\Yoast_SEO;
 
-use JWWS\Admin_Columns_Add_On\Modules\Groups;
+use JWWS\ACA\Modules\Groups;
 
 class Root {
     use Groups\Hook;

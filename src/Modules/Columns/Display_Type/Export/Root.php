@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type\Export;
+namespace JWWS\ACA\Modules\Columns\Display_Type\Export;
 
 /**
  * Export class. Adds export functionality to the column.

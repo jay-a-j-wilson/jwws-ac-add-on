@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Groups;
+namespace JWWS\ACA\Modules\Groups;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

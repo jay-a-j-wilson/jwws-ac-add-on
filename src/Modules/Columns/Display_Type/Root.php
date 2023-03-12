@@ -1,8 +1,8 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Display_Type;
+namespace JWWS\ACA\Modules\Columns\Display_Type;
 
-use JWWS\Admin_Columns_Add_On\Modules\Columns;
+use JWWS\ACA\Modules\Columns;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

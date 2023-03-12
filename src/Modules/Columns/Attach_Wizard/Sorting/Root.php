@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Attach_Wizard\Sorting;
+namespace JWWS\ACA\Modules\Columns\Attach_Wizard\Sorting;
 
 use AC;
 use ACP\Sorting;

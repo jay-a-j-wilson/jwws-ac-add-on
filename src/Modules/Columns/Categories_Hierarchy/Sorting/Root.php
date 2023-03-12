@@ -1,6 +1,6 @@
 <?php
 
-namespace JWWS\Admin_Columns_Add_On\Modules\Columns\Categories_Hierarchy\Sorting;
+namespace JWWS\ACA\Modules\Columns\Categories_Hierarchy\Sorting;
 
 use AC;
 use ACP\Sorting;
