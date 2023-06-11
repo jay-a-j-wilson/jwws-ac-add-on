@@ -6,9 +6,6 @@ if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * 
- */
 trait Hook {
     /**
      * @return void

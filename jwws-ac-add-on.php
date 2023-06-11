@@ -1,25 +1,26 @@
-<?php
-/**
- * Plugin Name:  Admin Columns - Add On
- * Description:  Extra Columns.
- * Version:      3.0.0b1
- * Requires PHP: 8.0
- * Author:       Jay Wilson
- * License:      GPLv2 or later
- * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- */
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA;
 
-use JWWS\ACA\Common\Collection\Collection_Test;
+use JWWS\ACA\App\Factory\App_Factory;
 
-if (! defined(constant_name: 'ABSPATH')) {
+/**
+ * Plugin Name:  Admin Columns - Add On
+ * Description:  Adds new columns.
+ * Version:      3.0.0-beta.1
+ * Requires PHP: 8.1
+ * Author:       Jay Wilson
+ * License:      GPLv2 or later
+ * License URI:  http://www.gnu.org/licenses/gpl-2.0.html.
+ */
+
+if (! \defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 require __DIR__ . '/vendor/autoload.php';
 
-define(
+\define(
     constant_name: __NAMESPACE__ . '\PLUGIN_DIR',
     value: basename(
         path: plugin_dir_path(
@@ -28,9 +29,10 @@ define(
     ),
 );
 
-define(__NAMESPACE__ . '\DOMAIN', 'jwws');
-define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
+\define(__NAMESPACE__ . '\DOMAIN', 'jwws');
+\define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 
-// Collection_Test::run();
-
-App::hook();
+App_Factory::new_instance()
+    ->create()
+    ->hook()
+;

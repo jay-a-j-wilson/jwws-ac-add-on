@@ -1,85 +1,60 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\Deps\JWWS\WPPF\Template;
 
-if (! defined(constant_name: 'ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
+use JWWS\ACA\Deps\JWWS\WPPF\Common\Security\Security;
+use JWWS\ACA\Deps\JWWS\WPPF\Filepath\{
+    Sub_Value_Objects\Dir\Base_Dir\Subclasses\Full_Dir\Full_Dir,
+    Sub_Value_Objects\File\Base_File\Subclasses\PHP_File\PHP_File,
+    Subclasses\Confirmed_Filepath\Confirmed_Filepath,
+};
+
+// Security::stop_direct_access();
 
 /**
+ * Undocumented class.
  */
 final class Template {
     /**
-     * Creates template.
-     *
-     * @param string $filename
+     * Factory method.
      */
-    public static function create(string $filename): self {
+    public static function of(string $path): self {
         return new self(
-            file: Template_File::create(name: $filename),
+            filepath: Confirmed_Filepath::of(
+                dir: Full_Dir::of(path: $path),
+                file: PHP_File::of(path: $path),
+            ),
         );
     }
 
     /**
-     * Template constructor.
-     *
-     * @param File  $file
-     * @param array $variables variables to embed in template
+     * @return void
      */
     private function __construct(
-        private Template_File $file,
+        private Confirmed_Filepath $filepath,
         private array $variables = [],
     ) {
     }
 
     /**
-     * Assigns template variable(s).
-     * 
-     * ? Investigate why $names accepts array type.
-     *
-     * @param string|array $names the template variable name(s)
-     * @param mixed        $value the value to assign
-     *
-     * @return self
+     * Assigns a value to a specific key in the template.
      */
-    public function assign(string|array $names, mixed $value = ''): self {
-        if (is_array(value: $names)) {
-            foreach ($names as $name => $val) {
-                $this->{__FUNCTION__}($name, $val);
-            }
-        } else {
-            $this->variables[$names] = $value;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Append an element to an assigned array.
-     *
-     * @param string $name  the template variable name
-     * @param mixed  $value the value to assign
-     *
-     * @return self
-     */
-    public function append(string $name, mixed $value = ''): self {
-        $this->variables[$name][] = $value;
+    public function assign(string $key, mixed $value = ''): self {
+        $this->variables[$key] = $value;
 
         return $this;
     }
 
     /**
      * Returns template to user.
-     *
-     * @return string
      */
     public function output(): string {
-        extract($this->variables);
+        extract(array: $this->variables);
 
         ob_start();
 
-        require $this->file->get_name();
+        require $this->filepath->value;
 
-        return ob_get_clean();
+        return trim(string: ob_get_clean());
     }
 }

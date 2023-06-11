@@ -1,56 +1,46 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\Deps\JWWS\WPPF\Loader;
 
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Plugin;
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\Hooks\Actions\{
-    Admin_Init,
-    Deactivated_Plugin
+use JWWS\ACA\Deps\JWWS\WPPF\{
+    Common\Security\Security,
+    Loader\Hooks\Actions\Admin_Init\Admin_Init,
+    Loader\Hooks\Actions\Deactivated_Plugin\Deactivated_Plugin,
+    Loader\Plugin\Plugin
 };
 
-if (! defined(constant_name: 'ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
+// Security::stop_direct_access();
 
-class Loader {
+/**
+ * Ensures given plugin loads correctly.
+ *
+ * Prevents plugin activation if dependant plugins are not active. Disables a
+ * plugin if dependant plugin is deactivated.
+ */
+final class Loader {
     /**
-     * Creates loader.
-     *
-     * @param Plugin $plugin
-     *
-     * @return self for chaining
+     * Factory method
      */
-    public static function create(Plugin $plugin): self {
+    public static function of(Plugin $plugin): self {
         return new self(
-            plugin: $plugin,
+            admin_init: Admin_Init::of(plugin: $plugin),
+            deactivated_plugin: Deactivated_Plugin::of(plugin: $plugin),
         );
     }
 
     /**
-     * @param Plugin $plugin
+     * @return void
      */
-    private function __construct(private Plugin $plugin) {
-    }
+    private function __construct(
+        private Admin_Init $admin_init,
+        private Deactivated_Plugin $deactivated_plugin,
+    ) {}
 
     /**
-     * Prevent plugin activation if dependant plugins are not active.
-
-     * @return self for chaining
+     * Hooks into WordPress.
      */
-    public function hook_admin_init(): self {
-        Admin_Init::hook(plugin: $this->plugin);
-
-        return $this;
-    }
-
-    /**
-     * Disables a plugin if dependant plugin is deactivated.
-     * 
-     * @return self for chaining
-     */
-    public function hook_deactivated_plugin(): self {
-        Deactivated_Plugin::hook(plugin: $this->plugin);
-
-        return $this;
+    public function hook(): void {
+        $this->admin_init->hook();
+        $this->deactivated_plugin->hook();
     }
 }

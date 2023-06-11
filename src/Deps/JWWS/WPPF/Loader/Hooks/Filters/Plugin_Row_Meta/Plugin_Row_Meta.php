@@ -1,71 +1,71 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\Deps\JWWS\WPPF\Loader\Hooks\Filters\Plugin_Row_Meta;
 
 use JWWS\ACA\Deps\JWWS\WPPF\{
-    Template\Template,
-    Loader\Plugin\Plugin
+    Collection\Standard_Collection\Standard_Collection,
+    Common\Security\Security,
+    Loader\Plugin\Plugin,
+    Template\Template
 };
 
-if (! defined(constant_name: 'ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
+// Security::stop_direct_access();
 
 /**
  * Filter.
  */
-class Plugin_Row_Meta {
+final class Plugin_Row_Meta {
     /**
-     * @param Plugin $plugin
-     *
-     * @return self
+     * Factory method.
      */
-    public static function hook(Plugin $plugin): void {
+    public static function of(Plugin $plugin): self {
+        return new self(
+            plugin: $plugin,
+        );
+    }
+
+    /**
+     * @return void
+     */
+    public function __construct(private Plugin $plugin) {
+    }
+
+    /**
+     * Hooks into WordPress.
+     */
+    public function hook(): void {
         add_filter(
             'plugin_row_meta',
-            [new self(plugin: $plugin), 'callback'],
+            [$this, 'callback'],
             10,
             2,
         );
     }
 
     /**
-     * @param Plugin $plugin
-     */
-    private function __construct(private Plugin $plugin) {
-    }
-
-    /**
-     * Filters the array of row meta for each plugin in the Plugins list table
-     * 
-     * @docs https://developer.wordpress.org/reference/hooks/plugin_row_meta/
-     * 
-     * @param array  $plugin_meta
-     * @param string $plugin_file
+     * Filters the array of row meta for each plugin in the Plugins list table.
      *
-     * @return void
+     * @link https://developer.wordpress.org/reference/hooks/plugin_row_meta/
+     *
+     * @param array  $plugin_meta an array of the plugin's metadata, including
+     *                            the version, author, author URI, and plugin
+     *                            URI
+     * @param string $plugin_file path to the plugin file relative to the
+     *                            plugins directory
+     *                            example "plugin-folder/plugin-name.php"
      */
     public function callback(array $plugin_meta, string $plugin_file): array {
         if (! $this->plugin->has_dependencies()) {
             return $plugin_meta;
         }
 
-        if ($plugin_file !== $this->plugin->get_filename()) {
+        if (! $this->plugin->basename_equals(basename: $plugin_file)) {
             return $plugin_meta;
         }
 
-        // you can still use array_unshift() to add links at the beginning
-        $plugin_meta[] = Template::create(filename: __DIR__ . '/templates/template')
-            ->assign(
-                names: 'plugin_names',
-                value: implode(
-                    separator: ', ',
-                    array: $this->plugin->get_dependencies_names(),
-                ),
-            )
-            ->output()
+        return Standard_Collection::of(...$plugin_meta)
+            ->add(items: $this->plugin->render_dependencies())
+            ->to_array()
         ;
-
-        return $plugin_meta;
     }
 }

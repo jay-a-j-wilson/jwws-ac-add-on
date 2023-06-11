@@ -1,9 +1,9 @@
-<div class="error">
+<div class="notice notice-error">
     <p>
         Sorry, the
-        <strong><?= $child_plugin->get_name(); ?></strong>
+        <strong><?= $plugin_name; ?></strong>
         plugin needs the
-        <strong><?= $parent_plugin->get_name(); ?></strong>
-        plugin to be installed and active.
+        <strong><?= $dependency_name; ?></strong>
+        plugin to be installed and activated.
     </p>
 </div>

@@ -1,269 +1,147 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin;
 
+// @codeCoverageIgnoreStart
 use JWWS\ACA\Deps\JWWS\WPPF\{
-    Loader\Hooks\Filters\Plugin_Row_Meta\Plugin_Row_Meta,
-    Log\Error_Log
+    Collection\Collection,
+    Common\Security\Security,
+    Loader\Plugin\Sub_Value_Objects\Basename\Basename,
+    Loader\Plugin\Sub_Value_Objects\Name\Name,
 };
+// @codeCoverageIgnoreEnd
 
-if (! defined(constant_name: 'ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
-
-/**
- * Plugin.
- */
-class Plugin {
+interface Plugin {
     /**
      * Creates object using the plugin's slug.
      *
      * Use when the plugin's directory name is the same as the plugin's main
-     * file name.
+     * filename.
      *
-     * @param string $slug
-     * @param string $fallback_name will be overwitten by plugins name if installed
-     *
-     * @return Plugin
+     * @param string $fallback_name will be overwritten by plugin's name if it's
+     *                              installed
      */
-    public static function create_with_slug(
-        string $slug,
-        string $fallback_name = '',
-    ): self {
-        return new self(
-            file: Plugin_File::create(name: "{$slug}/{$slug}.php"),
-            fallback_name: $fallback_name,
-        );
-    }
+    public static function of_slug(string $slug, string $fallback_name): static;
 
     /**
-     * Creates object using the plugin's path.
+     * Creates object using the plugin's basename.
      *
      * Use when the plugin's directory name is different from the plugin's main
-     * file name.
+     * filename.
      *
-     * @param string $path          example "directory/filename.php"
-     * @param string $fallback_name will be overwitten by plugins name if installed
-     *
-     * @return Plugin
+     * @param string $basename      example "directory/filename.php"
+     * @param string $fallback_name will be overwritten by plugin's name if it's
+     *                              installed
      */
-    public static function create_with_path(
-        string $path,
-        string $fallback_name = '',
-    ): self {
-        return new self(
-            file: Plugin_File::create(name: $path),
-            fallback_name: $fallback_name,
-        );
-    }
+    public static function of_basename(
+        string $basename,
+        string $fallback_name,
+    ): static;
 
     /**
-     * @param Plugin_File $file
-     * @param string      $fallback_name
+     * Returns basename.
      */
-    private function __construct(
-        private Plugin_File $file,
-        private string $fallback_name,
-    ) {
-        $this->dependencies = Plugin_Collection::create();
-
-        $this->name = $this->file->exists()
-            ? $this->fetch_name()
-            : $this->fallback_name;
-    }
+    public function basename(): Basename;
 
     /**
-     * @var string
+     * Returns name.
      */
-    private string $name = '';
+    public function name(): Name;
 
     /**
-     * @var Plugin_Collection
+     * Returns dependencies.
      */
-    private Plugin_Collection $dependencies;
+    public function dependencies(): Collection;
 
     /**
-     * Returns the plugin's name as set in its metadata.
-     *
-     * @source https://developer.wordpress.org/reference/functions/get_plugin_data/
-     *
-     * @param mixed $name
-     *
-     * @return string
+     * Activates plugin.
      */
-    private function fetch_name(): string {
-        if (! is_admin()) {
-            return '';
-        }
-
-        // get_plugin_data() is NOT available by default (not even in admin).
-        if (! function_exists(function: 'get_plugin_data')) {
-            require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        }
-
-        return get_plugin_data(plugin_file: $this->file->get_path())['Name'];
-    }
-
-    /**
-     * Checks if plugin has a fallback name.
-     *
-     * @return string
-     */
-    public function has_fallback_name(): bool {
-        return ! empty($this->fallback_name);
-    }
-
-    /**
-     * Returns the plugin's name.
-     *
-     * @return string
-     */
-    public function get_name(): string {
-        return $this->name;
-    }
-
-    /**
-     * Returns the plugin's filename.
-     *
-     * Example
-     * directory/filename.php
-     *
-     * @return string
-     */
-    public function get_filename(): string {
-        return $this->file->get_name();
-    }
-
-    /**
-     * Checks if active.
-     *
-     * @return bool
-     */
-    public function is_active(): bool {
-        return is_plugin_active(plugin: $this->file->get_name());
-    }
-
-    /**
-     * Checks if plugin meets activation criteria.
-     *
-     * @return bool
-     */
-    public function can_activate(): bool {
-        return ! is_admin()
-        || ! current_user_can(capability: 'activate_plugins')
-        || ! $this->has_inactive_dependencies();
-    }
+    public function activate(): static;
 
     /**
      * Deactivates plugin.
-     *
-     * @return bool
      */
-    public function deactivate(): void {
-        deactivate_plugins(plugins: $this->file->get_name());
-    }
+    public function deactivate(): static;
+
+    /**
+     * Checks if plugin is active.
+     */
+    public function is_active(): bool;
+
+    /**
+     * Checks if plugin is inactive.
+     */
+    public function is_inactive(): bool;
+
+    /**
+     * Checks if plugin meets activation criteria.
+     */
+    public function can_activate(): bool;
+
+    /**
+     * @param string $basename Example 'directory/filename.php'.
+     */
+    public function basename_equals(string $basename): bool;
 
     /**
      * Adds a plugin dependency.
-     *
-     * @param Plugin $plugins
-     *
-     * @return self for chaining
      */
-    public function add_dependencies(self ...$plugins): self {
-        foreach ($plugins as $plugin) {
-            if (! $plugin->has_fallback_name()) {
-                throw new \Exception(message: 'A plugin must have a fallback name before it can be added as a dependency.');
-            }
-        }
-
-        $this->dependencies->add(...$plugins);
-
-        return $this->append_dependencies_to_listing();
-    }
+    public function add_dependencies(Plugin ...$plugins): static;
 
     /**
      * Returns the plugin's dependent plugins.
-     *
-     * @return Plugin_Collection
      */
-    public function get_dependencies(): Plugin_Collection {
-        return $this->dependencies;
-    }
-
-    /**
-     * Checks if plugins has dependent plugins.
-     *
-     * @return bool
-     */
-    public function has_dependencies(): bool {
-        return $this->dependencies->count() > 0;
-    }
-
-    /**
-     * Returns the plugin's dependent plugins.
-     *
-     * @return array
-     */
-    public function get_dependencies_names(): array {
-        $names = [];
-
-        foreach ($this->dependencies as $dependency) {
-            $names[] = $dependency->get_name();
-        }
-
-        return $names;
-    }
-
-    /**
-     * Returns the plugin's inactive dependent plugins.
-     *
-     * @return Plugin_Collection
-     */
-    public function get_inactive_dependencies(): Plugin_Collection {
-        return $this->dependencies->get_inactive();
-    }
-
-    /**
-     * Checks if plugins has inactive dependent plugins.
-     *
-     * @return bool
-     */
-    public function has_inactive_dependencies(): bool {
-        return $this->dependencies->has_inactive();
-    }
+    public function dependencies_names(): Collection;
 
     /**
      * Checks if plugin has dependency of plugin.
      *
-     * @param string $plugin Path to plugin file relative to plugin's directory.
-     *                       Example 'directory/filename.php'.
-     *
-     * @return bool
+     * @param string $basename Example 'directory/filename.php'.
      */
-    public function includes_dependecy(string $plugin): bool {
-        return $this->dependencies->includes(plugin: $plugin);
-    }
+    public function contains_dependency(string $basename): bool;
+
+    /**
+     * Returns the plugin's active dependent plugins.
+     */
+    public function active_dependencies(): Collection;
+
+    /**
+     * Returns the plugin's inactive dependent plugins.
+     */
+    public function inactive_dependencies(): Collection;
+
+    /**
+     * Checks if plugins has dependent plugins.
+     */
+    public function has_dependencies(): bool;
+
+    /**
+     * Checks if plugins has active dependent plugins.
+     */
+    public function has_active_dependencies(): bool;
+
+    /**
+     * Checks if plugins has inactive dependent plugins.
+     */
+    public function has_inactive_dependencies(): bool;
+
+    /**
+     * Checks if plugins has no active dependent plugins.
+     */
+    public function has_no_active_dependencies(): bool;
+
+    /**
+     * Checks if plugins has no inactive dependent plugins.
+     */
+    public function has_no_inactive_dependencies(): bool;
 
     /**
      * @docs https://developer.wordpress.org/reference/hooks/plugin_row_meta/
-     *
-     * @return self for chaining
      */
-    public function append_dependencies_to_listing(): self {
-        Plugin_Row_Meta::hook(plugin: $this);
-
-        return $this;
-    }
+    public function append_dependencies_to_listing(): static;
 
     /**
-     * Prints object to error log.
-     *
-     * @return self for chaining
+     * Outputs the plugin's required dependency's names as HTML.
      */
-    public function log(): self {
-        Error_Log::print(output: $this, depth: 2);
-
-        return $this;
-    }
+    public function render_dependencies(): string;
 }
