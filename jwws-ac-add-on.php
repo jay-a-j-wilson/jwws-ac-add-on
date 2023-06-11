@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Extra Columns.
- * Version:      2.0.0
+ * Version:      3.0.0b1
  * Requires PHP: 8.0
  * Author:       Jay Wilson
  * License:      GPLv2 or later
