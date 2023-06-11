@@ -1,0 +1,30 @@
+/* TABLE */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.JW_ACA--c-table--xs td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    vertical-align: middle;
+
+    line-height: 1em;
+    font-size: 1em;
+}
+
+.JW_ACA--c-table tr {
+    border-top: 1px solid #f0f0f1;
+}
+
+.JW_ACA--c-table td code {
+    padding: 2px;
+}
+
+.JW_ACA--c-table td img {
+    margin: 0;
+}

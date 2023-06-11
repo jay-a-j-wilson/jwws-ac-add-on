@@ -2,13 +2,17 @@
 
 namespace JWWS\ACA;
 
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\{
+// use JWWS\ACA\Deps\JWWS\WPPF\Loader\{
+//     Plugin\Plugin,
+//     Loader
+// };
+use JWWS\WPPF\Loader\{
     Plugin\Plugin,
     Loader
 };
 use JWWS\ACA\Modules\{
-    Groups,
-    Columns
+    WooCommerce,
+    Products_Wizard
 };
 
 if (! defined(constant_name: 'ABSPATH')) {
@@ -32,10 +36,13 @@ class App {
      * @return void
      */
     public function load(): void {
-        Loader::create(
-            plugin: Plugin::create_with_slug(slug: PLUGIN_DIR)
+        Loader::of(
+            plugin: Plugin::of_slug(
+                slug: PLUGIN_DIR,
+                fallback_name: 'Admin Colums Add-On',
+            )
                 ->add_dependencies(
-                    Plugin::create_with_slug(
+                    plugins: Plugin::of_slug(
                         slug: 'admin-columns-pro',
                         fallback_name: 'Admin Columns Pro',
                     ),
@@ -54,7 +61,12 @@ class App {
             return;
         }
 
-        Groups\Root::hook();
-        Columns\Root::hook();
+        if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
+            WooCommerce\Root::hook();
+
+            if (is_plugin_active(plugin: 'woocommerce-products-wizard/woocommerce-products-wizard.php')) {
+                Products_Wizard\Root::hook();
+            }
+        }
     }
 }

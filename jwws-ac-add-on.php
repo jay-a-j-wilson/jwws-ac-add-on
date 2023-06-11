@@ -11,8 +11,10 @@
 
 namespace JWWS\ACA;
 
-if (! defined('ABSPATH')) {
-    return;
+use JWWS\ACA\Common\Collection\Collection_Test;
+
+if (! defined(constant_name: 'ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 require __DIR__ . '/vendor/autoload.php';
@@ -28,5 +30,7 @@ define(
 
 define(__NAMESPACE__ . '\DOMAIN', 'jwws');
 define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
+
+// Collection_Test::run();
 
 App::hook();
