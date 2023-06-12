@@ -3,6 +3,10 @@
         "coenjacobs/mozart": "*",
         "jay-a-j-wilson/jwws-wp-plugin-framework": "3.1.0"
     },
+    "require-dev": {
+        "yoast/phpunit-polyfills": "^1.0",
+        "phpunit/phpunit": "^9.6"
+    },
     "autoload": {
         "psr-4": {
             "JWWS\\ACA\\": "src/"
@@ -10,7 +14,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "JWWS\\ACA\\Tests\\": "test/"
+            "JWWS\\ACA\\Tests\\": "tests/"
         }
     },
     "extra": {

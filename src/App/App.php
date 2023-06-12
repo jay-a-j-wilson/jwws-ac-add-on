@@ -2,14 +2,9 @@
 
 namespace JWWS\ACA\App;
 
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\{
-    Loader,
-    Plugin\Plugin,
-    Plugin\Standard_Plugin\Standard_Plugin
-};
-use JWWS\ACA\Modules\{
-    Products_Wizard,
-    WooCommerce
+use JWWS\ACA\{
+    App\Modules\Modules,
+    Deps\JWWS\WPPF\Loader\Loader
 };
 
 if (! \defined(constant_name: 'ABSPATH')) {
@@ -27,28 +22,22 @@ final class App {
     private function __construct(private readonly Loader $loader) {}
 
     /**
-     * Hooks into WordPress
+     * Hooks into WordPress.
      */
     public function hook(): void {
         add_action('wp_loaded', [$this, 'hook_loader']);
-        add_action('ac/ready', [$this, 'register']);
+
+        // TODO: create activation check method in Loader class.
+        if (is_plugin_active(plugin: 'admin-columns-pro/admin-columns-pro.php')) {
+            add_action('ac/ready', [$this, 'hook_modules']);
+        }
     }
 
     public function hook_loader(): void {
         $this->loader->hook();
     }
 
-    public function register(): void {
-        if (! is_plugin_active(plugin: 'admin-columns-pro/admin-columns-pro.php')) {
-            return;
-        }
-
-        if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
-            WooCommerce\Root::hook();
-
-            if (is_plugin_active(plugin: 'woocommerce-products-wizard/woocommerce-products-wizard.php')) {
-                Products_Wizard\Root::hook();
-            }
-        }
+    public function hook_modules(): void {
+        Modules::hook();
     }
 }
