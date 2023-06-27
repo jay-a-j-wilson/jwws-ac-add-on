@@ -1,32 +1,365 @@
 /*----------------------------------------------------------------------------*/
 /* Settings
 /*----------------------------------------------------------------------------*/
-@import "settings/variables.css";
+:root {
+    --grey-light: #f0f0f1;
+    --grey-dark: #c3c4c7;
+}
+/* @import "settings/variables.css"; */
 
 /*----------------------------------------------------------------------------*/
 /* LAYOUTS
 /*----------------------------------------------------------------------------*/
-@import "layouts/container.css";
+
+/* CONTAINER */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--l-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* @import "layouts/container.css"; */
 
 /*----------------------------------------------------------------------------*/
 /* COMPONENTS
 /*----------------------------------------------------------------------------*/
-@import "components/card.css";
-@import "components/icon.css";
-@import "components/image.css";
-@import "components/table.css";
-@import "components/tooltip.css";
+
+/* CARD */
+/* "!important" used to reset jQuery UI CSS styles enqueued by other plugins. */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-card {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--grey-dark);
+
+    font-family: unset !important;
+    font-size: unset !important;
+}
+
+/* Card Header */
+.JW_ACA--c-card__header {
+    display: flex !important;
+    flex-direction: column;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+    padding-top: 2px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+
+    border: none !important;
+
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+
+    background: var(--grey-light) !important;
+}
+
+/* Card Body */
+.JW_ACA--c-card__body {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 !important;
+
+    border: none !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+
+    background: white;
+}
+
+/* Card Title */
+.JW_ACA--c-card__title {
+    margin: 0 !important;
+    font-weight: 600;
+}
+/* @import "components/card.css"; */
+
+/* ICON */
+/* "!important" used to reset jQuery UI CSS styles enqueued by other plugins. */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-icon {
+    position: unset !important;
+
+    margin-top: -0.1em !important;
+
+    text-indent: unset !important;
+
+    overflow: unset !important;
+
+    background-image: unset !important;
+    background-repeat: unset !important;
+}
+/* @import "components/icon.css"; */
+
+/* IMAGE */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-image--12px {
+    width: 12px;
+    height: 12px;
+}
+/* @import "components/image.css"; */
+
+/* TABLE */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.JW_ACA--c-table--xs td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    vertical-align: middle;
+
+    line-height: 1em;
+    font-size: 1em;
+}
+
+.JW_ACA--c-table tr {
+    border-top: 1px solid #f0f0f1;
+}
+
+.JW_ACA--c-table td code {
+    padding: 2px;
+}
+
+.JW_ACA--c-table td img {
+    margin: 0;
+}
+/* @import "components/table.css"; */
+
+/* TOOLTIP */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--c-tooltip {
+    display: none;
+
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+
+    position: absolute;
+    z-index: 9999;
+    max-width: 300px;
+
+    color: white;
+    background: #1d2327;
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: 11px !important;
+}
+
+.JW_ACA--c-tooltip * {
+    font-size: 11px !important;
+}
+
+/* @source https://codepen.io/GreeCoon/pen/OpGjLM */
+/* Arrow []> */
+.JW_ACA--c-tooltip::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0px;
+    right: 0;
+    top: 50%;
+    border: 5px solid transparent;
+    border-right: 0;
+    border-left: 5px solid #1d2327;
+    transform: translate(calc(100%), -50%);
+}
+
+.JW_ACA--c-tooltip p {
+    margin-top: 0 !important;
+}
+
+.JW_ACA--c-tooltip p:last-child {
+    margin-bottom: 0 !important;
+}
+/* @import "components/tooltip.css"; */
 
 /*----------------------------------------------------------------------------*/
 /* UTILITIES
 /*----------------------------------------------------------------------------*/
-@import "utilities/border.css";
-@import "utilities/flex.css";
-@import "utilities/font.css";
-@import "utilities/gap.css";
-@import "utilities/padding.css";
-@import "utilities/size.css";
-@import "utilities/text.css";
+
+/* Border */
+/*----------------------------------------------------------------------------*/
+/* Remove */
+.JW_ACA--u-border--top {
+    border-right: unset !important;
+    border-left: unset !important;
+    border-bottom: unset !important;
+}
+
+/* add */
+.JW_ACA--u-border--add-all {
+    border: solid 1px var(--grey-dark) !important;
+}
+
+.JW_ACA--u-border--add-top {
+    border-top: solid 1px var(--grey-dark) !important;
+}
+
+.JW_ACA--u-border--add-bottom {
+    border-bottom: solid 1px var(--grey-dark) !important;
+}
+
+.JW_ACA--u-border--add-left {
+    border-left: solid 1px var(--grey-dark) !important;
+}
+
+.JW_ACA--u-border--add-right {
+    border-right: solid 1px var(--grey-dark) !important;
+}
+
+/* Remove */
+.JW_ACA--u-border--remove-all {
+    border: none !important;
+}
+
+.JW_ACA--u-border--remove-top {
+    border-top: none !important;
+}
+
+.JW_ACA--u-border--remove-bottom {
+    border-bottom: none !important;
+}
+
+.JW_ACA--u-border--remove-left {
+    border-left: none !important;
+}
+
+.JW_ACA--u-border--remove-right {
+    border-right: none !important;
+}
+
+/* Width */
+.JW_ACA--u-border--width-4 {
+    border-width: 4px !important;
+}
+
+/* Color */
+.JW_ACA--u-border--color-grey-dark {
+    border-color: var(--grey-dark) !important;
+}
+/* @import "utilities/border.css"; */
+
+/* Flex */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-flex--direction-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.JW_ACA--u-flex--justify-content-between {
+    justify-content: space-between;
+}
+/* @import "utilities/flex.css"; */
+
+/* Font */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-font--size-xs {
+    font-size: 0.8em;
+}
+
+.JW_ACA--u-font--size-sm {
+    font-size: 0.9em;
+}
+
+.JW_ACA--u-font--size-md {
+    font-size: 1em;
+}
+
+.JW_ACA--u-font--size-lg {
+    font-size: 1.25em;
+}
+/* @import "utilities/font.css"; */
+
+/* Gap */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-gap--row-no {
+    row-gap: 0px;
+}
+
+.JW_ACA--u-gap--row-xs {
+    row-gap: 4px;
+}
+
+.JW_ACA--u-gap--row-sm {
+    row-gap: 8px;
+}
+
+.JW_ACA--u-gap--row-md {
+    row-gap: 16px;
+}
+
+.JW_ACA--u-gap--row-lg {
+    row-gap: 32px;
+}
+
+.JW_ACA--u-gap--row-xl {
+    row-gap: 64px;
+}
+/* @import "utilities/gap.css"; */
+
+/* Padding */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-padding--all-no {
+    padding: 0 !important;
+}
+
+.JW_ACA--u-padding--all-xs {
+    padding: 4px !important;
+}
+
+.JW_ACA--u-padding--all-sm {
+    padding: 8px !important;
+}
+
+.JW_ACA--u-padding--all-md {
+    padding: 12px !important;
+}
+/* @import "utilities/padding.css"; */
+
+/* Size */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-size--width-33 {
+    width: 33%
+}
+
+.JW_ACA--u-size--width-40 {
+    width: 40%
+}
+
+.JW_ACA--u-size--width-50 {
+    width: 50%
+}
+
+.JW_ACA--u-size--width-100 {
+    width: 100%
+}
+
+.JW_ACA--u-size--13px {
+    width: 13px;
+    height: 13px;
+}
+/* @import "utilities/size.css"; */
+
+/* Text */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-text--align-left {
+    text-align: left !important;
+}
+/* @import "utilities/text.css"; */
 
 /*----------------------------------------------------------------------------*/
 /* !!!
