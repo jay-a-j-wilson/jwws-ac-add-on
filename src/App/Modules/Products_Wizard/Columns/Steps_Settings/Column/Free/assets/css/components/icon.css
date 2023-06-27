@@ -2,6 +2,8 @@
 /* "!important" used to reset jQuery UI CSS styles enqueued by other plugins. */
 /*----------------------------------------------------------------------------*/
 .JW_ACA--c-icon {
+    position: unset !important;
+
     margin-top: -0.1em !important;
 
     text-indent: unset !important;
