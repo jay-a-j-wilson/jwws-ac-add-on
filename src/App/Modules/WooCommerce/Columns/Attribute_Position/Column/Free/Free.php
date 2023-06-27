@@ -5,6 +5,9 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Column\Fre
 use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
 
+/**
+ * @final
+ */
 class Free extends Column {
     private string $error_message = 'Attribute not assigned';
 

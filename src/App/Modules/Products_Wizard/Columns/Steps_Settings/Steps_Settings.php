@@ -8,7 +8,7 @@ use JWWS\ACA\App\{
     Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Free
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

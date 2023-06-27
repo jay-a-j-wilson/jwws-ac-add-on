@@ -20,6 +20,9 @@ use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\{
     Sorting\Sorting
 };
 
+/**
+ * @final
+ */
 class Pro extends Free implements
     Editable,
     Exportable,

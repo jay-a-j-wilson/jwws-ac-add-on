@@ -4,6 +4,9 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Free;
 
 use AC\Column;
 
+/**
+ * @final
+ */
 class Free extends Column {
     public function __construct() {
         $this

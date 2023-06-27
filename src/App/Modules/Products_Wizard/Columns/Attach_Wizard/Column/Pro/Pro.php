@@ -1,51 +1,45 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\Column\Pro;
 
-use JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Sorting\Sorting,
-    Smart_Filtering\Smart_Filtering,
-    Filtering\Filtering
-};
 use ACP\{
     ConditionalFormat\ConditionalFormatTrait,
     ConditionalFormat\Formattable,
     Editing\Editable,
     Export\Exportable,
-    Sorting\Sortable,
-    Search\Searchable,
     Filtering\Filterable,
+    Search\Searchable,
+    Sorting\Sortable,
+};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\{
+    Column\Free\Free,
+    Editing\Editing,
+    Export\Export,
+    Filtering\Filtering,
+    Smart_Filtering\Smart_Filtering,
+    Sorting\Sorting
 };
 
+/**
+ * @final
+ */
 class Pro extends Free implements
-    Formattable,
     Editable,
     Exportable,
-    Sortable,
+    Filterable,
+    Formattable,
     Searchable,
-    Filterable {
+    Sortable {
     use ConditionalFormatTrait;
 
-    /**
-     *
-     */
     public function editing() {
         return new Editing(column: $this);
     }
 
-    /**
-     *
-     */
     public function export() {
         return new Export(column: $this);
     }
 
-    /**
-     *
-     */
     public function sorting() {
         return new Sorting(column: $this);
     }
@@ -57,9 +51,6 @@ class Pro extends Free implements
         return new Smart_Filtering();
     }
 
-    /**
-     *
-     */
     public function filtering() {
         return new Filtering(column: $this);
     }

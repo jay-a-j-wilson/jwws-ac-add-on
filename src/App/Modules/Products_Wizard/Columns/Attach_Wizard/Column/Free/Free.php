@@ -4,13 +4,19 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\Column\Free
 
 use AC\Column;
 
+/**
+ * @final
+ */
 class Free extends Column {
-    public function __construct() {
+    /**
+     * @return void
+     */
+    public function __construct(
+        readonly private string $uid = 'jwws_aca-pw-column-attach_wizard',
+    ) {
         $this
-            // Identifier, pick an unique name. Single word, no spaces.
-            // Underscores allowed.
-            ->set_type(type: 'column-attach_wizard')
-            ->set_group(group: 'jwws-products_wizard')
+            ->set_type(type: $this->uid)
+            ->set_group(group: 'jwws_aca-products_wizard')
             // Default column label.
             ->set_label(label: __(text: 'Attach Wizard', domain: 'jwws'))
         ;

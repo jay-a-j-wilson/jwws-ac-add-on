@@ -3,22 +3,25 @@
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free;
 
 use AC\Column;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\{
     App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model,
     Deps\JWWS\WPPF\Template\Template
 };
 
+/**
+ * @final
+ */
 class Free extends Column {
     /**
-     * Identifier, pick an unique name.
-     * Single word, no spaces. Underscores allowed.
+     * @return void
      */
-    private string $uid = 'column-jwws-pw-steps_settings';
-
-    public function __construct() {
+    public function __construct(
+        readonly private string $uid = 'jwws_aca-pw-column-steps_settings',
+    ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws-products_wizard')
+            ->set_group(group: 'jwws_aca-products_wizard')
             // Default column label.
             ->set_label(label: __(text: 'Steps Settings', domain: 'jwws'))
         ;
@@ -55,22 +58,36 @@ class Free extends Column {
      * Use this action to add CSS + JavaScript
      */
     public function scripts(): void {
+        $this->enqueue_styles();
+        $this->enqueue_scripts();
+    }
+
+    private function enqueue_styles(): void {
+        $path = 'assets/css/styles.css';
+
         wp_enqueue_style(
             handle: $this->uid,
-            src: plugin_dir_url(file: __FILE__) . 'assets/css/styles.css',
+            src: plugin_dir_url(file: __FILE__) . $path,
+            ver: filemtime(
+                filename: plugin_dir_path(file: __FILE__) . $path,
+            ),
         );
+    }
+
+    private function enqueue_scripts(): void {
+        $path = 'assets/js/scripts.js';
 
         wp_enqueue_script(
-            handle: 'jw-aca-accordion',
-            src: plugins_url(
-                path: 'assets/js/scripts.js',
-                plugin: __FILE__,
-            ),
+            handle: $this->uid,
+            src: plugin_dir_url(file: __FILE__) . $path,
             deps: [
                 'jquery-ui-accordion',
                 'jquery-ui-tooltip',
                 'jquery-effects-fade',
             ],
+            ver: filemtime(
+                filename: plugin_dir_path(file: __FILE__) . $path,
+            ),
             in_footer: true,
         );
     }

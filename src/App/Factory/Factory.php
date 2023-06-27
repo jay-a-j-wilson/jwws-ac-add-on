@@ -9,7 +9,7 @@ use JWWS\ACA\{
     Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Standard_Plugin
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

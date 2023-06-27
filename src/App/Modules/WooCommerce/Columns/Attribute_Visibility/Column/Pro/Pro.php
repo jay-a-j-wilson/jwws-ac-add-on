@@ -20,6 +20,9 @@ use ACP\{
     Filtering\Filterable,
 };
 
+/**
+ * @final
+ */
 class Pro extends Free implements
     Formattable,
     Editable,

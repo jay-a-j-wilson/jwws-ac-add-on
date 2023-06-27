@@ -5,17 +5,19 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Column\Free;
 use AC\Column;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 
+/**
+ * @final
+ */
 class Free extends Column {
     /**
-     * Identifier, pick an unique name.
-     * Single word, no spaces. Underscores allowed.
+     * @return void 
      */
-    private string $uid = 'column-products_wizard_discount';
-
-    public function __construct() {
+    public function __construct(
+        readonly private string $uid = 'jwws_aca-pw-column-discount',
+    ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws-products_wizard')
+            ->set_group(group: 'jwws_aca-products_wizard')
             // Default column label.
             ->set_label(label: __(text: 'Discount', domain: 'jwws'))
         ;
@@ -118,9 +120,18 @@ class Free extends Column {
      * Enqueues CSS on the admin listings screen.
      */
     public function scripts(): void {
+        $this->enqueue_styles();
+    }
+
+    private function enqueue_styles(): void {
+        $path = 'assets/css/styles.css';
+
         wp_enqueue_style(
             handle: $this->uid,
-            src: plugin_dir_url(file: __FILE__) . '/assets/css/styles.css',
+            src: plugin_dir_url(file: __FILE__) . $path,
+            ver: filemtime(
+                filename: plugin_dir_path(file: __FILE__) . $path,
+            ),
         );
     }
 }

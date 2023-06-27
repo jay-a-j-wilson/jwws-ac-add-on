@@ -7,7 +7,7 @@ use JWWS\ACA\App\Modules\Products_Wizard\{
     Group\Group
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

@@ -4,7 +4,7 @@ namespace JWWS\ACA\App\Modules\WooCommerce;
 
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Columns;
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

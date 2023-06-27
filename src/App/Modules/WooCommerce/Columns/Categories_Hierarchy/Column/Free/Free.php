@@ -4,6 +4,9 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\F
 
 use AC\Column;
 
+/**
+ * @final
+ */
 class Free extends Column {
     /**
      * Identifier, pick an unique name.

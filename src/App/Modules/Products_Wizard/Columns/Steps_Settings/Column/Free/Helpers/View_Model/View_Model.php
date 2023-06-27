@@ -7,7 +7,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\Collection\{
     Standard_Collection\Standard_Collection
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

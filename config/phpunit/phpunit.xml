@@ -83,7 +83,7 @@
     </testsuites>
     <!-- coverage -->
     <coverage
-        cacheDirectory="coverage/cache"
+        cacheDirectory="../../data/phpunit/coverage/cache"
         pathCoverage="false"
         ignoreDeprecatedCodeUnits="true"
         includeUncoveredFiles="true"

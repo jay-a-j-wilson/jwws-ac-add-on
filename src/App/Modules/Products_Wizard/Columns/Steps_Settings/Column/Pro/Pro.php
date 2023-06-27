@@ -20,6 +20,9 @@ use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\{
     Sorting\Sorting
 };
 
+/**
+ * @final
+ */
 class Pro extends Free implements
     Editable,
     Exportable,
