@@ -20,7 +20,7 @@ use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\{
     Sorting\Sorting
 };
 
-final class Pro extends Free implements
+class Pro extends Free implements
     Editable,
     Exportable,
     Filterable,

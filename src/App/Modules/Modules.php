@@ -7,17 +7,29 @@ use JWWS\ACA\{
     App\Modules\WooCommerce\WooCommerce,
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 final class Modules {
-    public static function hook(): void {
+    /**
+     * Factory method.
+     */
+    public static function new_instance(): self {
+        return new self();
+    }
+
+    /**
+     * @return void
+     */
+    private function __construct() {}
+
+    public function hook(): void {
         if (is_plugin_active(plugin: 'woocommerce/woocommerce.php')) {
-            WooCommerce::hook();
+            WooCommerce::new_instance()->hook();
 
             if (is_plugin_active(plugin: 'woocommerce-products-wizard/woocommerce-products-wizard.php')) {
-                Products_Wizard::hook();
+                Products_Wizard::new_instance()->hook();
             }
         }
     }

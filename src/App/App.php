@@ -7,11 +7,14 @@ use JWWS\ACA\{
     Deps\JWWS\WPPF\Loader\Loader
 };
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 final class App {
+    /**
+     * Factory method.
+     */
     public static function of(Loader $loader): self {
         return new self(loader: $loader);
     }
@@ -38,6 +41,6 @@ final class App {
     }
 
     public function hook_modules(): void {
-        Modules::hook();
+        Modules::new_instance()->hook();
     }
 }

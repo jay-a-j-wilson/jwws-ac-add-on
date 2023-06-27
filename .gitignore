@@ -1,12 +1,12 @@
-# OS X
+/src/Deps
+/data
+
+# Mac OS
 .DS_Store
 
-/src/Deps
+# Composer
+/composer.lock
 /vendor
-/bin
 
+#PhpStorm
 /.idea
-
-/config/phpunit/cache
-/config/phpunit/coverage
-/config/phpunit/logs

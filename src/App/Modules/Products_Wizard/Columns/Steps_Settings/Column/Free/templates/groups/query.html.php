@@ -9,7 +9,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Categories for using -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             The categories of the products you want to present in this step.
         </div>
@@ -33,7 +33,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Attributes for using -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Product attribute values to fetch products
         </div>
@@ -61,7 +61,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Availability rules -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Show/hide the step according the specific rules
         </div>
@@ -202,7 +202,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Enable "Order by" dropdown -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Shows the typical WooCommerce dropdown menu for the products' order.
         </div>
@@ -221,7 +221,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Products per page -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Sets the quantity of the products per page. Zero is equal infinity.
         </div>

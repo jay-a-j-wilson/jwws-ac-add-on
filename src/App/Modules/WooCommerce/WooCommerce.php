@@ -9,7 +9,19 @@ if (! \defined(constant_name: 'ABSPATH')) {
 }
 
 final class WooCommerce {
-    public static function hook(): void {
-        Columns::hook();
+    /**
+     * Factory method.
+     */
+    public static function new_instance(): self {
+        return new self();
+    }
+
+    /**
+     * @return void
+     */
+    private function __construct() {}
+
+    public function hook(): void {
+        Columns::new_instance()->hook();
     }
 }

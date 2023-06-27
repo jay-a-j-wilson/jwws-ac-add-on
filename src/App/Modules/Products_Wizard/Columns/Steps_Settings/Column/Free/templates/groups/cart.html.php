@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Hides the radio/checkbox icon on each product. If you enable this
@@ -33,7 +33,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Use with individual product controls or 'Add to cart by quantity'
@@ -56,7 +56,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             <p class="JW_ACA--u-text--align-left">
@@ -112,7 +112,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Shows/hides the quantity setting input of a product.

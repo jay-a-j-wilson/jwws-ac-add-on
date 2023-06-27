@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span 
             title="tooltip" 
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Defines the layout of the products of the current step. There are
@@ -28,7 +28,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span 
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Changes the view of the products in the current step. Doesn't matter
@@ -92,7 +92,7 @@ use JWWS\ACA\App\Modules\{
     <td class="JW_ACA--u-size--width-40">
         <span
             title="tooltip"
-            class="JW_ACA--u-font--size-md dashicons dashicons-info"
+            class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"
         ></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Removes the galleries from the products and shows only the gallery

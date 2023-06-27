@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db5175ac286312d6517af81a9d65ae2d",
+    "content-hash": "df1a433b92574f002c89fb6d58ae6d32",
     "packages": [
         {
             "name": "coenjacobs/mozart",
@@ -66,16 +66,16 @@
         },
         {
             "name": "jay-a-j-wilson/jwws-wp-plugin-framework",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework.git",
-                "reference": "4cb27518ff486782fc33da851ba6c55e2db46978"
+                "reference": "0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/4cb27518ff486782fc33da851ba6c55e2db46978",
-                "reference": "4cb27518ff486782fc33da851ba6c55e2db46978",
+                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4",
+                "reference": "0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4",
                 "shasum": ""
             },
             "require": {
@@ -95,9 +95,9 @@
             "description": "A light-weight framework for WordPress plugins.",
             "support": {
                 "issues": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/issues",
-                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/3.1.0"
+                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/3.2.0"
             },
-            "time": "2023-06-11T05:21:36+00:00"
+            "time": "2023-06-25T01:06:29+00:00"
         },
         {
             "name": "league/flysystem",
@@ -1324,16 +1324,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.5",
+            "version": "v4.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e"
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/11e2663a5bc9db5d714eedb4277ee300403b4a9e",
-                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/19526a33fb561ef417e822e85f08a00db4059c17",
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17",
                 "shasum": ""
             },
             "require": {
@@ -1374,9 +1374,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.5"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.16.0"
             },
-            "time": "2023-05-19T20:20:00+00:00"
+            "time": "2023-06-25T14:52:30+00:00"
         },
         {
             "name": "phar-io/manifest",

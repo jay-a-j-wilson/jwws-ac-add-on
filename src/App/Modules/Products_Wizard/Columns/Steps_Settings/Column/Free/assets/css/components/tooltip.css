@@ -17,9 +17,16 @@
     border-radius: 4px;
 
     text-align: center;
+
+    font-size: 11px !important;
+}
+
+.JW_ACA--c-tooltip * {
+    font-size: 11px !important;
 }
 
 /* @source https://codepen.io/GreeCoon/pen/OpGjLM */
+/* Arrow []> */
 .JW_ACA--c-tooltip::after {
     content: '';
     position: absolute;

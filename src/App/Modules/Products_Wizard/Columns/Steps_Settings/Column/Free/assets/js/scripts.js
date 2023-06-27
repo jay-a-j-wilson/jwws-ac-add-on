@@ -28,8 +28,8 @@ jQuery(function ($) {
         header: ">.accordion-header",
         heightStyle: "content",
         icons: {
-            header: "dashicons dashicons-arrow-right",
-            activeHeader: "dashicons dashicons-arrow-down",
+            header: "JW_ACA--c-icon dashicons dashicons-arrow-right",
+            activeHeader: "JW_ACA--c-icon dashicons dashicons-arrow-down",
         },
     });
     $(".accordion-nested").accordion({
@@ -38,8 +38,8 @@ jQuery(function ($) {
         header: ">.accordion-header-nested",
         heightStyle: "content",
         icons: {
-            header: "dashicons dashicons-arrow-right",
-            activeHeader: "dashicons dashicons-arrow-down",
+            header: "JW_ACA--c-icon dashicons dashicons-arrow-right",
+            activeHeader: "JW_ACA--c-icon dashicons dashicons-arrow-down",
         },
     });
 });

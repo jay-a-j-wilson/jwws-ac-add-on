@@ -34,7 +34,7 @@ class Free extends Column {
 
         return $value === $this->error_message
             ? "<span style='color: #999'>{$value}</span>"
-            : $value;
+            : "{$value}";
     }
 
     /**

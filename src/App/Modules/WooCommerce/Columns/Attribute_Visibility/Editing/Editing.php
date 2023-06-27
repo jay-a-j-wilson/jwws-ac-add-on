@@ -2,12 +2,11 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Editing;
 
-use JWWS\ACA\Modules\WooCommerce\Columns\Attribute_Visibility\Column;
-use JWWS\ACA\Modules\WooCommerce\Columns\Attribute_Visibility\Editing\privateColumn;
 use ACP\Editing\ {
     Service,
     View
 };
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro\Pro;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -16,7 +15,7 @@ class Editing implements Service {
     /**
      * @param privateColumn\Pro\Root $column
      */
-    public function __construct(private \JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro\Root $column) {
+    public function __construct(private Pro $column) {
     }
 
     /**

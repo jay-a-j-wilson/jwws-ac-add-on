@@ -12,6 +12,7 @@
 /* COMPONENTS
 /*----------------------------------------------------------------------------*/
 @import "components/card.css";
+@import "components/icon.css";
 @import "components/image.css";
 @import "components/table.css";
 @import "components/tooltip.css";

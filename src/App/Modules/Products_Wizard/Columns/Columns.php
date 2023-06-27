@@ -13,9 +13,21 @@ if (! \defined(constant_name: 'ABSPATH')) {
 }
 
 final class Columns {
-    public static function hook(): void {
-        Attach_Wizard::hook();
-        Discount::hook();
-        Steps_Settings::hook();
+    /**
+     * Factory method.
+     */
+    public static function new_instance(): self {
+        return new self();
+    }
+
+    /**
+     * @return void
+     */
+    private function __construct() {}
+
+    public function hook(): void {
+        Attach_Wizard::new_instance()->hook();
+        Discount::new_instance()->hook();
+        Steps_Settings::new_instance()->hook();
     }
 }

@@ -38,7 +38,7 @@ class Free extends Column {
     private function render(mixed $discounts): string {
         return empty($discounts)
             ? '-'
-            : Template::of(path: __DIR__ . '/templates/template')
+            : Template::of(path: __DIR__ . '/templates/template.html.php')
                 ->assign(
                     key: 'discounts',
                     value: $this->format(discounts: $discounts),

@@ -4,7 +4,7 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Fre
 
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

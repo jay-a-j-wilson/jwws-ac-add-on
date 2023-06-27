@@ -7,14 +7,14 @@ use JWWS\ACA\App\Factory\Factory as App_Factory;
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      3.0.0
+ * Version:      3.1.0
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later
  * License URI:  http://www.gnu.org/licenses/gpl-2.0.html.
  */
 
-if (! \defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 

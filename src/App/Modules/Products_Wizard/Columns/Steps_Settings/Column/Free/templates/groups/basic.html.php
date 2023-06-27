@@ -8,7 +8,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Title -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Defines the title of the step.
         </div>
@@ -21,7 +21,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Thumbnail -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             <p class="JW_ACA--u-text--align-left">
                 Defines a thumbnail which is shown in the navigation tab of the
@@ -47,7 +47,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Top description -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             <p class="JW_ACA--u-text--align-left">
                 Area you can add a text for your customers before the products'
@@ -75,7 +75,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Handle description with auto tags -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md dashicons dashicons-info"></span>
+        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Preserves the HTML-tags in the text and shows the text
             HTML-formatted.

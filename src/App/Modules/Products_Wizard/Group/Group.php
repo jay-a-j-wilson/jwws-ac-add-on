@@ -3,11 +3,9 @@
 namespace JWWS\ACA\App\Modules\Products_Wizard\Group;
 
 use AC\Groups;
-use JWWS\ACA\App\Common\Group\Hook;
+use JWWS\ACA\App\Common\Group\Group as Base_Group;
 
-final class Group {
-    use Hook;
-
+final class Group extends Base_Group {
     public function register(Groups $groups): void {
         $groups->register_group(
             slug: 'jwws-products_wizard',

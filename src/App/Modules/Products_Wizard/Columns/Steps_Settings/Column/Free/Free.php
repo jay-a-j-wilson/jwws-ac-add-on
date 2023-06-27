@@ -7,7 +7,6 @@ use JWWS\ACA\{
     App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model,
     Deps\JWWS\WPPF\Template\Template
 };
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 class Free extends Column {
     /**
@@ -57,13 +56,8 @@ class Free extends Column {
      */
     public function scripts(): void {
         wp_enqueue_style(
-            handle: 'JW_ACA--jquery-ui',
-            src: plugin_dir_url(file: __FILE__) . '/assets/css/jquery-ui.css',
-        );
-
-        wp_enqueue_style(
             handle: $this->uid,
-            src: plugin_dir_url(file: __FILE__) . '/assets/css/styles.css',
+            src: plugin_dir_url(file: __FILE__) . 'assets/css/styles.css',
         );
 
         wp_enqueue_script(
