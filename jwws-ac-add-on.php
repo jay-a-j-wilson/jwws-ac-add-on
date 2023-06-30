@@ -7,7 +7,7 @@ use JWWS\ACA\App\Factory\Factory as App_Factory;
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      3.2.1
+ * Version:      3.2.2
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later

@@ -6,6 +6,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\Collection\{
     Collection,
     Standard_Collection\Standard_Collection
 };
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -14,31 +15,55 @@ if (! defined(constant_name: 'ABSPATH')) {
 final class View_Model {
     public static function of(int $wizard_id): self {
         return new self(
-            get_post_meta(
-                post_id: $wizard_id,
-                key: '_steps_settings',
-            )[0],
+            steps_settings: self::sorted_steps_settings(wizard_id: $wizard_id)
+        );
+    }
+
+    private static function sorted_steps_settings(int $wizard_id): Collection {
+        $steps_settings = self::steps_settings(wizard_id: $wizard_id);
+
+        $sorted_steps_settings = [];
+
+        foreach (self::steps_ids(wizard_id: $wizard_id) as $steps_id) {
+            $sorted_steps_settings[] = $steps_settings[(int) $steps_id];
+        }
+
+        return Standard_Collection::of(...$sorted_steps_settings);
+    }
+
+    private static function steps_ids(int $wizard_id): array {
+        return get_post_meta(
+            post_id: $wizard_id,
+            key: '_steps_ids',
+            single: true,
+        );
+    }
+
+    private static function steps_settings(int $wizard_id): array {
+        return get_post_meta(
+            post_id: $wizard_id,
+            key: '_steps_settings',
+            single: true,
         );
     }
 
     /**
      * @return void
      */
-    private function __construct(readonly private array $steps_settings) {}
+    private function __construct(readonly private Collection $steps_settings) {}
 
-    public function steps_settings(): array {
-        return $this->steps_settings;
-    }
+    // public function steps_settings(): array {
+    //     return $this->steps_settings;
+    // }
 
     public function formatted_steps_settings(): Collection {
-        return Standard_Collection::of(...$this->steps_settings)
+        return $this->steps_settings
             ->map(callback: fn ($steps_setting): array => [
                 'title' => $steps_setting['title'],
                 'groups' => [
                     'basic' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'title',
                                     'nav_title',
@@ -54,8 +79,7 @@ final class View_Model {
                         ->to_array(),
                     'query' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'categories',
                                     'attributes',
@@ -75,8 +99,7 @@ final class View_Model {
                         ->to_array(),
                     'cart' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'several_products',
                                     'several_variations_per_product',
@@ -102,8 +125,7 @@ final class View_Model {
                         ->to_array(),
                     'controls' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'buttons_nonblocking_requests',
                                     'enable_add_to_cart_button',
@@ -125,8 +147,7 @@ final class View_Model {
                         ->to_array(),
                     'view' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'template',
                                     'grid_column',
@@ -154,8 +175,7 @@ final class View_Model {
                         ->to_array(),
                     'filters' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(
-                            callback: fn ($step_setting): bool =>
-                            Standard_Collection::of(
+                            callback: fn ($step_setting): bool => Standard_Collection::of(
                                 ...[
                                     'use_step_filters',
                                     'filters',

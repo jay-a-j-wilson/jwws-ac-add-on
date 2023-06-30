@@ -3,7 +3,6 @@
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free;
 
 use AC\Column;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\{
     App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model,
     Deps\JWWS\WPPF\Template\Template

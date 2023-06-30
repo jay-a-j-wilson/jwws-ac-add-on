@@ -10,7 +10,7 @@
                 JW_ACA--u-flex--justify-content-between
             ">
                 <span class=JW_ACA--c-card__title>
-                    #<?= $step_key; ?> <?= $step['title']; ?>
+                    #<?= $step_key + 1; ?> <?= $step['title']; ?>
                 </span>
             </div>
             <div class="JW_ACA--c-card__body JW_ACA--u-padding--all-no">
