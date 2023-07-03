@@ -1,67 +1,8 @@
-<?php
-
-use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Repo\Subclasses\Term_Repo\Term_Repo;
-use JWWS\ACA\App\Modules\{
-    Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\Boolean\Boolean
-};
-?>
-
-<!-- Categories for using -->
-<tr>
-    <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            The categories of the products you want to present in this step.
-        </div>
-        Categories for using
-    </td>
-    <td>
-        <?php foreach ($group['categories'] as $category_id) : ?>
-            <samp>
-                <?=
-                    Term_Repo::create()
-                        ->find_by_id(id: $category_id)
-                        ->name
-                    ;
-                ?>
-                [#<?= $category_id; ?>]
-            </samp>
-            <br>
-        <?php endforeach; ?>
-    </td>
-</tr>
-<!-- Attributes for using -->
-<tr>
-    <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Product attribute values to fetch products
-        </div>
-        Attributes for using
-    </td>
-    <td>
-        <?php if (! empty($group['attributes'])) : ?>
-            <?php foreach ($group['attributes'] as $attribute) : ?>
-                <?php
-                    $attr_pair = explode(
-                    separator: '#',
-                    string: $attribute,
-                );
-                ?>
-                <samp>
-                    <?= wc_attribute_label(name: $attr_pair[0]); ?>
-                    [#<?= $attr_pair[1]; ?>]
-                </samp>
-                <br>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </td>
-</tr>
 <!----------------------------------------------------------------------------->
 <!-- Availability rules -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
+        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
         <div role="tooltip" class="JW_ACA--c-tooltip">
             Show/hide the step according the specific rules
         </div>
@@ -178,56 +119,5 @@ use JWWS\ACA\App\Modules\{
                 </div>
             </div>
         <?php endforeach; ?>
-    </td>
-</tr>
-<!----------------------------------------------------------------------------->
-<!-- Order -->
-<tr class="JW_ACA--u-border--width-4">
-    <td class="JW_ACA--u-size--width-40">
-        Order
-    </td>
-    <td>
-        <samp><?= $group['order']; ?></samp>
-    </td>
-</tr>
-<!-- Order by -->
-<tr>
-    <td class="JW_ACA--u-size--width-40">
-        Order by
-    </td>
-    <td>
-        <samp><?= $group['order_by']; ?></samp>
-    </td>
-</tr>
-<!-- Enable "Order by" dropdown -->
-<tr>
-    <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Shows the typical WooCommerce dropdown menu for the products' order.
-        </div>
-        Enable "Order by" dropdown
-    </td>
-    <td>
-        <samp>
-            <?=
-            Boolean::from(value: $group['enable_order_by_dropdown'])
-                ->to_html()
-            ;
-            ?>
-        </samp>
-    </td>
-</tr>
-<!-- Products per page -->
-<tr>
-    <td class="JW_ACA--u-size--width-40">
-        <span title="tooltip" class="JW_ACA--u-font--size-md JW_ACA--u-size--13px dashicons dashicons-info"></span>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Sets the quantity of the products per page. Zero is equal infinity.
-        </div>
-        Products per page
-    </td>
-    <td>
-        <samp><?= $group['products_per_page']; ?></samp>
     </td>
 </tr>

@@ -23,7 +23,7 @@ final class Boolean {
     /**
      * @return void
      */
-    private function __construct(private string $value) {}
+    private function __construct(readonly private string $value) {}
 
     /**
      * Returns boolean value wrapped in the specified html tag with a boolean
