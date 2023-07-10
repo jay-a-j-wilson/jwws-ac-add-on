@@ -1,54 +1,32 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro;
 
+use ACP\ConditionalFormat\ConditionalFormatTrait;
+use JWWS\ACA\App\Modules\Interfaces\Proable;
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\{
     Column\Free\Free,
     Editing\Editing,
     Export\Export,
-    Sorting\Sorting,
+    Filtering\Filtering,
     Smart_Filtering\Smart_Filtering,
-    Filtering\Filtering
-};
-use ACP\{
-    ConditionalFormat\ConditionalFormatTrait,
-    ConditionalFormat\Formattable,
-    Editing\Editable,
-    Export\Exportable,
-    Sorting\Sortable,
-    Search\Searchable,
-    Filtering\Filterable,
+    Sorting\Sorting
 };
 
 /**
  * @final
  */
-class Pro extends Free implements
-    Formattable,
-    Editable,
-    Exportable,
-    Sortable,
-    Searchable,
-    Filterable {
+class Pro extends Free implements Proable {
     use ConditionalFormatTrait;
 
-    /**
-     *
-     */
     public function editing() {
         return new Editing(column: $this);
     }
 
-    /**
-     *
-     */
     public function export() {
         return new Export(column: $this);
     }
 
-    /**
-     *
-     */
     public function sorting() {
         return new Sorting(column: $this);
     }
@@ -60,9 +38,6 @@ class Pro extends Free implements
         return new Smart_Filtering();
     }
 
-    /**
-     *
-     */
     public function filtering() {
         return new Filtering(column: $this);
     }

@@ -1,30 +1,32 @@
 <!-- Groups -->
 <?php foreach ($step as $groups) : ?>
-    <?php foreach ($groups as $group_key => $group) : ?>
-        <div class="accordion-nested JW_ACA--c-card JW_ACA--u-border--top">
-            <div class="
-                accordion-header-nested
-                JW_ACA--c-card__header
-                JW_ACA--u-flex--direction-row-reverse
-                JW_ACA--u-flex--justify-content-between
-            ">
-                <span>
-                    <?= ucfirst(string: $group_key); ?>
-                </span>
-            </div>
-            <div class="JW_ACA--c-card__body">
-                <table class="JW_ACA--c-table JW_ACA--c-table--xs">
-                    <?php
-                        foreach ($group as $group_item_key => $group_item) {
-                            $template = __DIR__ . "/{$group_key}/{$group_item_key}.html.php";
+    <?php if (is_array(value: $groups) || is_object(value: $groups)) : ?>
+        <?php foreach ($groups as $group_key => $group) : ?>
+            <div class="accordion-nested JW_ACA--c-card JW_ACA--u-border--top">
+                <div class="
+                    accordion-header-nested
+                    JW_ACA--c-card__header
+                    JW_ACA--u-flex--direction-row-reverse
+                    JW_ACA--u-flex--justify-content-between
+                ">
+                    <span>
+                        <?= ucfirst(string: $group_key); ?>
+                    </span>
+                </div>
+                <div class="JW_ACA--c-card__body--flush">
+                    <table class="JW_ACA--c-table JW_ACA--c-table--xs">
+                        <?php
+                            foreach ($group as $group_item_key => $group_item) {
+                                $template = __DIR__ . "/{$group_key}/{$group_item_key}.html.php";
 
-                            if (file_exists(filename: $template)) {
-                                include $template;
+                                if (file_exists(filename: $template)) {
+                                    include $template;
+                                }
                             }
-                        }
-                    ?>
-                </table>
+                        ?>
+                    </table>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
 <?php endforeach; ?>

@@ -11,11 +11,16 @@ use ACA\WC\Settings\Product\Attributes;
 class Free extends Column {
     private string $error_message = 'Attribute not assigned';
 
-    public function __construct() {
+    /**
+     * @return void
+     */
+    public function __construct(
+        readonly private string $uid = 'column-attribute_visibility',
+    ) {
         $this
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
-            ->set_type(type: 'column-attribute_visibility')
+            ->set_type(type: $this->uid)
             ->set_group(group: 'woocommerce')
             // Default column label.
             ->set_label(label: __(

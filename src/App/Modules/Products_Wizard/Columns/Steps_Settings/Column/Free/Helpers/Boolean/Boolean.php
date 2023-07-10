@@ -9,6 +9,9 @@ if (! defined(constant_name: 'ABSPATH')) {
 }
 
 final class Boolean {
+    /**
+     * Factory method.
+     */
     public static function from(mixed $value): self {
         return new self(
             value: strtoupper(

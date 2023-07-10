@@ -1,16 +1,20 @@
+<?php
+
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+?>
 <!-- Thumbnail -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            <p class="JW_ACA--u-text--align-left">
-                Defines a thumbnail which is shown in the navigation tab of the
-                step.
-            </p>
-            <p class="JW_ACA--u-text--align-left">
-                This works only with the Step-by-Step behavior.
-            </p>
-        </div>
+        <?=
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Defines a thumbnail which is shown in the navigation tab of the
+                step.',
+                'This works only with the Step-by-Step behavior.'
+            ])
+            ->output()
+        ;
+        ?>
         Thumbnail
     </td>
     <td>

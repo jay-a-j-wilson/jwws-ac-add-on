@@ -9,12 +9,11 @@ use AC\Column;
  */
 class Free extends Column {
     /**
-     * Identifier, pick an unique name.
-     * Single word, no spaces. Underscores allowed.
+     * @return void
      */
-    private string $uid = 'column-categories_hierarchy';
-
-    public function __construct() {
+    public function __construct(
+        readonly private string $uid = 'column-categories_hierarchy',
+    ) {
         $this
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.

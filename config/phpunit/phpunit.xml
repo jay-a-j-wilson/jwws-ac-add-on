@@ -31,6 +31,15 @@
             <directory suffix=".php">
                 ../../src/App/*/*/*/*/*/*/Tests
             </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
         </testsuite>
         <!-- unit -->
         <testsuite name="unit">
@@ -52,6 +61,15 @@
             <directory suffix=".php">
                 ../../src/App/*/*/*/*/*/*/Tests/Unit
             </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
         </testsuite>
         <!-- integration -->
         <testsuite name="integration">
@@ -72,6 +90,15 @@
             </directory>
             <directory suffix=".php">
                 ../../src/App/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests/Integration
             </directory>
         </testsuite>
         <!-- debug -->
@@ -100,6 +127,9 @@
             <directory suffix=".php">../../src/App/*/*/*/*/Tests</directory>
             <directory suffix=".php">../../src/App/*/*/*/*/*/Tests</directory>
             <directory suffix=".php">../../src/App/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/*/*/Tests</directory>
         </exclude>
         <report>
             <html outputDirectory="../../data/phpunit/coverage/report/html" />

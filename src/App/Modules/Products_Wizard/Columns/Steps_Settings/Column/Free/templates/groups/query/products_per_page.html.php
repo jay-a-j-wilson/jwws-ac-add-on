@@ -1,10 +1,20 @@
+<?php
+
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+?>
+
 <!-- Products per page -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Sets the quantity of the products per page. Zero is equal infinity.
-        </div>
+        <?php
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Sets the quantity of the products per page. Zero is equal
+                infinity.',
+            ])
+            ->output()
+        ;
+        ?>
         Products per page
     </td>
     <td>

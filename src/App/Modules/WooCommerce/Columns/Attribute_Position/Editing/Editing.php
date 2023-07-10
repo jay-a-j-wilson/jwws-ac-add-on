@@ -6,7 +6,11 @@ use ACP\Editing\ {
     Service,
     View
 };
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Column\Pro\Pro;
+use JWWS\ACA\{
+    App\Modules\WooCommerce\Columns\Attribute_Position\Column\Pro\Pro,
+    Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta
+};
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -37,21 +41,16 @@ final class Editing implements Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        // Get product attributes
-        $attributes = get_post_meta(
-            post_id: $id,
-            key: '_product_attributes',
-            single: true,
-        );
+        $attributes = Post_Meta::of(id: $id)
+            ->find_by_key(key: '_product_attributes')
+        ;
 
-        // Loop through product attributes
-        foreach ($attributes as $attribute_key => $attribute_value) {
-            // Target specific attribute by its name
-            $option = $this->column->get_option(key: 'product_taxonomy_display');
+        $option = $this->column->get_option(key: 'product_taxonomy_display');
 
-            if ($attribute_value['name'] == $option) {
+        foreach ($attributes as $key => $value) {
+            if ($key === $option) {
                 // Set the new value in the array
-                $attributes[$attribute_key]['position'] = $data;
+                $attributes[$key]['position'] = $data;
 
                 break;
             }

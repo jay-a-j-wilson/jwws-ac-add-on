@@ -1,5 +1,6 @@
 <?php
 
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use JWWS\ACA\App\Modules\{
     Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\Boolean\Boolean
 };
@@ -8,11 +9,15 @@ use JWWS\ACA\App\Modules\{
 <!-- Hide choose element -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Use with individual product controls or 'Add to cart by quantity'
-            setting.
-        </div>
+        <?=
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Use with individual product controls or \'Add to cart by
+                quantity\' setting.'
+            ])
+            ->output()
+        ;
+        ?>
         Hide choose element
     </td>
     <td>

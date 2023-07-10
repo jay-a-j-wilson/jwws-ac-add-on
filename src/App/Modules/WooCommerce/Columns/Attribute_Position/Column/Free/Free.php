@@ -4,6 +4,8 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Column\Fre
 
 use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+use WC_Product;
 
 /**
  * @final
@@ -11,11 +13,16 @@ use ACA\WC\Settings\Product\Attributes;
 class Free extends Column {
     private string $error_message = 'Attribute not assigned';
 
-    public function __construct() {
+    /**
+     * @return void
+     */
+    public function __construct(
+        readonly private string $uid = 'column-attribute_position',
+    ) {
         $this
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
-            ->set_type(type: 'column-attribute_position')
+            ->set_type(type: $this->uid)
             ->set_group(group: 'woocommerce')
             // Default column label.
             ->set_label(label: __(
@@ -27,10 +34,6 @@ class Free extends Column {
 
     /**
      * Returns the display value for the column.
-     *
-     * @param mixed $product_id ID
-     *
-     * @return string Value
      */
     public function get_value(mixed $product_id): string {
         $value = $this->get_raw_value(product_id: $product_id);
@@ -44,10 +47,6 @@ class Free extends Column {
      * Get the raw, underlying value for the column
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
-     *
-     * @param mixed $product_id ID
-     *
-     * @return mixed Value
      */
     public function get_raw_value(mixed $product_id): mixed {
         $attribute_key = $this->get_option(key: 'product_taxonomy_display');
@@ -62,6 +61,8 @@ class Free extends Column {
         $attributes = wc_get_product(the_product: $product_id)
             ->get_attributes()
         ;
+
+        Error_Logger::log_verbose($attributes);
 
         if (! \array_key_exists(key: $attribute_key, array: $attributes)) {
             return __(text: $this->error_message, domain: 'jwws');

@@ -1,10 +1,19 @@
+<?php
+
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+?>
+
 <!-- Attributes for using -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Product attribute values to fetch products
-        </div>
+        <?php
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Product attribute values to fetch products.',
+            ])
+            ->output()
+        ;
+        ?>
         Attributes for using
     </td>
     <td>

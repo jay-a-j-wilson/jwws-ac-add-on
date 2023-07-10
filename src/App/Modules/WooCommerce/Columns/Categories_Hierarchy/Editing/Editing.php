@@ -6,11 +6,17 @@ use ACP\Editing\ {
     Service,
     View
 };
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\Pro\Pro;
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
 final class Editing implements Service {
+    /**
+     * @return void
+     */
+    public function __construct(private Pro $column) {}
+
     public function get_value(int $id): void {
         // Retrieve the value for editing
         // For example: get_post_meta( $id, '_my_custom_field_example', true );

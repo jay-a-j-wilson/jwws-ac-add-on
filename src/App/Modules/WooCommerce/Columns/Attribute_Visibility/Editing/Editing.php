@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Editing;
 
@@ -7,20 +7,17 @@ use ACP\Editing\ {
     View
 };
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro\Pro;
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
-class Editing implements Service {
+final class Editing implements Service {
     /**
-     * @param privateColumn\Pro\Root $column
+     * @return void
      */
-    public function __construct(private Pro $column) {
-    }
+    public function __construct(private Pro $column) {}
 
-    /**
-     * @param string $context
-     */
     public function get_view(string $context): ?View {
         // Disables edit controls if attribute is not selected in column settings.
         if (empty($this->column->get_option(key: 'product_taxonomy_display'))) {
@@ -30,45 +27,32 @@ class Editing implements Service {
         return (new View\Select())
             ->set_clear_button(enable: true)
             ->set_options(options: [
-                '1' => __(text: 'Yes', domain: 'jwws'),
-                '0' => __(text: 'No', domain: 'jwws'),
+                true => __(text: 'Yes', domain: 'jwws'),
+                false => __(text: 'No', domain: 'jwws'),
             ])
         ;
     }
 
-    /**
-     * @param int $product_id
-     */
     public function get_value(int $product_id): mixed {
         return $this->column->get_value(product_id: $product_id);
     }
 
     /**
      * Saves the value after using inline-edit.
-     *
-     * @param int   $id
-     * @param mixed $data
      */
     public function update(int $id, mixed $data): void {
-        // Get product attributes
-        $attributes = get_post_meta(
-            post_id: $id,
-            key: '_product_attributes',
-            single: true,
-        );
+        $attributes = Post_Meta::of(id: $id)
+            ->find_by_key(key: '_product_attributes')
+        ;
+
+        $option = $this->column->get_option(key: 'product_taxonomy_display');
 
         // Loop through product attributes
-        foreach ($attributes as $attribute_key => $attribute_value) {
-            // Target specific attribute by its name
-            if ($attribute_value['name'] == $this->column->get_option(key: 'product_taxonomy_display')) {
-                if (empty($data)) {
-                    unset($attributes[$attribute_key]);
-                } else {
-                    // Set the new value in the array
-                    $attributes[$attribute_key]['is_visible'] = $data;
-                }
+        foreach ($attributes as $key => $value) {
+            if ($key === $option) {
+                $attributes[$key]['is_visible'] = $data;
 
-                break; // stop the loop
+                break;
             }
         }
 

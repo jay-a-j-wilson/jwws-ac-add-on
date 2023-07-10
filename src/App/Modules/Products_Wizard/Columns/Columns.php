@@ -4,6 +4,7 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns;
 
 use JWWS\ACA\App\Modules\Products_Wizard\Columns\{
     Attach_Wizard\Attach_Wizard,
+    Default_Cart_Content\Default_Cart_Content,
     Discount\Discount,
     Steps_Settings\Steps_Settings
 };
@@ -27,6 +28,7 @@ final class Columns {
 
     public function hook(): void {
         Attach_Wizard::new_instance()->hook();
+        Default_Cart_Content::new_instance()->hook();
         Discount::new_instance()->hook();
         Steps_Settings::new_instance()->hook();
     }

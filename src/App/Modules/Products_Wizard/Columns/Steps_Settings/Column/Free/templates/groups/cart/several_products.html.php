@@ -1,5 +1,6 @@
 <?php
 
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use JWWS\ACA\App\Modules\{
     Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\Boolean\Boolean
 };
@@ -8,12 +9,16 @@ use JWWS\ACA\App\Modules\{
 <!-- Can select several products -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Hides the radio/checkbox icon on each product. If you enable this
-            option, then the only way to select a product is the use of the
-            individual controls of each product.
-        </div>
+        <?=
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Hides the radio/checkbox icon on each product. If you enable this
+                option, then the only way to select a product is the use of the
+                individual controls of each product.',
+            ])
+            ->output()
+        ;
+        ?>
         Can select several products
     </td>
     <td>

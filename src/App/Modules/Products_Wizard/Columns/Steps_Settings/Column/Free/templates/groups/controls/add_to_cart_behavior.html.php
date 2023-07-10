@@ -1,25 +1,34 @@
-<?php
+<?php declare(strict_types=1);
 
-use JWWS\ACA\App\Modules\{
-    Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\Boolean\Boolean
+use JWWS\ACA\Deps\JWWS\WPPF\{
+    Template\Template,
+    Dictionary\Standard_Dictionary\Standard_Dictionary
 };
 ?>
 
 <!-- "Add to cart" button behavior -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Defines the action that is fired after a product is added to the
-            cart.
-        </div>
+        <?php
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Defines the action that is fired after a product is added to
+                the cart.',
+            ])
+            ->output()
+        ;
+        ?>
         "Add to cart" button behavior
     </td>
     <td>
         <samp>
             <?=
-            Boolean::from(value: $group['add_to_cart_behavior'])
-                ->to_html();
+            Standard_Dictionary::new_instance()
+                ->add(key: 'default', value: 'Stay on the same step')
+                ->add(key: 'submit', value: 'Go next')
+                ->add(key: 'add-to-main-cart', value: 'Add to main cart')
+                ->find_by_key(key: $group['add_to_cart_behavior'])
+            ;
             ?>
         </samp>
     </td>

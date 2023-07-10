@@ -1,7 +1,7 @@
 {
     "require": {
         "coenjacobs/mozart": "*",
-        "jay-a-j-wilson/jwws-wp-plugin-framework": "3.2.0"
+        "jay-a-j-wilson/jwws-wp-plugin-framework": "3.3.0"
     },
     "require-dev": {
         "yoast/phpunit-polyfills": "^1.0",

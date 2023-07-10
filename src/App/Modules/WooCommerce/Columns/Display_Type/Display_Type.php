@@ -6,7 +6,7 @@ use AC\ListScreen;
 use ACA\WC\ListScreen\ProductCategory;
 use JWWS\ACA\App\{
     Common\Column\Column,
-    Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro\Pro
+    Modules\WooCommerce\Columns\Display_Type\Column\Pro\Pro
 };
 
 if (! defined(constant_name: 'ABSPATH')) {

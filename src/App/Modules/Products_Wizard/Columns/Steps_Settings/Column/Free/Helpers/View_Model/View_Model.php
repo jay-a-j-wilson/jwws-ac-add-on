@@ -2,11 +2,11 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model;
 
-use JWWS\ACA\Deps\JWWS\WPPF\Collection\{
-    Collection,
-    Standard_Collection\Standard_Collection
+use JWWS\ACA\Deps\JWWS\WPPF\{
+    Collection\Collection,
+    Collection\Standard_Collection\Standard_Collection,
+    WordPress\Meta\Subclasses\Post_Meta\Post_Meta
 };
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -20,31 +20,19 @@ final class View_Model {
     }
 
     private static function sorted_steps_settings(int $wizard_id): Collection {
-        $steps_settings = self::steps_settings(wizard_id: $wizard_id);
+        $steps_settings = Post_Meta::of(id: $wizard_id)
+            ->find_by_key(key: '_steps_settings');
+
+        $steps_ids = Post_Meta::of(id: $wizard_id)
+            ->find_by_key(key: '_steps_ids');
 
         $sorted_steps_settings = [];
 
-        foreach (self::steps_ids(wizard_id: $wizard_id) as $steps_id) {
+        foreach ($steps_ids as $steps_id) {
             $sorted_steps_settings[] = $steps_settings[(int) $steps_id];
         }
 
         return Standard_Collection::of(...$sorted_steps_settings);
-    }
-
-    private static function steps_ids(int $wizard_id): array {
-        return get_post_meta(
-            post_id: $wizard_id,
-            key: '_steps_ids',
-            single: true,
-        );
-    }
-
-    private static function steps_settings(int $wizard_id): array {
-        return get_post_meta(
-            post_id: $wizard_id,
-            key: '_steps_settings',
-            single: true,
-        );
     }
 
     /**
@@ -52,9 +40,9 @@ final class View_Model {
      */
     private function __construct(readonly private Collection $steps_settings) {}
 
-    // public function steps_settings(): array {
-    //     return $this->steps_settings;
-    // }
+    public function steps_settings(): Collection {
+        return $this->steps_settings;
+    }
 
     public function formatted_steps_settings(): Collection {
         return $this->steps_settings

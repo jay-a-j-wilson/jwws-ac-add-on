@@ -1,11 +1,20 @@
+<?php
+
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+?>
+
 <!----------------------------------------------------------------------------->
 <!-- Availability rules -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            Show/hide the step according the specific rules
-        </div>
+        <?php
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Show/hide the step according the specific rules.',
+            ])
+            ->output()
+        ;
+        ?>
         Availability rules
     </td>
     <td class="JW_ACA--u-padding--all-no">
@@ -26,7 +35,7 @@
                         Rule <?= ucfirst(string: $key + 1); ?>
                     </span>
                 </div>
-                <div class="JW_ACA--c-card__body">
+                <div class="JW_ACA--c-card__body--flush">
                     <table class="JW_ACA--c-table JW_ACA--c-table--xs">
                         <tr>
                             <td>Source</td>

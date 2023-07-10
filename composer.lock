@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df1a433b92574f002c89fb6d58ae6d32",
+    "content-hash": "8b76f4224b34385af95183b990357220",
     "packages": [
         {
             "name": "coenjacobs/mozart",
@@ -66,16 +66,16 @@
         },
         {
             "name": "jay-a-j-wilson/jwws-wp-plugin-framework",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework.git",
-                "reference": "0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4"
+                "reference": "9bc2edb29d597cebb0d2a650f3012bd9f3d45ec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4",
-                "reference": "0e8ce7d4c6e5011c478f58126aa5e46089b7bcd4",
+                "url": "https://api.github.com/repos/jay-a-j-wilson/jwws-wp-plugin-framework/zipball/9bc2edb29d597cebb0d2a650f3012bd9f3d45ec3",
+                "reference": "9bc2edb29d597cebb0d2a650f3012bd9f3d45ec3",
                 "shasum": ""
             },
             "require": {
@@ -95,9 +95,9 @@
             "description": "A light-weight framework for WordPress plugins.",
             "support": {
                 "issues": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/issues",
-                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/3.2.0"
+                "source": "https://github.com/jay-a-j-wilson/jwws-wp-plugin-framework/tree/3.3.0"
             },
-            "time": "2023-06-25T01:06:29+00:00"
+            "time": "2023-07-10T02:00:26+00:00"
         },
         {
             "name": "league/flysystem",

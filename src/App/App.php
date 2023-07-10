@@ -30,8 +30,7 @@ final class App {
     public function hook(): void {
         add_action('wp_loaded', [$this, 'hook_loader']);
 
-        // TODO: create activation check method in Loader class.
-        if (is_plugin_active(plugin: 'admin-columns-pro/admin-columns-pro.php')) {
+        if ($this->loader->can_activate()) {
             add_action('ac/ready', [$this, 'hook_modules']);
         }
     }

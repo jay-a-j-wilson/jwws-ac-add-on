@@ -3,14 +3,16 @@
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Tests\Integration;
 
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\{
-    Editing\Editing,
-    Column\Pro\Pro
+    Column\Pro\Pro,
+    Editing\Editing
 };
 
 /**
  * @covers \JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Editing
  *
  * @internal
+ *
+ * @small
  */
 final class Construct extends \WP_UnitTestCase {
     /**
@@ -19,7 +21,11 @@ final class Construct extends \WP_UnitTestCase {
     public function pass(): void {
         self::assertInstanceOf(
             expected: Editing::class,
-            actual: new Editing(),
+            actual: new Editing(
+                column: $this->createStub(
+                    originalClassName: Pro::class,
+                ),
+            ),
         );
     }
 }

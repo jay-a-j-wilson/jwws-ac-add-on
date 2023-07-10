@@ -2,15 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\Pro;
 
-use ACP\{
-    ConditionalFormat\ConditionalFormatTrait,
-    ConditionalFormat\Formattable,
-    Editing\Editable,
-    Export\Exportable,
-    Filtering\Filterable,
-    Search\Searchable,
-    Sorting\Sortable,
-};
+use ACP\ConditionalFormat\ConditionalFormatTrait;
+use JWWS\ACA\App\Modules\Interfaces\Proable;
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\{
     Column\Free\Free,
     Editing\Editing,
@@ -23,13 +16,7 @@ use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\{
 /**
  * @final
  */
-class Pro extends Free implements
-    Editable,
-    Exportable,
-    Filterable,
-    Formattable,
-    Searchable,
-    Sortable {
+class Pro extends Free implements Proable {
     use ConditionalFormatTrait;
 
     public function editing() {

@@ -1,20 +1,25 @@
+<?php
+
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+?>
+
 <!----------------------------------------------------------------------------->
 <!-- Selected items by default -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            <p class="JW_ACA--u-text--align-left">
-                Define the products that are selected by default when entering
+        <?=
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Define the products that are selected by default when entering
                 this step. Also by this option you can define specific product
-                variations as checked.
-            </p>
-            <p class="JW_ACA--u-text--align-left">
-                Hides the radio/checkbox icon on each product. If you enable
+                variations as checked.',
+                'Hides the radio/checkbox icon on each product. If you enable
                 this option, then the only way to select a product is the use of
-                the individual controls of each product.
-            </p>
-        </div>
+                the individual controls of each product.'
+            ])
+            ->output()
+        ;
+        ?>
         Selected items by default
     </td>
     <td>

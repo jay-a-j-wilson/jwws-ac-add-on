@@ -6,15 +6,15 @@ use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 <!-- Maximum total products quantity -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php include __DIR__ . "/../tooltip-icon.html.php"; ?>
-        <div role="tooltip" class="JW_ACA--c-tooltip">
-            <p class="JW_ACA--u-text--align-left">
-                Sets the maximum product quantity input value for this step.
-            </p>
-            <p class="JW_ACA--u-text--align-left">
-                This option works without the «Sold individually» option.
-            </p>
-        </div>
+        <?=
+        Template::of(__DIR__ . '/../tooltip.html.php')
+            ->assign(key: 'paragraphs', value: [
+                'Sets the maximum product quantity input value for this step.',
+                'This option works without the «Sold individually» option.'
+            ])
+            ->output()
+        ;
+        ?>
         Maximum total products quantity
     </td>
     <td>
