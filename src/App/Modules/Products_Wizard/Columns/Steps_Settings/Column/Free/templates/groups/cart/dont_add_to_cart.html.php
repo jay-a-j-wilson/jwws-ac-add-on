@@ -7,25 +7,23 @@ use JWWS\ACA\App\Modules\{
 ?>
 
 <!----------------------------------------------------------------------------->
-<!-- Hide remove button -->
+<!-- Don't add to main cart -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
         <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
-                'If enabled for the wizard in the cart widget, hides the Remove
-                button if it is set as enabled from the "Control General
-                settings".',
+                'Does not allow any product of this step to be to the car.',
             ])
             ->output()
         ;
         ?>
-        Hide remove button
+        Don't add to main cart
     </td>
     <td>
         <samp>
             <?=
-            Boolean::from(value: $group['hide_remove_button'])
+            Boolean::from(value: $group['dont_add_to_cart'])
                 ->to_html();
             ?>
         </samp>

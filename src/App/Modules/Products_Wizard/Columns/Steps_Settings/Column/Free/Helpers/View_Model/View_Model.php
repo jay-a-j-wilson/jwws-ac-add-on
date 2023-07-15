@@ -2,29 +2,32 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model;
 
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\Deps\JWWS\WPPF\{
     Collection\Collection,
     Collection\Standard_Collection\Standard_Collection,
     WordPress\Meta\Subclasses\Post_Meta\Post_Meta
 };
 
-if (! defined(constant_name: 'ABSPATH')) {
+if (!defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 final class View_Model {
     public static function of(int $wizard_id): self {
         return new self(
-            steps_settings: self::sorted_steps_settings(wizard_id: $wizard_id)
+            steps_settings: self::sorted_steps_settings(wizard_id: $wizard_id),
         );
     }
 
     private static function sorted_steps_settings(int $wizard_id): Collection {
         $steps_settings = Post_Meta::of(id: $wizard_id)
-            ->find_by_key(key: '_steps_settings');
+            ->find_by_key(key: '_steps_settings')
+        ;
 
         $steps_ids = Post_Meta::of(id: $wizard_id)
-            ->find_by_key(key: '_steps_ids');
+            ->find_by_key(key: '_steps_ids')
+        ;
 
         $sorted_steps_settings = [];
 
@@ -32,7 +35,12 @@ final class View_Model {
             $sorted_steps_settings[] = $steps_settings[(int) $steps_id];
         }
 
-        return Standard_Collection::of(...$sorted_steps_settings);
+        return Standard_Collection::of(...$sorted_steps_settings)
+            ->filter_by_value(
+                callback: fn (?array $sorted_steps_setting): bool =>
+                    $sorted_steps_setting !== null,
+            )
+        ;
     }
 
     /**
@@ -47,7 +55,7 @@ final class View_Model {
     public function formatted_steps_settings(): Collection {
         return $this->steps_settings
             ->map(callback: fn ($steps_setting): array => [
-                'title' => $steps_setting['title'],
+                'title'  => $steps_setting['title'],
                 'groups' => [
                     'basic' => Standard_Collection::of(...$steps_setting)
                         ->filter_by_key(

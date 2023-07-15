@@ -9,7 +9,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Enable "Order by" dropdown -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Shows the typical WooCommerce dropdown menu for the products\'

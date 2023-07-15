@@ -9,7 +9,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
 <!-- Categories for using -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'The categories of the products you want to present in this
@@ -24,10 +24,10 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
         <?php foreach ($group['categories'] as $category_id) : ?>
             <samp>
                 <?=
-                    Term_Repo::new_instance()
-                        ->find_by_id(id: $category_id)
-                        ->name
-                    ;
+                Term_Repo::new_instance()
+                    ->find_by_id(id: $category_id)
+                    ->name
+                ;
                 ?>
                 [#<?= $category_id; ?>]
             </samp>

@@ -7,14 +7,13 @@ use JWWS\ACA\App\Modules\{
 ?>
 
 <!----------------------------------------------------------------------------->
-<!-- Enable "Add to cart" button -->
+<!-- Enable "Update" button -->
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
-                'Enables/disables the "Add to cart" button on each product of this
-                step.',
+                'Shows the Edit button in the wizard.',
             ])
             ->output()
         ;
@@ -24,7 +23,7 @@ use JWWS\ACA\App\Modules\{
     <td>
         <samp>
             <?=
-            Boolean::from(value: $group['enable_add_to_cart_button'])
+            Boolean::from(value: $group['enable_update_button'])
                 ->to_html();
             ?>
         </samp>

@@ -9,7 +9,7 @@ use JWWS\ACA\App\Modules\{
 <!-- Merge thumbnail with gallery -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Removes the galleries from the products and shows only the

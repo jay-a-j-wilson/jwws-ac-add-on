@@ -6,7 +6,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 <!-- Attributes for using -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Product attribute values to fetch products.',

@@ -9,7 +9,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
 <!-- "Add to cart" button behavior -->
 <tr>
     <td class="JW_ACA--u-size--width-40">
-        <?php
+        <?=
         Template::of(__DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Defines the action that is fired after a product is added to
@@ -30,6 +30,6 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
                 ->find_by_key(key: $group['add_to_cart_behavior'])
             ;
             ?>
-        </samp>
+           </samp>
     </td>
 </tr>
