@@ -1,0 +1,61 @@
+/* Border */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-border {
+    &--top {
+        border-right: unset !important;
+        border-left: unset !important;
+        border-bottom: unset !important;
+    }
+
+    // Add
+    &--add-all {
+        border: solid 1px var(--grey-dark) !important;
+    }
+
+    &--add-top {
+        border-top: solid 1px var(--grey-dark) !important;
+    }
+
+    &--add-bottom {
+        border-bottom: solid 1px var(--grey-dark) !important;
+    }
+
+    &--add-left {
+        border-left: solid 1px var(--grey-dark) !important;
+    }
+
+    &--add-right {
+        border-right: solid 1px var(--grey-dark) !important;
+    }
+
+    // Remove */
+    &--remove-all {
+        border: none !important;
+    }
+
+    &--remove-top {
+        border-top: none !important;
+    }
+
+    &--remove-bottom {
+        border-bottom: none !important;
+    }
+
+    &--remove-left {
+        border-left: none !important;
+    }
+
+    &--remove-right {
+        border-right: none !important;
+    }
+
+    // Width */
+    &--width-4 {
+        border-width: 4px !important;
+    }
+
+    // Color */
+    &--color-grey-dark {
+        border-color: var(--grey-dark) !important;
+    }
+}

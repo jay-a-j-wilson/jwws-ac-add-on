@@ -22,7 +22,7 @@ jQuery(function ($) {
         },
     });
     $(".accordion").accordion({
-        animate: 200,
+        animate: 100,
         active: false,
         collapsible: true,
         header: ">.accordion-header",
@@ -33,7 +33,8 @@ jQuery(function ($) {
         },
     });
     $(".accordion-nested").accordion({
-        animate: 200,
+        animate: 100,
+        active: false,
         collapsible: true,
         header: ">.accordion-header-nested",
         heightStyle: "content",

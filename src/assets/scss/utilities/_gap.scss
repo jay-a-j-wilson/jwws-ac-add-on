@@ -1,0 +1,49 @@
+/* Gap */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-gap {
+    // Row
+    &--row-xs {
+        row-gap: 4px;
+    }
+
+    &--row-sm {
+        row-gap: 8px;
+    }
+
+    &--row-md {
+        row-gap: 16px;
+    }
+
+    &--row-lg {
+        row-gap: 32px;
+    }
+
+    &--row-xl {
+        row-gap: 64px;
+    }
+
+    // Column
+    &--column-no {
+        column-gap: 0px;
+    }
+
+    &--column-xs {
+        column-gap: 4px;
+    }
+
+    &--column-sm {
+        column-gap: 8px;
+    }
+
+    &--column-md {
+        column-gap: 16px;
+    }
+
+    &--column-lg {
+        column-gap: 32px;
+    }
+
+    &--column-xl {
+        column-gap: 64px;
+    }
+}

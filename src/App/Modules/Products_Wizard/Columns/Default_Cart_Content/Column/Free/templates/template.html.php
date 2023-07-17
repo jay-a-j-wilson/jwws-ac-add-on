@@ -1,33 +1,50 @@
 <div class="JW_ACA--l-container JW_ACA--u-gap--row-xs">
 
-    <?php if (is_array(value: $values) || is_object(value: $values)) : ?>
-        <?php foreach($values as $value): ?>
+    <?php if (is_iterable(value: $values)) : ?>
+        <?php $last_key = array_key_last(array: $values); ?>
+        <?php foreach($values as $value_key => $value): ?>
 
             <div class="JW_ACA--c-card">
-                <div class="JW_ACA--c-card__body">
-                    <div>
-                        <?php if (is_null($value)) : ?>
-                            &nbsp;
-                        <?php else: ?>
+                <div class="
+                    JW_ACA--c-card__body
+                    JW_ACA--u-flex--direction-row
+                    JW_ACA--u-flex--justify-content-between
+                    JW_ACA--u-size--height-min-20px
+                ">
+                    <span class="JW_ACA--c-card__title">
+                        #<?= $value_key + 1; ?>
+                    </span>
+                    <samp class="
+                        JW_ACA--c-display--flex
+                        JW_ACA--u-flex--align-items-center
+                        JW_ACA--u-gap--column-xs
+                    ">
+                        <?php if ($value !== null) : ?>
                             <?php
-                            $product = wc_get_product(
-                                the_product: $value['product_id']
-                            );
+                            $product_id = empty($value['variation_id'])
+                                ? $value['product_id']
+                                : $value['variation_id'];
+
+                            $product = wc_get_product(the_product: $product_id);
                             ?>
                             <?=
                             wp_get_attachment_image(
                                 attachment_id: $product->get_image_id(),
                                 icon: true,
-                                attr: ['class' => 'JW_ACA--c-image--12px'],
+                                attr: ['class' => 'JW_ACA--u-size--12px'],
                             );
                             ?>
-                            <?= $product->get_title(); ?>
-                            [#<?= $value['product_id']; ?>]
+                            <span>
+                                <?= $product->get_name(); ?>
+                                [#<?= $product_id; ?>]
+                            </span>
+                            <?php if($key !== $last_key) : ?>
+                                <br>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    </div>
+                    </samp>
                 </div>
             </div>
-
         <?php endforeach; ?>
     <?php endif; ?>
 

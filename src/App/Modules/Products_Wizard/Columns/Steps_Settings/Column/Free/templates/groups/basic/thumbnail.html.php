@@ -6,7 +6,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Defines a thumbnail which is shown in the navigation tab of the
                 step.',
@@ -22,7 +22,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
         wp_get_attachment_image(
             attachment_id: $group['thumbnail'],
             icon: true,
-            attr: ['class' => 'JW_ACA--c-image--12px'],
+            attr: ['class' => 'JW_ACA--u-size--12px'],
         );
         ?>
     </td>

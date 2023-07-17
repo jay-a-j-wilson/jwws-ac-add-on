@@ -1,0 +1,19 @@
+/* Padding */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-padding {
+    &--all-no {
+        padding: 0 !important;
+    }
+
+    &--all-xs {
+        padding: 4px !important;
+    }
+
+    &--all-sm {
+        padding: 8px !important;
+    }
+
+    &--all-md {
+        padding: 12px !important;
+    }
+}

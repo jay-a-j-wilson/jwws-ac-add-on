@@ -2,6 +2,10 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free;
 
+use const JWWS\ACA\{
+    ASSETS_PATH,
+    ASSETS_URL
+};
 use AC\Column;
 use JWWS\ACA\{
     App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model,
@@ -62,13 +66,11 @@ class Free extends Column {
     }
 
     private function enqueue_styles(): void {
-        $path = 'assets/css/styles.css';
-
         wp_enqueue_style(
             handle: $this->uid,
-            src: plugin_dir_url(file: __FILE__) . $path,
+            src: ASSETS_URL . '/css/styles.min.css',
             ver: filemtime(
-                filename: plugin_dir_path(file: __FILE__) . $path,
+                filename: ASSETS_PATH . '/css/styles.min.css',
             ),
         );
     }

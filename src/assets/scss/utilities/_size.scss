@@ -1,0 +1,35 @@
+/* Size */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-size {
+    &--12px {
+        width: 12px;
+        height: 12px;
+    }
+
+    &--13px {
+        width: 13px;
+        height: 13px;
+    }
+
+    // Width
+    &--width-33 {
+        width: 33%;
+    }
+
+    &--width-40 {
+        width: 40%;
+    }
+
+    &--width-50 {
+        width: 50%;
+    }
+
+    &--width-100 {
+        width: 100%;
+    }
+
+    // Height
+    &--height-min-20px {
+        min-height: 20px !important;
+    }
+}

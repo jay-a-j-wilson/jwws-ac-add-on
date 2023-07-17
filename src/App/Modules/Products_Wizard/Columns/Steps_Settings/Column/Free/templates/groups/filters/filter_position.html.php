@@ -10,7 +10,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Defines the position of the filter.',
                 'The filter can be either: on the right / before the products /

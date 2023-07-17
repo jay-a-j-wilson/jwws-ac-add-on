@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'If enabled for the wizard in the cart widget and results table,
                 hides the Edit button if it is set from the "Control General

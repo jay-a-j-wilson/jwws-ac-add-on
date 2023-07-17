@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Have the filter opened when the step is shown.',
             ])

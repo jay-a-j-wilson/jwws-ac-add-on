@@ -11,7 +11,7 @@ use JWWS\ACA\App\Modules\{
 <tr class="JW_ACA--u-border--width-4">
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Shows the Remove button',
             ])

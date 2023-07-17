@@ -1,6 +1,6 @@
 <!-- Groups -->
 <?php foreach ($step as $groups) : ?>
-    <?php if (is_array(value: $groups) || is_object(value: $groups)) : ?>
+    <?php if (is_iterable(value: $groups)) : ?>
         <?php foreach ($groups as $group_key => $group) : ?>
             <div class="accordion-nested JW_ACA--c-card JW_ACA--u-border--top">
                 <div class="
@@ -8,6 +8,7 @@
                     JW_ACA--c-card__header
                     JW_ACA--u-flex--direction-row-reverse
                     JW_ACA--u-flex--justify-content-between
+                    JW_ACA--u-size--height-min-20px
                 ">
                     <span>
                         <?= ucfirst(string: $group_key); ?>

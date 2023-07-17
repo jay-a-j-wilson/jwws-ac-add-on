@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Removes the galleries from the products and shows only the
                 gallery images in thumbnails, formatted as a carousel.',

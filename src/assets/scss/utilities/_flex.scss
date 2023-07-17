@@ -1,0 +1,22 @@
+/* Flex */
+/*----------------------------------------------------------------------------*/
+.JW_ACA--u-flex {
+    // Direction
+    &--direction-row {
+        flex-direction: row;
+    }
+
+    &--direction-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    // Align Items
+    &--align-items-center {
+        align-items: center;
+    }
+
+    // Justify Content
+    &--justify-content-between {
+        justify-content: space-between;
+    }
+}

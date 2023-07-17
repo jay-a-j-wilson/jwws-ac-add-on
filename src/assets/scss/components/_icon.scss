@@ -1,15 +1,14 @@
 /* ICON */
-/* "!important" used to reset jQuery UI CSS styles enqueued by other plugins. */
 /*----------------------------------------------------------------------------*/
+// "!important" used to reset jQuery UI CSS styles enqueued by other plugins.
+
 .JW_ACA--c-icon {
     position: unset !important;
-
-    margin-top: -0.1em !important;
-
     text-indent: unset !important;
-
     overflow: unset !important;
-
     background-image: unset !important;
     background-repeat: unset !important;
+    margin-top: unset !important;
+    width: unset !important;
+    height: unset !important;
 }

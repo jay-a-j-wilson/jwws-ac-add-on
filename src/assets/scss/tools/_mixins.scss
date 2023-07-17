@@ -1,0 +1,18 @@
+// Mixins
+
+@mixin reset-margin {
+    margin: 0 !important;
+}
+
+@mixin reset-padding {
+    padding: 0 !important;
+}
+
+@mixin reset-border {
+    border: none !important;
+
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}

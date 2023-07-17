@@ -2,6 +2,10 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free;
 
+use const JWWS\ACA\{
+    ASSETS_PATH,
+    ASSETS_URL
+};
 use AC\Column;
 use JWWS\ACA\{
     App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free\Helpers\View_Model\View_Model,
@@ -35,7 +39,7 @@ class Free extends Column {
         return Template::of(path: __DIR__ . '/templates/template.html.php')
             ->assign(
                 key: 'values',
-                value: View_Model::of(wizard_id: $wizard_id)->settings()
+                value: View_Model::of(wizard_id: $wizard_id)->settings(),
             )
             ->output()
         ;
@@ -50,5 +54,19 @@ class Free extends Column {
         return Post_Meta::of(id: $wizard_id)
             ->find_by_key(key: '_default_cart_content')
         ;
+    }
+
+    public function scripts(): void {
+        $this->enqueue_styles();
+    }
+
+    private function enqueue_styles(): void {
+        wp_enqueue_style(
+            handle: $this->uid,
+            src: ASSETS_URL . '/css/styles.min.css',
+            ver: filemtime(
+                filename: ASSETS_PATH . '/css/styles.min.css',
+            ),
+        );
     }
 }

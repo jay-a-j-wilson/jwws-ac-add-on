@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'When this option is set, then all products having a quantity
                 more than zero are added to the cart. When this option is

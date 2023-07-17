@@ -1,0 +1,58 @@
+/* CARD */
+/*----------------------------------------------------------------------------*/
+// "!important" used to reset jQuery UI CSS styles enqueued by other plugins.
+@use '../tools/mixins';
+
+.JW_ACA--c-card {
+    font-family: unset !important;
+    font-size: unset !important;
+    line-height: unset !important;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--grey-dark);
+
+    &__header {
+        @include mixins.reset-margin;
+        @include mixins.reset-padding;
+        @include mixins.reset-border;
+
+        display: flex !important;
+        flex-direction: column;
+
+        align-items: center;
+
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+
+        background: var(--grey-light) !important;
+    }
+
+    &__body {
+        @include mixins.reset-margin;
+        @include mixins.reset-padding;
+        @include mixins.reset-border;
+
+        overflow: unset !important;
+
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+
+        background: white;
+
+        &--flush {
+            @extend .JW_ACA--c-card__body;
+            @include mixins.reset-padding;
+        }
+    }
+
+    &__title {
+        @include mixins.reset-margin;
+
+        font-weight: 600;
+    }
+}

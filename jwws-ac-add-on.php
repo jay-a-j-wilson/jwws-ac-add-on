@@ -7,7 +7,7 @@ use JWWS\ACA\App\Factory\Factory as App_Factory;
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      3.3.1
+ * Version:      3.3.2
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later
@@ -19,6 +19,9 @@ if (!defined(constant_name: 'ABSPATH')) {
 
 require __DIR__ . '/vendor/autoload.php';
 
+\define(__NAMESPACE__ . '\DOMAIN', 'jwws');
+\define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
+
 \define(
     constant_name: __NAMESPACE__ . '\PLUGIN_DIR',
     value: basename(
@@ -28,8 +31,14 @@ require __DIR__ . '/vendor/autoload.php';
     ),
 );
 
-\define(__NAMESPACE__ . '\DOMAIN', 'jwws');
-\define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
+\define(
+    constant_name: __NAMESPACE__ . '\ASSETS_URL',
+    value: plugin_dir_url(file: __FILE__) . '/src/assets'
+);
+\define(
+    constant_name: __NAMESPACE__ . '\ASSETS_PATH',
+    value: plugin_dir_path(file: __FILE__) . 'src/assets'
+);
 
 App_Factory::new_instance()
     ->create()

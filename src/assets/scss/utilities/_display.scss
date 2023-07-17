@@ -1,5 +1,7 @@
-/* Text */
+/* DISPLAY */
 /*----------------------------------------------------------------------------*/
-.JW_ACA--u-text--align-left {
-    text-align: left !important;
+.JW_ACA--c-display {
+    &--flex {
+        display: flex;
+    }
 }

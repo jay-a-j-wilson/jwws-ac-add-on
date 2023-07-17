@@ -10,7 +10,7 @@ use JWWS\ACA\App\Modules\{
 <tr>
     <td class="JW_ACA--u-size--width-40">
         <?=
-        Template::of(__DIR__ . '/../tooltip.html.php')
+        Template::of(path: __DIR__ . '/../tooltip.html.php')
             ->assign(key: 'paragraphs', value: [
                 'Hides the radio/checkbox icon on each product. If you enable this
                 option, then the only way to select a product is the use of the

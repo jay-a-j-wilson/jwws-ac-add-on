@@ -9,7 +9,7 @@ use JWWS\ACA\Deps\JWWS\WPPF\{
     WordPress\Meta\Subclasses\Post_Meta\Post_Meta
 };
 
-if (!defined(constant_name: 'ABSPATH')) {
+if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
@@ -32,6 +32,10 @@ final class View_Model {
         $sorted_steps_settings = [];
 
         foreach ($steps_ids as $steps_id) {
+            if (! isset($steps_settings[(int) $steps_id])) {
+                continue;
+            }
+
             $sorted_steps_settings[] = $steps_settings[(int) $steps_id];
         }
 

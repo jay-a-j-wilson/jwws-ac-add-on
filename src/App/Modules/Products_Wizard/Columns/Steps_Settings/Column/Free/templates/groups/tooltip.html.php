@@ -8,9 +8,11 @@
     "
 ></span>
 <div role="tooltip" class="JW_ACA--c-tooltip">
-    <?php foreach($paragraphs as $paragraph) :?>
-        <p class="JW_ACA--u-text--align-left">
-            <?= $paragraph; ?>
-        </p>
-    <?php endforeach; ?>
+    <?php if (is_iterable(value: $paragraphs)) : ?>
+        <?php foreach($paragraphs as $paragraph) : ?>
+            <p class="JW_ACA--u-text--align-left">
+                <?= $paragraph; ?>
+            </p>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </div>
