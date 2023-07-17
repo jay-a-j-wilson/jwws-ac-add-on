@@ -2,7 +2,7 @@
 
     <?php if (is_iterable(value: $values)) : ?>
         <?php $last_key = array_key_last(array: $values); ?>
-        <?php foreach($values as $value_key => $value): ?>
+        <?php foreach ($values as $value_key => $value) : ?>
 
             <div class="JW_ACA--c-card">
                 <div class="
@@ -38,13 +38,14 @@
                                 <?= $product->get_name(); ?>
                                 [#<?= $product_id; ?>]
                             </span>
-                            <?php if($key !== $last_key) : ?>
+                            <?php if ($value_key !== $last_key) : ?>
                                 <br>
                             <?php endif; ?>
                         <?php endif; ?>
                     </samp>
                 </div>
             </div>
+
         <?php endforeach; ?>
     <?php endif; ?>
 
