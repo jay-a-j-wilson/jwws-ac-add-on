@@ -22,7 +22,7 @@
             {
                 "format": "expanded",
                 "extensionName": ".css",
-                "savePath": "/build/css",
+                "savePath": "/data/css",
                 "savePathReplacementPairs": null
             },
             {

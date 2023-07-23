@@ -5,7 +5,6 @@
 /.idea
 
 # Project
-/build
 /data
 
 # Composer
