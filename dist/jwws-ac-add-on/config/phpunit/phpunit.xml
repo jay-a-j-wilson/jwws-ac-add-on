@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="../../test/PHPUnit/bootstrap.php"
+    backupGlobals="false"
+    cacheResultFile="../../../../data/phpunit/cache/.phpunit.result.cache"
+    colors="true"
+    verbose="true"
+    testdox="true"
+    stopOnError="true"
+    stopOnFailure="true"
+>
+    <!-- testsuites -->
+    <testsuites>
+        <!-- all -->
+        <testsuite name="all">
+            <directory suffix=".php">
+                ../../src/App/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+        </testsuite>
+        <!-- unit -->
+        <testsuite name="unit">
+            <directory suffix=".php">
+                ../../src/App/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests/Unit
+            </directory>
+        </testsuite>
+        <!-- integration -->
+        <testsuite name="integration">
+            <directory suffix=".php">
+                ../../src/App/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/Tests/Integration
+            </directory>
+            <directory suffix=".php">
+                ../../src/App/*/*/*/*/*/*/*/*/*/Tests/Integration
+            </directory>
+        </testsuite>
+        <!-- debug -->
+        <!-- <testsuite name="debug">
+            <directory suffix=".php">
+                ../../src/
+            </directory>
+        </testsuite> -->
+    </testsuites>
+    <!-- coverage -->
+    <coverage
+        cacheDirectory="../../../../data/phpunit/coverage/cache"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        includeUncoveredFiles="true"
+        processUncoveredFiles="false"
+        disableCodeCoverageIgnore="false"
+    >
+        <include>
+            <directory suffix=".php">../../src/App/</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">../../src/App/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../src/App/*/*/*/*/*/*/*/*/*/Tests</directory>
+        </exclude>
+        <report>
+            <html outputDirectory="../../../../data/phpunit/coverage/report/html" />
+            <!-- <php outputFile="./coverage/report/php/index.php" /> -->
+        </report>
+    </coverage>
+    <!-- logging -->
+    <logging>
+        <testdoxHtml outputFile="../../../../data/phpunit/logs/log.html" />
+    </logging>
+    <!-- PHP -->
+    <php>
+        <env
+            name="WP_PHPUNIT__TESTS_CONFIG"
+            value="test/PHPUnit/WordPress/wp-config.php"
+        />
+    </php>
+</phpunit>

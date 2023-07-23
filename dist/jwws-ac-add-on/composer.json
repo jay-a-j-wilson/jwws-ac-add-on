@@ -1,0 +1,41 @@
+{
+    "require-dev": {
+        "jay-a-j-wilson/jwws-wp-plugin-framework": "3.3.0",
+        "coenjacobs/mozart": "0.7.1",
+        "yoast/phpunit-polyfills": "^1.0",
+        "phpunit/phpunit": "^9.6",
+        "wp-phpunit/wp-phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "JWWS\\ACA\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JWWS\\ACA\\Test\\": "test/"
+        }
+    },
+    "extra": {
+        "mozart": {
+            "dep_namespace": "JWWS\\ACA\\Deps\\",
+            "dep_directory": "/src/Deps/",
+            "classmap_directory": "/src/Deps/classes/",
+            "classmap_prefix": "JWWS_ACA_",
+            "packages": [
+                "jay-a-j-wilson/jwws-wp-plugin-framework"
+            ],
+            "delete_vendor_directories": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "\"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "\"vendor/bin/mozart\" compose",
+            "composer dump-autoload"
+        ]
+    }
+}

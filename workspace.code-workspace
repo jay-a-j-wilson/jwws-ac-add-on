@@ -1,8 +1,62 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
+    // FOLDERS
+    "folders": [
+        {
+            "path": "."
+        }
     ],
-    "settings": {}
+
+    // SETTINGS
+    "settings": {
+        "json.schemaDownload.enable": true,
+
+        // Terminal
+        "terminal.integrated.cwd": "dist/jwws-ac-add-on",
+
+        // PHPUnit
+        "phpunit.phpunit": "dist/jwws-ac-add-on/vendor/bin/phpunit",
+        "phpunit.args": ["-c dist/jwws-ac-add-on/config/phpunit/phpunit.xml"],
+
+        // Sass
+        "liveSassCompile.settings.formats": [
+            {
+                "format": "expanded",
+                "extensionName": ".css",
+                "savePath": "/build/css",
+                "savePathReplacementPairs": null
+            },
+            {
+                "format": "compressed",
+                "extensionName": ".min.css",
+                "savePath": "/dist/jwws-ac-add-on/src/assets/css",
+                "savePathReplacementPairs": null
+            }
+        ]
+    },
+
+    // TASKS
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            // PHPUnit
+            {
+                "label": "my: phpunit",
+                "type": "shell",
+                "command": "vendor/bin/phpunit -c config/phpunit/phpunit.xml",
+                "options": {
+                    "cwd": "dist/jwws-ac-add-on"
+                },
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "dedicated",
+                    "clear": true
+                },
+                "problemMatcher": [],
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                }
+            }
+        ]
+    }
 }

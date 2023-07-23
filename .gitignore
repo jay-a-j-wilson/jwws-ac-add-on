@@ -1,12 +1,16 @@
-/src/Deps
-/data
-
 # Mac OS
 .DS_Store
 
-# Composer
-/composer.lock
-/vendor
-
-#PhpStorm
+# PhpStorm
 /.idea
+
+# Project
+/build
+/data
+
+# Composer
+/dist/jwws-ac-add-on/composer.lock
+/dist/jwws-ac-add-on/vendor
+
+#App
+/dist/jwws-ac-add-on/src/Deps
