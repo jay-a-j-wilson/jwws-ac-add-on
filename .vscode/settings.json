@@ -1,0 +1,19 @@
+{
+    "DIST": "dist/jwws-ac-add-on/",
+
+    // Sass
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/data/css",
+            "savePathReplacementPairs": null
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/dist/jwws-ac-add-on/src/assets/css",
+            "savePathReplacementPairs": null
+        }
+    ]
+}

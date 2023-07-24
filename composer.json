@@ -1,0 +1,44 @@
+{
+    "require-dev": {
+        "jay-a-j-wilson/jwws-wp-plugin-framework": "3.3.4",
+        "phpunit/phpunit": "^9.6",
+        "wp-phpunit/wp-phpunit": "^6.2",
+        "yoast/phpunit-polyfills": "^1.0",
+        "brianhenryie/strauss": "^0.14.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JWWS\\ACA\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JWWS\\ACA\\Test\\": "test/"
+        }
+    },
+    "extra": {
+        "strauss": {
+            "target_directory": "src/vendor/",
+            "namespace_prefix": "JWWS\\ACA\\Deps\\",
+            "classmap_prefix": "JWWS_ACA_",
+            "constant_prefix": "JWWS_ACA_",
+            "packages": [
+                "jay-a-j-wilson/jwws-wp-plugin-framework"
+            ],
+            "delete_vendor_packages": true
+        }
+    },
+    "scripts": {
+        "strauss": [
+            "vendor/bin/strauss"
+        ],
+        "post-install-cmd": [
+            "@strauss",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "@strauss",
+            "composer dump-autoload"
+        ]
+    }
+}
