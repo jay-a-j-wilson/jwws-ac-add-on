@@ -1,52 +1,18 @@
-<div class="JW_ACA--l-container JW_ACA--u-gap--row-xs">
-
-    <?php if (is_iterable(value: $values)) : ?>
-        <?php $last_key = array_key_last(array: $values); ?>
-        <?php foreach ($values as $value_key => $value) : ?>
-
-            <div class="JW_ACA--c-card">
-                <div class="
-                    JW_ACA--c-card__body
-                    JW_ACA--u-flex--direction-row
-                    JW_ACA--u-flex--justify-content-between
-                    JW_ACA--u-size--height-min-20px
-                ">
-                    <span class="JW_ACA--c-card__title">
-                        #<?= $value_key + 1; ?>
-                    </span>
-                    <samp class="
-                        JW_ACA--c-display--flex
-                        JW_ACA--u-flex--align-items-center
-                        JW_ACA--u-gap--column-xs
-                    ">
-                        <?php if ($value !== null) : ?>
-                            <?php
-                            $product_id = empty($value['variation_id'])
-                                ? $value['product_id']
-                                : $value['variation_id'];
-
-                            $product = wc_get_product(the_product: $product_id);
-                            ?>
-                            <?=
-                            wp_get_attachment_image(
-                                attachment_id: $product->get_image_id(),
-                                icon: true,
-                                attr: ['class' => 'JW_ACA--u-size--12px'],
-                            );
-                            ?>
-                            <span>
-                                <?= $product->get_name(); ?>
-                                [#<?= $product_id; ?>]
-                            </span>
-                            <?php if ($value_key !== $last_key) : ?>
-                                <br>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    </samp>
-                </div>
-            </div>
-
-        <?php endforeach; ?>
-    <?php endif; ?>
-
+<div class="accordion JW_ACA--c-card">
+    <div class="
+        accordion-header
+        JW_ACA--c-card__header
+        JW_ACA--u-flex--direction-row-reverse
+        JW_ACA--u-flex--justify-content-between
+        JW_ACA--u-size--height-min-20px
+    ">
+        <span class=JW_ACA--c-card__title>
+            Default Cart Content
+        </span>
+    </div>
+    <div class="JW_ACA--c-card__body JW_ACA--u-padding--all-xs">
+        <div class="JW_ACA--l-container JW_ACA--u-gap--row-no">
+            <?php include __DIR__ . "/steps.html.php"; ?>
+        </div>
+    </div>
 </div>

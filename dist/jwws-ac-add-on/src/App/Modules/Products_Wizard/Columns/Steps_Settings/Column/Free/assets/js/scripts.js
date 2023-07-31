@@ -32,6 +32,17 @@ jQuery(function ($) {
             activeHeader: "JW_ACA--c-icon dashicons dashicons-arrow-down",
         },
     });
+    $(".accordion-steps").accordion({
+        animate: 100,
+        active: false,
+        collapsible: true,
+        header: ">.accordion-steps-header",
+        heightStyle: "content",
+        icons: {
+            header: "JW_ACA--c-icon dashicons dashicons-arrow-right",
+            activeHeader: "JW_ACA--c-icon dashicons dashicons-arrow-down",
+        },
+    });
     $(".accordion-nested").accordion({
         animate: 100,
         active: false,

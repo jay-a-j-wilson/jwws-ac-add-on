@@ -2,17 +2,12 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free;
 
-use const JWWS\ACA\{
-    ASSETS_PATH,
-    ASSETS_URL
-};
+use const JWWS\ACA\ASSETS_PATH;
+use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
-use JWWS\ACA\{
-    App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free\Helpers\View_Model\View_Model,
-    Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger,
-    Deps\JWWS\WPPF\Template\Template,
-    Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free\Helpers\View_Model\View_Model;
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 
 /**
  * @final
@@ -58,6 +53,7 @@ class Free extends Column {
 
     public function scripts(): void {
         $this->enqueue_styles();
+        $this->enqueue_scripts();
     }
 
     private function enqueue_styles(): void {
@@ -67,6 +63,24 @@ class Free extends Column {
             ver: filemtime(
                 filename: ASSETS_PATH . '/css/styles.min.css',
             ),
+        );
+    }
+
+    private function enqueue_scripts(): void {
+        $path = 'assets/js/scripts.js';
+
+        wp_enqueue_script(
+            handle: $this->uid,
+            src: plugin_dir_url(file: __FILE__) . $path,
+            deps: [
+                'jquery-ui-accordion',
+                'jquery-ui-tooltip',
+                'jquery-effects-fade',
+            ],
+            ver: filemtime(
+                filename: plugin_dir_path(file: __FILE__) . $path,
+            ),
+            in_footer: true,
         );
     }
 }

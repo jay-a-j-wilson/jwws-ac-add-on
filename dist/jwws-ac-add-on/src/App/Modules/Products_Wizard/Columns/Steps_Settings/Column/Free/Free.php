@@ -2,15 +2,11 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free;
 
-use const JWWS\ACA\{
-    ASSETS_PATH,
-    ASSETS_URL
-};
+use const JWWS\ACA\ASSETS_PATH;
+use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
-use JWWS\ACA\{
-    App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model,
-    Deps\JWWS\WPPF\Template\Template
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model\View_Model;
+use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 
 /**
  * @final
