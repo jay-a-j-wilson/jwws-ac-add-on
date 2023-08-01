@@ -4,14 +4,12 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Pro;
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
 use JWWS\ACA\App\Modules\Interfaces\Proable;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Filtering\Filtering,
-    Smart_Filtering\Smart_Filtering,
-    Sorting\Sorting
-};
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Free\Free;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\Editing;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Export\Export;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Filtering\Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Smart_Filtering\Smart_Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Sorting\Sorting;
 
 /**
  * @final

@@ -2,12 +2,10 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Helpers\View_Model;
 
+use JWWS\ACA\Deps\JWWS\WPPF\Collection\Collection;
+use JWWS\ACA\Deps\JWWS\WPPF\Collection\Standard_Collection\Standard_Collection;
 use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
-use JWWS\ACA\Deps\JWWS\WPPF\{
-    Collection\Collection,
-    Collection\Standard_Collection\Standard_Collection,
-    WordPress\Meta\Subclasses\Post_Meta\Post_Meta
-};
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -41,8 +39,7 @@ final class View_Model {
 
         return Standard_Collection::of(...$sorted_steps_settings)
             ->filter_by_value(
-                callback: fn (?array $sorted_steps_setting): bool =>
-                    $sorted_steps_setting !== null,
+                callback: fn (?array $sorted_steps_setting): bool => $sorted_steps_setting !== null,
             )
         ;
     }

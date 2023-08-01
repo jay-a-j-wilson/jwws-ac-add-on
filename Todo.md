@@ -1,6 +1,7 @@
 # TODO
 
 GLOBAL
+- Have ticks and crosses for in builder columns
 - Add more custom columns for various wizard settings.
 - Investigate Attribute Visibility and Attribute Position sorting in field
 selection drop down

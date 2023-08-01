@@ -4,10 +4,8 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard;
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\Product;
-use JWWS\ACA\App\{
-    Common\Column\Column,
-    Modules\Products_Wizard\Columns\Attach_Wizard\Column\Pro\Pro
-};
+use JWWS\ACA\App\Common\Column\Column;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\Column\Pro\Pro;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

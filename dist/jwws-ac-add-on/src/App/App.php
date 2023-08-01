@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App;
 
-use JWWS\ACA\{
-    App\Modules\Modules,
-    Deps\JWWS\WPPF\Loader\Loader
-};
+use JWWS\ACA\App\Modules\Modules;
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\Loader;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

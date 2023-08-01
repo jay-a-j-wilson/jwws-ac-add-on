@@ -2,12 +2,10 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Smart_Filtering;
 
-use ACP\Search\{
-    Comparison,
-    Operators,
-    Query\Bindings\Post,
-    Value
-};
+use ACP\Search\Comparison;
+use ACP\Search\Operators;
+use ACP\Search\Query\Bindings\Post;
+use ACP\Search\Value;
 use LogicException;
 
 final class Smart_Filtering extends Comparison {
@@ -51,8 +49,8 @@ final class Smart_Filtering extends Comparison {
 
         // Example #1 - altering the \WP_Meta_Query
         $binding->meta_query(args: [
-            'key' => 'custom_meta_key',
-            'value' => $value->get_value(),
+            'key'     => 'custom_meta_key',
+            'value'   => $value->get_value(),
             'compare' => $operator,
         ]);
 

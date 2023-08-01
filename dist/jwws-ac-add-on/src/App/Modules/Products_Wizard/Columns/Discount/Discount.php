@@ -4,10 +4,8 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount;
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\Product;
-use JWWS\ACA\App\{
-    Common\Column\Column,
-    Modules\Products_Wizard\Columns\Discount\Column\Free\Free
-};
+use JWWS\ACA\App\Common\Column\Column;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Column\Free\Free;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

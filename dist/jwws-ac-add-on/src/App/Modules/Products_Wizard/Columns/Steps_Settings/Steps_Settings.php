@@ -3,10 +3,8 @@
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings;
 
 use AC\ListScreen;
-use JWWS\ACA\App\{
-    Common\Column\Column,
-    Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Free
-};
+use JWWS\ACA\App\Common\Column\Column;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Free\Free;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

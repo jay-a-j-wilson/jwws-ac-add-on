@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Editing\Tests\Integration;
 
-use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\{
-    Column\Pro\Pro,
-    Editing\Editing
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Pro\Pro;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Editing\Editing;
 
 /**
  * @covers \JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Editing\Editing

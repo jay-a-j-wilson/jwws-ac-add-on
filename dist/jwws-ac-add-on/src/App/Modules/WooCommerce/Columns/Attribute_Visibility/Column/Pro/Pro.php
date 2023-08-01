@@ -4,14 +4,12 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\P
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
 use JWWS\ACA\App\Modules\Interfaces\Proable;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Filtering\Filtering,
-    Smart_Filtering\Smart_Filtering,
-    Sorting\Sorting
-};
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Free\Free;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Editing\Editing;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Export\Export;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Filtering\Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Smart_Filtering\Smart_Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Sorting\Sorting;
 
 /**
  * @final

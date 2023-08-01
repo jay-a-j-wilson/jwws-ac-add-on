@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\Pro\Pro;
 
 /**

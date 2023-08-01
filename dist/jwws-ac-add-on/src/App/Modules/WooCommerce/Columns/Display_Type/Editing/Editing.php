@@ -2,11 +2,9 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View,
-    View\Select
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
+use ACP\Editing\View\Select;
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Pro\Pro;
 
 /**
@@ -20,10 +18,10 @@ final class Editing implements Service {
             ->set_clear_button(enable: true)
             ->set_options(
                 options: [
-                    '' => __(text: 'Standard', domain: 'jwws'),
-                    'products' => __(text: 'Products', domain: 'jwws'),
+                    ''              => __(text: 'Standard', domain: 'jwws'),
+                    'products'      => __(text: 'Products', domain: 'jwws'),
                     'subcategories' => __(text: 'Subcategories', domain: 'jwws'),
-                    'both' => __(text: 'Both', domain: 'jwws'),
+                    'both'          => __(text: 'Both', domain: 'jwws'),
                 ],
             )
         ;

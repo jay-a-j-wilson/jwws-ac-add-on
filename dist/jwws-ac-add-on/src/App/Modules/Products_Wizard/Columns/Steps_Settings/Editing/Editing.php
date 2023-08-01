@@ -2,11 +2,9 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View,
-    View\Select
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
+use ACP\Editing\View\Select;
 use JWWS\ACA\App\Modules\Products_Wizard\Columns\Steps_Settings\Column\Pro\Pro;
 
 /**

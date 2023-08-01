@@ -4,14 +4,12 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Colu
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
 use JWWS\ACA\App\Modules\Interfaces\Proable;
-use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Filtering\Filtering,
-    Smart_Filtering\Smart_Filtering,
-    Sorting\Sorting
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Column\Free\Free;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Editing\Editing;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Export\Export;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Filtering\Filtering;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Smart_Filtering\Smart_Filtering;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Default_Cart_Content\Sorting\Sorting;
 
 /**
  * @final

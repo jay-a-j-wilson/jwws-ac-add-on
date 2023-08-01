@@ -3,11 +3,9 @@
 namespace JWWS\ACA\App\Factory;
 
 use const JWWS\ACA\PLUGIN_DIR;
-use JWWS\ACA\{
-    App\App,
-    Deps\JWWS\WPPF\Loader\Loader,
-    Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Standard_Plugin
-};
+use JWWS\ACA\App\App;
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\Loader;
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Standard_Plugin;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

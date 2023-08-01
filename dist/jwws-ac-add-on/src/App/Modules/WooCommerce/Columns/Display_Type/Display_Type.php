@@ -4,10 +4,8 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type;
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\ProductCategory;
-use JWWS\ACA\App\{
-    Common\Column\Column,
-    Modules\WooCommerce\Columns\Display_Type\Column\Pro\Pro
-};
+use JWWS\ACA\App\Common\Column\Column;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Pro\Pro;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

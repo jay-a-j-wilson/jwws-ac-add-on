@@ -2,11 +2,9 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View,
-    View\Text
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
+use ACP\Editing\View\Text;
 use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Column\Pro\Pro;
 
 /**

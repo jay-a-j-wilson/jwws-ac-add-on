@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules;
 
-use JWWS\ACA\{
-    App\Modules\Products_Wizard\Products_Wizard,
-    App\Modules\WooCommerce\WooCommerce,
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Products_Wizard;
+use JWWS\ACA\App\Modules\WooCommerce\WooCommerce;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

@@ -2,15 +2,15 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\Tests\Integration;
 
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\{
-    Editing\Editing,
-    Column\Pro\Pro
-};
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Column\Pro\Pro;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\Editing;
 
 /**
  * @covers \JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\Editing
  *
  * @internal
+ *
+ * @small
  */
 final class Construct extends \WP_UnitTestCase {
     /**
@@ -21,8 +21,8 @@ final class Construct extends \WP_UnitTestCase {
             expected: Editing::class,
             actual: new Editing(
                 column: $this->createStub(
-                    originalClassName: Pro::class
-                )
+                    originalClassName: Pro::class,
+                ),
             ),
         );
     }

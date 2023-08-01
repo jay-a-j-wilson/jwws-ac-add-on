@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Tests\Integration;
 
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\{
-    Column\Pro\Pro,
-    Editing\Editing
-};
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\Pro\Pro;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Editing;
 
 /**
  * @covers \JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Editing

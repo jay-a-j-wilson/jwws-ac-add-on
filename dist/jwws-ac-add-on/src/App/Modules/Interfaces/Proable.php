@@ -2,14 +2,12 @@
 
 namespace JWWS\ACA\App\Modules\Interfaces;
 
-use ACP\{
-    ConditionalFormat\Formattable,
-    Editing\Editable,
-    Export\Exportable,
-    Filtering\Filterable,
-    Search\Searchable,
-    Sorting\Sortable,
-};
+use ACP\ConditionalFormat\Formattable;
+use ACP\Editing\Editable;
+use ACP\Export\Exportable;
+use ACP\Filtering\Filterable;
+use ACP\Search\Searchable;
+use ACP\Sorting\Sortable;
 
 interface Proable extends
     Editable,

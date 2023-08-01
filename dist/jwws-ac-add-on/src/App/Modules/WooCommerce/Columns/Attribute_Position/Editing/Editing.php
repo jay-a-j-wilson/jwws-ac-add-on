@@ -2,15 +2,11 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View
-};
-use JWWS\ACA\{
-    App\Modules\WooCommerce\Columns\Attribute_Position\Column\Pro\Pro,
-    Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Column\Pro\Pro;
 use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 
 /**
  * Editing class. Adds editing functionality to the column.

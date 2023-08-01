@@ -4,14 +4,12 @@ namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\P
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
 use JWWS\ACA\App\Modules\Interfaces\Proable;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Filtering\Filtering,
-    Smart_Filtering\Smart_Filtering,
-    Sorting\Sorting
-};
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Column\Free\Free;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Editing\Editing;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Export\Export;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Filtering\Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Smart_Filtering\Smart_Filtering;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Sorting\Sorting;
 
 /**
  * @final

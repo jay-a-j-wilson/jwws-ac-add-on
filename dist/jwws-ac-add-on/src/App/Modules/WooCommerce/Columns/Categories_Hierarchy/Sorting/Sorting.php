@@ -3,11 +3,9 @@
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Sorting;
 
 use AC\Column;
-use ACP\Sorting\{
-    AbstractModel,
-    Sorter,
-    Type\DataType
-};
+use ACP\Sorting\AbstractModel;
+use ACP\Sorting\Sorter;
+use ACP\Sorting\Type\DataType;
 
 /**
  * Sorting class. Adds sorting functionality to the column.
@@ -53,7 +51,8 @@ final class Sorting extends AbstractModel {
         }
 
         $ids = (new Sorter())
-            ->sort(values: $array, data_type: $this->data_type);
+            ->sort(values: $array, data_type: $this->data_type)
+        ;
 
         if ($this->get_order() === 'DESC') {
             $ids = array_reverse($ids);

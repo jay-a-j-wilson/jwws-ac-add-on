@@ -2,7 +2,7 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Filtering;
 
-use \ACP\Filtering\Model;
+use ACP\Filtering\Model;
 
 final class Filtering extends Model {
     public function get_filtering_data() {
@@ -32,7 +32,7 @@ final class Filtering extends Model {
         // Example of Meta Query filter
         $vars['meta_query'][] = [
             // For Meta columns, you can use $column->get_meta_key()
-            'key' => 'meta_key',
+            'key'   => 'meta_key',
             'value' => $this->get_filter_value(),
         ];
 

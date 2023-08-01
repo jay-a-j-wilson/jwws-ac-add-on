@@ -1,13 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Sorting;
 
 use AC\Column;
-use ACP\Sorting\{
-    AbstractModel,
-    Sorter,
-    Type\DataType
-};
+use ACP\Sorting\AbstractModel;
+use ACP\Sorting\Sorter;
+use ACP\Sorting\Type\DataType;
 
 /**
  * Sorting class. Adds sorting functionality to the column.

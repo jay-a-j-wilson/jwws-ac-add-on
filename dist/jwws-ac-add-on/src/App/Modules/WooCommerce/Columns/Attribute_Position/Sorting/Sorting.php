@@ -3,11 +3,9 @@
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Sorting;
 
 use AC\Column;
-use ACP\Sorting\{
-    AbstractModel,
-    Sorter,
-    Type\DataType
-};
+use ACP\Sorting\AbstractModel;
+use ACP\Sorting\Sorter;
+use ACP\Sorting\Type\DataType;
 
 /**
  * Sorting class. Adds sorting functionality to the column.

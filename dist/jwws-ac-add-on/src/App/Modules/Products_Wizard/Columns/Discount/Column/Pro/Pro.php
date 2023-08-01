@@ -4,14 +4,12 @@ namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Column\Pro;
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
 use JWWS\ACA\App\Modules\Interfaces\Proable;
-use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\{
-    Column\Free\Free,
-    Editing\Editing,
-    Export\Export,
-    Filtering\Filtering,
-    Smart_Filtering\Smart_Filtering,
-    Sorting\Sorting
-};
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Column\Free\Free;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Editing\Editing;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Export\Export;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Filtering\Filtering;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Smart_Filtering\Smart_Filtering;
+use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Sorting\Sorting;
 
 /**
  * @final

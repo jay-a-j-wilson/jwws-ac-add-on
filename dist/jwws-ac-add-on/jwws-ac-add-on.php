@@ -18,6 +18,7 @@ if (! defined(constant_name: 'ABSPATH')) {
 }
 
 require_once __DIR__ . '/src/vendor/autoload.php';
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 \define(__NAMESPACE__ . '\DOMAIN', 'jwws');

@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
 use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Column\Pro\Pro;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 
@@ -27,7 +25,7 @@ final class Editing implements Service {
         return (new View\Select())
             ->set_clear_button(enable: true)
             ->set_options(options: [
-                true => __(text: 'Yes', domain: 'jwws'),
+                true  => __(text: 'Yes', domain: 'jwws'),
                 false => __(text: 'No', domain: 'jwws'),
             ])
         ;

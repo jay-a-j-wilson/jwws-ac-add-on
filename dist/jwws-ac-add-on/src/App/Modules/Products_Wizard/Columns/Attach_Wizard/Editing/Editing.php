@@ -2,10 +2,8 @@
 
 namespace JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\Editing;
 
-use ACP\Editing\ {
-    Service,
-    View
-};
+use ACP\Editing\Service;
+use ACP\Editing\View;
 use JWWS\ACA\App\Modules\Products_Wizard\Columns\Attach_Wizard\Column\Pro\Pro;
 
 /**
@@ -20,11 +18,11 @@ final class Editing implements Service {
     public function get_view(string $context): ?View {
         $wizards = get_posts(
             args: [
-                'post_type' => 'wc_product_wizard',
+                'post_type'   => 'wc_product_wizard',
                 'post_status' => 'publish',
                 'numberposts' => -1,
-                'orderby' => 'menu_order',
-                'order' => 'ASC',
+                'orderby'     => 'menu_order',
+                'order'       => 'ASC',
             ],
         );
 
