@@ -2,10 +2,10 @@
 
 namespace JWWS\ACA\App\Modules\WooCommerce\Columns;
 
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Attribute_Position;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Visibility\Attribute_Visibility;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Categories_Hierarchy\Categories_Hierarchy;
-use JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Display_Type;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Collaborators\Attribute_Position\Attribute_Position;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Collaborators\Attribute_Visibility\Attribute_Visibility;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Collaborators\Categories_Hierarchy\Categories_Hierarchy;
+use JWWS\ACA\App\Modules\WooCommerce\Columns\Collaborators\Display_Type\Display_Type;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f8138da-2b51-4293-80dd-d1449284b73b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Attach_Wizard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Attach_Wizard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Attach_Wizard/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Columns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/Helpers/View_Model/View_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Free/Helpers/View_Model/View_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Free/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/templates/steps.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Free/templates/template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Default_Cart_Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Default_Cart_Content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Default_Cart_Content/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Default_Cart_Content/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Free/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Column/Free/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Free/templates/template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Discount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Discount/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Discount/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/Helpers/Boolean/Boolean.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Free/Helpers/Boolean/Boolean.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/Helpers/Boolean/templates/template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/Helpers/View_Model/View_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Free/Helpers/View_Model/View_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Free/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/bottom_description.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/description.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/description_auto_tags.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/nav_title.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/thumbnail.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/basic/title.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/add_to_cart_by_quantity.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/all_selected_items_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/dont_add_to_cart.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/dont_add_to_cart_products.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/hide_choose_element.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/max_product_quantity.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/max_products_selected.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/max_total_products_quantity.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/min_product_quantity.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/min_products_selected.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/min_total_products_quantity.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/no_selected_items_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/product_quantity_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/selected_items_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/several_products.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/sold_individually.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/templates/selected_items_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/cart/templates/validation.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/add_to_cart_behavior.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/add_to_cart_button_class.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/add_to_cart_button_text.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/buttons_nonblocking_requests.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/enable_add_to_cart_button.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/enable_remove_button.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/enable_update_button.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/hide_edit_button.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/hide_remove_button.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/remove_button_class.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/remove_button_text.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/update_button_class.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/controls/update_button_text.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/apply_default_filters.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/filter_is_expanded.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/filter_position.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/filter_thumbnail_size.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/filters.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/templates/filter.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/filters/use_step_filters.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/group.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/attributes.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/availability_rules.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/categories.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/enable_order_by_dropdown.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/order.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/order_by.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/products_per_page.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/query/templates/availability_rule.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/tooltip.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/enable_thumbnail_link.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/enable_title_link.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/item_description_source.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/item_template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/merge_thumbnail_with_gallery.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_attributes.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_availabilities.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_descriptions.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_galleries.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_prices.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_sku.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_tags.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/show_thumbnails.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/thumbnail_size.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/groups/view/variations_type.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/selected_items_by_default.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/steps.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Free/templates/template.html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Steps_Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Steps_Settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Steps_Settings/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Collaborators/Steps_Settings/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Attribute_Position.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Attribute_Position.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Position/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Position/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Attribute_Visibility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Attribute_Visibility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Attribute_Visibility/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Attribute_Visibility/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Categories_Hierarchy.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Categories_Hierarchy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/Tests/Unit/New_Instance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Categories_Hierarchy/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Categories_Hierarchy/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Columns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Column/Free/Free.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Column/Free/Free.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Column/Free/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Column/Free/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Column/Pro/Pro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Column/Pro/Pro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Column/Pro/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Column/Pro/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Display_Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Display_Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Editing/Editing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Editing/Editing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Editing/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Editing/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Export/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Export/Export.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Export/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Export/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Filtering/Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Filtering/Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Smart_Filtering/Smart_Filtering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Smart_Filtering/Smart_Filtering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Smart_Filtering/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Smart_Filtering/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Sorting/Sorting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Sorting/Sorting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Sorting/Tests/Integration/Construct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Sorting/Tests/Integration/Construct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Display_Type/Tests/Unit/New_Instance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Modules/WooCommerce/Columns/Collaborators/Display_Type/Tests/Unit/New_Instance.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/json-mapper/json-mapper" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/wp-phpunit/wp-phpunit" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/seld/signal-handler" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/brianhenryie/strauss" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/yoast/phpunit-polyfills" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2TNb9iB333HUZfU4G5o4Q9Rav48" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column/Free" />
+      <recent name="$PROJECT_DIR$/src/App/Modules/Products_Wizard/Columns/Attach_Wizard/Column" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f8138da-2b51-4293-80dd-d1449284b73b" name="Changes" comment="" />
+      <created>1690886335686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690886335686</updated>
+      <workItem from="1690886336696" duration="547000" />
+      <workItem from="1690887006970" duration="65000" />
+      <workItem from="1690887075843" duration="452000" />
+      <workItem from="1691038205474" duration="458000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
