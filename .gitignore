@@ -3,6 +3,7 @@
 
 # PhpStorm
 /.idea
+/dist/jwws-ac-add-on/.idea
 
 # Project
 /data
