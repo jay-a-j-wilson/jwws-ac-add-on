@@ -2,7 +2,7 @@
 
 namespace JWWS\ACA\App;
 
-use JWWS\ACA\App\Modules\Modules;
+use JWWS\ACA\App\Collabs\Modules\Modules;
 use JWWS\ACA\Deps\JWWS\WPPF\Loader\Loader;
 
 if (! defined(constant_name: 'ABSPATH')) {

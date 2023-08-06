@@ -20,7 +20,9 @@ final class Of extends TestCase {
     public function pass(): void {
         self::assertInstanceOf(
             expected: App::class,
-            actual: App::of(loader: $this->createStub(Loader::class)),
+            actual: App::of(
+                loader: $this->createStub(originalClassName: Loader::class)
+            ),
         );
     }
 }
