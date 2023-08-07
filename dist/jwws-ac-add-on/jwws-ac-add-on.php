@@ -3,11 +3,12 @@
 namespace JWWS\ACA;
 
 use JWWS\ACA\App\Factory\Factory as App_Factory;
+use function define;
 
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      4.0.1
+ * Version:      4.1.0
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later
@@ -21,10 +22,10 @@ require_once __DIR__ . '/src/vendor/autoload.php';
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-\define(__NAMESPACE__ . '\DOMAIN', 'jwws');
-\define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
+define(__NAMESPACE__ . '\DOMAIN', 'jwws');
+define(__NAMESPACE__ . '\VENDOR_PREFIX', 'jwws__');
 
-\define(
+define(
     constant_name: __NAMESPACE__ . '\PLUGIN_DIR',
     value: basename(
         path: plugin_dir_path(
@@ -33,11 +34,11 @@ require_once __DIR__ . '/vendor/autoload.php';
     ),
 );
 
-\define(
+define(
     constant_name: __NAMESPACE__ . '\ASSETS_URL',
     value: plugin_dir_url(file: __FILE__) . '/src/assets',
 );
-\define(
+define(
     constant_name: __NAMESPACE__ . '\ASSETS_PATH',
     value: plugin_dir_path(file: __FILE__) . 'src/assets',
 );

@@ -6,15 +6,12 @@ use ACP\Editing\Service;
 use ACP\Editing\View;
 use ACP\Editing\View\Text;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Pro\Pro;
-use JWWS\ACA\App\Modules\Products_Wizard\Columns\Discount\Editing\JWWS;
 
 /**
  * Editing class. Adds editing functionality to the column.
  */
 final class Editing implements Service {
     /**
-     * @param JWWS\ACA\App\Modules\Columns\Discount\Column\Pro\Pro $column
-     *
      * @return void
      */
     public function __construct(private Pro $column) {}

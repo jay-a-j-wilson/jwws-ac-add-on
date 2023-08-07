@@ -4,15 +4,16 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Display_Value\Display_Value;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use function __;
+use function array_key_exists;
 use function wc_get_product;
 
 /**
  * @final
  */
 class Free extends Column {
-    private string $error_message = 'Attribute not assigned';
-
     /**
      * @return void
      */
@@ -34,53 +35,77 @@ class Free extends Column {
 
     /**
      * Returns the display value for the column.
-     *
-     * @param mixed $product_id ID
-     *
-     * @return string Value
      */
     public function get_value(mixed $product_id): string {
-        $value = $this->get_raw_value(product_id: $product_id);
+        switch ($this->get_raw_value(product_id: $product_id)) {
+            case '0':
+                return ac_helper()
+                    ->icon
+                    ->no(tooltip: __(text: 'No'))
+                ;
 
-        return $value === $this->error_message
-            ? "<span style='color: #999'>{$value}</span>"
-            : "{$value}";
+            case '1':
+                return ac_helper()
+                    ->icon
+                    ->yes(tooltip: __(text: 'Yes'))
+                ;
+
+            case 'error_0':
+                return Display_Value::of(
+                    value: 'Attribute not selected in column settings.',
+                )
+                    ->grey()
+                ;
+
+            case 'error_1':
+                return Display_Value::of(
+                    value: "'{$this->attribute_label()}' attribute not assigned.",
+                )
+                    ->grey()
+                ;
+
+            default:
+                return $this->get_empty_char();
+        }
+    }
+
+    private function attribute_label(): string {
+        return wc_attribute_label(
+            name: $this->get_option(key: 'product_taxonomy_display'),
+        );
     }
 
     /**
-     * Get the raw, underlying value for the column
+     * Get the raw, underlying value for the column.
+     *
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
-     *
-     * @param mixed $product_id ID
-     *
-     * @return mixed Value
      */
     public function get_raw_value(mixed $product_id): mixed {
-        $attribute_key = $this->get_option(key: 'product_taxonomy_display');
+        $attribute = $this->get_option(key: 'product_taxonomy_display');
 
-        if (empty($attribute_key)) {
-            return __(
-                text: 'Attribute not selected in column settings.',
-                domain: 'jwws',
-            );
+        if (empty($attribute)) {
+            return 'error_0';
         }
 
         $attributes = wc_get_product(the_product: $product_id)
             ->get_attributes()
         ;
 
-        if (! \array_key_exists(key: $attribute_key, array: $attributes)) {
-            return __(text: $this->error_message, domain: 'jwws');
+        if (! array_key_exists(key: $attribute, array: $attributes)) {
+            return 'error_1';
         }
 
-        return ($attributes[$attribute_key]->get_visible() == 1)
-            ? __(text: 'Yes', domain: 'jwws')
-            : __(text: 'No', domain: 'jwws');
+        // Error_Logger::log_verbose($attributes[$attribute]->get_visible());
+
+        return ($attributes[$attribute]->get_visible() == 1)
+            ? '1'
+            : '0';
     }
 
     /**
      * (Optional) Create extra settings for you column.
+     *
      * These are visible when editing a column.
      * You can remove this function is you do not use it!
      *

@@ -1,10 +1,10 @@
 # TODO
 
 GLOBAL
-- Have ticks and crosses for in builder columns
 - Add more custom columns for various wizard settings.
 - Investigate Attribute Visibility and Attribute Position sorting in field
 selection drop down
+- Refactor column messages to use Display_Value class.
 
 Attach Wizard
 - Fix sorting

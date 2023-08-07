@@ -38,7 +38,8 @@ class Free extends Column {
     }
 
     /**
-     * Get the raw, underlying value for the column
+     * Get the raw, underlying value for the column.
+     *
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
      */

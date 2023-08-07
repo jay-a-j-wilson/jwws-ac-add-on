@@ -2,15 +2,15 @@
 /**
  * @license proprietary?
  *
- * Modified by __root__ on 06-August-2023 using Strauss.
+ * Modified by __root__ on 07-August-2023 using Strauss.
  * @see https://github.com/BrianHenryIE/strauss
  */ declare(strict_types=1);
 
 namespace JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Subclasses\Standard_Plugin\Tests\Integration\Dependencies;
 
 use JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Plugin;
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\Tests\Integration\Fixtures\Akismet_Plugin_Factory;
-use JWWS\ACA\Deps\JWWS\WPPF\Loader\Tests\Integration\Fixtures\Basic_Plugin_Factory;
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\Standard_Loader\Tests\Integration\Fixtures\Akismet_Plugin_Factory;
+use JWWS\ACA\Deps\JWWS\WPPF\Loader\Standard_Loader\Tests\Integration\Fixtures\Basic_Plugin_Factory;
 
 /**
  * @covers \JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Standard_Plugin

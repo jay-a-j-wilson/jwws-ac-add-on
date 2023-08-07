@@ -2,6 +2,8 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Default_Cart_Content\Column\Free;
 
+use const JWWS\ACA\ASSETS_PATH;
+use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Default_Cart_Content\Column\Free\Helpers\View_Model\View_Model;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
@@ -9,8 +11,6 @@ use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function wp_enqueue_script;
 use function wp_enqueue_style;
-use const JWWS\ACA\ASSETS_PATH;
-use const JWWS\ACA\ASSETS_URL;
 
 /**
  * @final

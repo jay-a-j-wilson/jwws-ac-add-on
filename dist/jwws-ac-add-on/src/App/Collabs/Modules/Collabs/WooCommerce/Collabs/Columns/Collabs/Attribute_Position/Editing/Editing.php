@@ -4,9 +4,10 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use ACP\Editing\Service;
 use ACP\Editing\View;
+use ACP\Editing\View\Number;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Position\Column\Pro\Pro;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
-use function JWWS\ACA\App\Modules\WooCommerce\Columns\Attribute_Position\Editing\update_post_meta;
+use function update_post_meta;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -24,13 +25,13 @@ final class Editing implements Service {
             return null;
         }
 
-        return (new View\Number())
+        return (new Number())
             ->set_min(min: 0)
         ;
     }
 
     public function get_value(int $product_id): mixed {
-        return $this->column->get_value(product_id: $product_id);
+        return $this->column->get_raw_value(product_id: $product_id);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns;
 
+use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Builder\Attribute_Builder;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Position\Attribute_Position;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Attribute_Visibility;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Categories_Hierarchy\Categories_Hierarchy;
@@ -25,6 +26,7 @@ final class Columns {
     private function __construct() {}
 
     public function hook(): void {
+        Attribute_Builder::new_instance()->hook();
         Attribute_Position::new_instance()->hook();
         Attribute_Visibility::new_instance()->hook();
         Categories_Hierarchy::new_instance()->hook();
