@@ -5,7 +5,6 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Display_Value\Display_Value;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use function __;
 use function array_key_exists;
 use function wc_get_product;
@@ -95,8 +94,6 @@ class Free extends Column {
         if (! array_key_exists(key: $attribute, array: $attributes)) {
             return 'error_1';
         }
-
-        // Error_Logger::log_verbose($attributes[$attribute]->get_visible());
 
         return ($attributes[$attribute]->get_visible() == 1)
             ? '1'

@@ -8,6 +8,7 @@ use ACP\Editing\Service;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Builder\Column\Pro\Pro;
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function get_terms;
 use function wp_set_object_terms;
@@ -53,24 +54,41 @@ final class Editing implements Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        $attribute = $this->column->get_option(key: 'product_taxonomy_display');
+        $attr = $this->column->get_option(key: 'product_taxonomy_display');
 
-        foreach (get_terms(args: $attribute) as $term) {
-            if ($term->name === $data) {
-                wp_set_object_terms(
-                    object_id: $id,
-                    terms: $term->term_id,
-                    taxonomy: $term->taxonomy,
-                );
+        $attrs = Post_Meta::of(id: $id)
+            ->find_by_key(key: '_product_attributes', single: true)
+        ;
 
-                return;
+        if (empty($data)) {
+            unset($attrs[$attr]);
+        } else {
+            foreach (get_terms(args: $attr) as $term) {
+                if ($term->name === $data) {
+                    wp_set_object_terms(
+                        object_id: $id,
+                        terms: [$term->term_id],
+                        taxonomy: $term->taxonomy,
+                    );
+
+                    $attrs[$attr] = [
+                        'name'          => $attr,
+                        'value'         => '',
+                        'position'      => $attrs[$attr]['position'] ?? 0,
+                        'is_visible'    => $attrs[$attr]['is_visible'] ?? 0,
+                        'is_variation'  => $attrs[$attr]['is_variation'] ?? 0,
+                        'is_taxonomy'   => $attrs[$attr]['is_taxonomy'] ?? 1,
+                    ];
+
+                    break;
+                }
             }
         }
 
-        wp_set_object_terms(
-            object_id: $id,
-            terms: [],
-            taxonomy: $attribute,
+        update_post_meta(
+            post_id: $id,
+            meta_key: '_product_attributes',
+            meta_value: $attrs,
         );
     }
 }
