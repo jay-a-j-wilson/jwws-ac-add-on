@@ -40,6 +40,7 @@ final class Editing implements Service {
                 ),
             ),
         ))
+            ->set_revisioning(enable: false)
             ->set_clear_button(enable: true)
         ;
     }
