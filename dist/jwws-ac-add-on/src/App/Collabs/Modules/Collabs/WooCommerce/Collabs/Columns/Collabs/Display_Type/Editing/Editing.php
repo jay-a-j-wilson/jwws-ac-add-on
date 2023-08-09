@@ -6,8 +6,8 @@ use ACP\Editing\Service;
 use ACP\Editing\View;
 use ACP\Editing\View\Select;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Display_Type\Column\Pro\Pro;
-use function JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\__;
-use function JWWS\ACA\App\Modules\WooCommerce\Columns\Display_Type\Editing\update_term_meta;
+use function __;
+use function update_term_meta;
 
 /**
  * Editing class. Adds editing functionality to the column.

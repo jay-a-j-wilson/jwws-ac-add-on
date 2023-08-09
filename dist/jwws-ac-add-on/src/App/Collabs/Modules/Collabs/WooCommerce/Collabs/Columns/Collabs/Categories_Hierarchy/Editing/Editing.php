@@ -28,7 +28,7 @@ final class Editing implements Service {
         // $view->set_placeholder( 'Custom placeholder' );
         // $view->set_required( true );
 
-        // (Optional) return a different view or disable editin based on context: bulk or single (index)
+        // (Optional) return a different view or disable editing based on context: bulk or single (index)
         // $context === Service::CONTEXT_BULK
 
         return null;
