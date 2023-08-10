@@ -8,6 +8,7 @@ use ACP\Editing\Service;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Builder\Column\Pro\Pro;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function get_terms;
@@ -32,7 +33,7 @@ final class Editing implements Service {
         return (new Toggle(
             options: new ToggleOptions(
                 disabled: new Option(
-                    value: 'No',
+                    value: '',
                     label: __(text: 'No'),
                 ),
                 enabled: new Option(
@@ -42,7 +43,7 @@ final class Editing implements Service {
             ),
         ))
             ->set_revisioning(enable: false)
-            ->set_clear_button(enable: true)
+            ->set_clear_button(enable: false)
         ;
     }
 
@@ -57,13 +58,18 @@ final class Editing implements Service {
         $attr = $this->column->get_option(key: 'product_taxonomy_display');
 
         $attrs = Post_Meta::of(id: $id)
-            ->find_by_key(key: '_product_attributes', single: true)
+            ->find_by_key(key: '_product_attributes')
         ;
 
         if (empty($data)) {
             unset($attrs[$attr]);
         } else {
-            foreach (get_terms(args: $attr) as $term) {
+            $terms = get_terms(args: [
+                'taxonomy'   => $attr,
+                'hide_empty' => false,
+            ]);
+
+            foreach ($terms as $term) {
                 if ($term->name === $data) {
                     wp_set_object_terms(
                         object_id: $id,
@@ -74,16 +80,18 @@ final class Editing implements Service {
                     $attrs[$attr] = [
                         'name'          => $attr,
                         'value'         => '',
-                        'position'      => $attrs[$attr]['position'] ?? 0,
-                        'is_visible'    => $attrs[$attr]['is_visible'] ?? 0,
+                        'position'      => $attrs[$attr]['position']     ?? 0,
+                        'is_visible'    => $attrs[$attr]['is_visible']   ?? 0,
                         'is_variation'  => $attrs[$attr]['is_variation'] ?? 0,
-                        'is_taxonomy'   => $attrs[$attr]['is_taxonomy'] ?? 1,
+                        'is_taxonomy'   => $attrs[$attr]['is_taxonomy']  ?? 1,
                     ];
 
                     break;
                 }
             }
         }
+
+        Error_Logger::log_verbose($attrs);
 
         update_post_meta(
             post_id: $id,

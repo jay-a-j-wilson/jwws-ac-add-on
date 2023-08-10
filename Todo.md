@@ -1,13 +1,11 @@
 # TODO
 
 GLOBAL
+- Check sorting logic works
 - Add more custom columns for various wizard settings.
 - Investigate Attribute Visibility and Attribute Position sorting in field
 selection drop down
 - Refactor column messages to use Display_Value class.
-
-Attach Wizard
-- Fix sorting
 
 Discount:
 - Add trash check for builder.

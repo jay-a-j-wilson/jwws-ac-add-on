@@ -43,7 +43,7 @@ final class Sorting extends AbstractModel {
              * For example:
              * $value = get_post_meta( $id, '_my_custom_field_example', true );
              */
-            $value = $this->column->get_value(id: $id);
+            $value = $this->column->get_value($id);
 
             // Stop editing.
 
