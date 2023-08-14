@@ -33,7 +33,7 @@ final class Editing implements Service {
         return (new Toggle(
             options: new ToggleOptions(
                 disabled: new Option(
-                    value: '',
+                    value: 'No',
                     label: __(text: 'No'),
                 ),
                 enabled: new Option(
