@@ -91,8 +91,6 @@ final class Editing implements Service {
             }
         }
 
-        Error_Logger::log_verbose($attrs);
-
         update_post_meta(
             post_id: $id,
             meta_key: '_product_attributes',

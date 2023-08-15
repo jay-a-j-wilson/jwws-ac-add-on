@@ -6,6 +6,7 @@ GLOBAL
 - Investigate Attribute Visibility and Attribute Position sorting in field
 selection drop down
 - Refactor column messages to use Display_Value class.
+- Can't bulk edit after sorting
 
 Discount:
 - Add trash check for builder.
