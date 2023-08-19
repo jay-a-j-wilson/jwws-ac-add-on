@@ -57,9 +57,19 @@ final class Editing implements Service {
     public function update(int $id, mixed $data): void {
         $attr = $this->column->get_option(key: 'product_taxonomy_display');
 
+        Error_Logger::log_verbose($attr);
+
         $attrs = Post_Meta::of(id: $id)
             ->find_by_key(key: '_product_attributes')
         ;
+
+        // Converts $attrs to array if empty string.
+        // Possible refactor upstream.
+        if (empty($attrs)) {
+            $attrs = [];
+        }
+
+        Error_Logger::log_verbose($attrs);
 
         if (empty($data)) {
             unset($attrs[$attr]);
