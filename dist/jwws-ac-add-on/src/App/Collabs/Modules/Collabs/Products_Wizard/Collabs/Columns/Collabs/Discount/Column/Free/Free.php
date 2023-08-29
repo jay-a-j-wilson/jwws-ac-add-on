@@ -3,9 +3,9 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free;
 
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free\Helpers\Discount\Discount;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use function __;
-use function get_the_title;
 use function wc_get_product;
 use function wp_enqueue_style;
 
@@ -14,7 +14,7 @@ use function wp_enqueue_style;
  */
 class Free extends Column {
     /**
-     * @return void 
+     * @return void
      */
     public function __construct(
         readonly private string $uid = 'jwws_aca-pw-column-discount',
@@ -50,47 +50,15 @@ class Free extends Column {
                     value: $this->format(discounts: $discounts),
                 )
                 ->output()
-        ;
+            ;
     }
 
     private function format(array $discounts): array {
         foreach ($discounts as $key => $value) {
-            $discounts[$key]['id'] = $this->format_id(discount: $value);
-            $discounts[$key]['value'] = $this->format_value(discount: $value);
-            $discounts[$key]['type'] = $this->format_type(discount: $value);
+            $discounts[$key] = Discount::of(discount: $value);
         }
 
         return $discounts;
-    }
-
-    private function format_id(mixed $discount): string {
-        return empty($discount['id'])
-            ? 'All'
-            : get_the_title(post: $discount['id']);
-    }
-
-    private function format_value(mixed $discount): string {
-        switch ($discount['type']) {
-            case 'percentage':
-                return '-' . $discount['value'] . '%';
-
-            case 'precise_price':
-                return '$' . $discount['value'];
-
-            case 'fixed':
-                return '-$' . $discount['value'];
-
-            default:
-                return $discount['value'];
-        }
-    }
-
-    private function format_type(mixed $discount): string {
-        return str_replace(
-            search: '_',
-            replace: ' ',
-            subject: ucfirst(string: $discount['type']),
-        );
     }
 
     /**

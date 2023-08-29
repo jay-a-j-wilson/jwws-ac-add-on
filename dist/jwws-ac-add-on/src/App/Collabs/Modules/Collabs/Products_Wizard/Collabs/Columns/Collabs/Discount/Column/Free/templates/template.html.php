@@ -5,12 +5,16 @@
         <th>Value</th>
     </tr>
     <?php foreach ($discounts as $discount): ?>
-        <tr <?= $discount['id'] === 'All' ? 'class="jwws-italic"' : ''; ?>>
-            <?php foreach ($discount as $key => $value): ?>
-                <td <?= $key === 'id' ? 'class="jwws-bold"' : ''; ?>>
-                    <?=$value; ?>
-                </td>
-            <?php endforeach; ?>
+        <tr <?= $discount->wizard() === 'All' ? 'class="jwws-italic"' : ''; ?>>
+            <td class="jwws-bold">
+                <?= $discount->wizard(); ?>
+            </td>
+            <td>
+                <?= $discount->type(); ?>
+            </td>
+            <td>
+                <?= $discount->value(); ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
