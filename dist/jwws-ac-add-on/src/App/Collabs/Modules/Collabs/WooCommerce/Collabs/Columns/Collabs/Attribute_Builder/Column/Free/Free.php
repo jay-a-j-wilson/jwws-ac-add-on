@@ -37,7 +37,7 @@ class Free extends Column {
      */
     public function get_value(mixed $product_id): string {
         switch ($this->get_raw_value(product_id: $product_id)) {
-            case 'No':
+            case '':
                 return ac_helper()
                     ->icon
                     ->no(tooltip: __(text: 'No'))
