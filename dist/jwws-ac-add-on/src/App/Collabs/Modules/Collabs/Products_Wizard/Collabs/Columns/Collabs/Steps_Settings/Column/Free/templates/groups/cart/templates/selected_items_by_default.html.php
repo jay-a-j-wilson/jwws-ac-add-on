@@ -3,7 +3,7 @@
     <?php foreach ($selected_items_by_default as $key => $item_id) : ?>
         <?php $default_product = wc_get_product(the_product: $item_id); ?>
         <samp class="
-            JW_ACA--c-display--flex
+            JW_ACA--u-display--flex
             JW_ACA--u-flex--align-items-center
             JW_ACA--u-gap--column-xs
         ">

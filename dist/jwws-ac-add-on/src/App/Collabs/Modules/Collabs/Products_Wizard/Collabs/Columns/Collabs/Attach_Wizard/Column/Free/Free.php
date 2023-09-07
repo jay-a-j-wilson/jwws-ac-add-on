@@ -21,7 +21,7 @@ class Free extends Column {
             ->set_type(type: $this->uid)
             ->set_group(group: 'jwws_aca-products_wizard')
             // Default column label.
-            ->set_label(label: __(text: 'Attach Wizard', domain: 'jwws'))
+            ->set_label(label: __(text: 'Attach Wizard [Custom]', domain: 'jwws'))
         ;
     }
 

@@ -15,7 +15,7 @@
                         #<?= $value_key + 1; ?>
                     </span>
                     <samp class="
-                        JW_ACA--c-display--flex
+                        JW_ACA--u-display--flex
                         JW_ACA--u-flex--align-items-center
                         JW_ACA--u-gap--column-xs
                     ">

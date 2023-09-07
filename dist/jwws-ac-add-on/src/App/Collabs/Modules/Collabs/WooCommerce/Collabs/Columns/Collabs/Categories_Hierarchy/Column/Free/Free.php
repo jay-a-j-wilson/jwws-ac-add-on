@@ -2,6 +2,7 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Categories_Hierarchy\Column\Free;
 
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Display_Value\Display_Value;
 use AC\Column;
 use function __;
 use function get_ancestors;
@@ -28,7 +29,7 @@ class Free extends Column {
             // Default column label.
             ->set_label(
                 label: __(
-                    text: 'Categories Hierarchy (Custom)',
+                    text: 'Categories (Hierarchy) [Custom]',
                     domain: 'jwws',
                 ),
             )
@@ -79,6 +80,7 @@ class Free extends Column {
             $output[] = implode(
                 array: $all_categories,
                 separator: ' <span style="color: #999">&raquo;</span> ',
+                // separator: ' ' . Display_Value::of(value: '&raquo;')->grey() . ' '
             );
         }
 

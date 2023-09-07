@@ -2,7 +2,7 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard;
 
-use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\{Collabs\Group\Group};
+use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Group\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Columns;
 
 if (! defined(constant_name: 'ABSPATH')) {

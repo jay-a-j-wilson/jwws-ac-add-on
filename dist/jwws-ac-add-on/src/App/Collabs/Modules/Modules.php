@@ -4,6 +4,7 @@ namespace JWWS\ACA\App\Collabs\Modules;
 
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Products_Wizard;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\WooCommerce;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\YITH_Cost_Of_Goods;
 use function is_plugin_active;
 
 if (! defined(constant_name: 'ABSPATH')) {
@@ -29,6 +30,10 @@ final class Modules {
 
             if (is_plugin_active(plugin: 'woocommerce-products-wizard/woocommerce-products-wizard.php')) {
                 Products_Wizard::new_instance()->hook();
+            }
+
+            if (is_plugin_active(plugin: 'yith-cost-of-goods-for-woocommerce-premium/init.php')) {
+                YITH_Cost_Of_Goods::new_instance()->hook();
             }
         }
     }

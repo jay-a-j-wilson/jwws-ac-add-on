@@ -23,7 +23,7 @@ class Free extends Column {
             ->set_type(type: $this->uid)
             ->set_group(group: 'jwws_aca-products_wizard')
             // Default column label.
-            ->set_label(label: __(text: 'Discount', domain: 'jwws'))
+            ->set_label(label: __(text: 'Discount [Custom]', domain: 'jwws'))
         ;
     }
 

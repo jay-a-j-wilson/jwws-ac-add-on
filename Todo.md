@@ -9,6 +9,9 @@ selection drop down
 - Can't bulk edit after sorting
 - Ajax load accordion columns for speed
 
+Profit Margin
+- create column
+
 Discount:
 - Add trash check for builder.
 - Add for variable product.

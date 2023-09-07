@@ -22,7 +22,7 @@ class Free extends Column {
             ->set_type(type: $this->uid)
             ->set_group(group: 'woocommerce')
             // Default column label.
-            ->set_label(label: __(text: 'Display Type', domain: 'jwws'))
+            ->set_label(label: __(text: 'Display Type [Custom]', domain: 'jwws'))
         ;
     }
 

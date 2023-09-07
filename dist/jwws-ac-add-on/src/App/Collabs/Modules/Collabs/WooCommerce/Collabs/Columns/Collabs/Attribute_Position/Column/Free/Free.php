@@ -25,7 +25,7 @@ class Free extends Column {
             ->set_group(group: 'woocommerce')
             // Default column label.
             ->set_label(label: __(
-                text: 'Attribute Position (Custom)',
+                text: 'Attribute - Position [Custom]',
                 domain: 'jwws',
             ))
         ;

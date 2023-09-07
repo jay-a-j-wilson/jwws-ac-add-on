@@ -27,7 +27,11 @@ define('ABSPATH', '/Users/jaywilson/Sites/WordPress/local.wordpress.test/');
 // CREATE A SYMBOLIC LINK OF jwws-ac-add-on FOLDER AND PLACE IT IN THE
 // WORDPRESS PLUGIN DIRECTORY.
 
+// WooCommerce
+define('WC_ABSPATH', ABSPATH . '/wp-content/plugins/woocommerce/');
+
 $dependencies = [
+    // Admin Columns Pro
     'admin-columns-pro/admin-columns/classes/Column.php',
     'admin-columns-pro/admin-columns/classes/ArrayIterator.php',
     'admin-columns-pro/admin-columns/classes/Config.php',
@@ -54,6 +58,11 @@ $dependencies = [
     'admin-columns-pro/classes/Sorting/Sortable.php',
     'admin-columns-pro/classes/Sorting/AbstractModel.php',
     'admin-columns-pro/classes/Sorting/Type/DataType.php',
+
+    // WooCommerce
+    'woocommerce/includes/abstracts/abstract-wc-data.php',
+    'woocommerce/includes/abstracts/abstract-wc-product.php',
+    'woocommerce/includes/class-wc-data-store.php'
 ];
 
 foreach ($dependencies as $dependency) {
