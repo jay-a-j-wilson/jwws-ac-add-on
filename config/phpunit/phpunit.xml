@@ -40,6 +40,33 @@
             <directory suffix=".php">
                 ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/Tests
             </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
+            <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/Tests
+            </directory>
         </testsuite>
         <!-- unit -->
         <testsuite name="unit">

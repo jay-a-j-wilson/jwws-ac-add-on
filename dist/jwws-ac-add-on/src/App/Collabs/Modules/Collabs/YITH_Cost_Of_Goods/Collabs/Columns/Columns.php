@@ -2,8 +2,9 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns;
 
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit_Dollar\Profit_Dollar;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit_Percentage\Profit_Percentage;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Amount\Amount;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Margin\Margin;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Markup\Markup;
 
 
 if (! defined(constant_name: 'ABSPATH')) {
@@ -24,7 +25,8 @@ final class Columns {
     private function __construct() {}
 
     public function hook(): void {
-        Profit_Dollar::new_instance()->hook();
-        Profit_Percentage::new_instance()->hook();
+        Amount::new_instance()->hook();
+        Margin::new_instance()->hook();
+        Markup::new_instance()->hook();
     }
 }

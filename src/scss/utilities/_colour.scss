@@ -1,27 +1,30 @@
 /* COLOUR */
 /*----------------------------------------------------------------------------*/
+@use "sass:map";
+@use '../settings/variables';
+
 .JW_ACA--u-colour {
     &--success {
-        color: #198754;
+        color: map.get(variables.$theme-colours, "success")
     }
 
     &--danger {
-        color: #dc3545;
+        color: map.get(variables.$theme-colours, "danger")
     }
 
     &--warning {
-        color: #ffc107;
+        color: map.get(variables.$theme-colours, "warning")
     }
 
     &--info {
-        color: #0dcaf0;
+        color: map.get(variables.$theme-colours, "info")
     }
 
     &--light {
-        color: #f8f9fa;
+        color: map.get(variables.$theme-colours, "light")
     }
 
     &--dark {
-        color: #212529;
+        color: map.get(variables.$theme-colours, "dark")
     }
 }

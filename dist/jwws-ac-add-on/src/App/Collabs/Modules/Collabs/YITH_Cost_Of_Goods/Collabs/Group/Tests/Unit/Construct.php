@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Group\Tests\Unit;
+namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Group\Tests\Unit;
 
-use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Group\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Group\Group;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Group\Group
+ * @covers \JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Group\Group
  *
  * @internal
  */

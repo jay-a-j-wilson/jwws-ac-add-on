@@ -20,6 +20,7 @@ Configuration::of(
     file: getenv('WP_PHPUNIT__DIR') . '/includes/bootstrap.php',
     options: [
         'active_plugins' => [
+            'woocommerce/woocommerce.php',
             'admin-columns-pro/admin-columns-pro.php',
         ],
     ],
