@@ -47,8 +47,8 @@ final class Editing implements Service {
         ;
     }
 
-    public function get_value(int $product_id): mixed {
-        return $this->column->get_raw_value(product_id: $product_id);
+    public function get_value(int $id): mixed {
+        return $this->column->get_raw_value(id: $id);
     }
 
     /**

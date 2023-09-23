@@ -2,13 +2,14 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Margin\Column\Free;
 
+use const JWWS\ACA\ASSETS_PATH;
+use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Heading\Heading;
 use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Common\Product\Product;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use function __;
 use function wp_enqueue_style;
-use const JWWS\ACA\ASSETS_PATH;
-use const JWWS\ACA\ASSETS_URL;
 
 /**
  * @final
@@ -27,10 +28,17 @@ class Free extends Column {
             ->set_group(group: 'jwws_aca-yith_cost_of_goods')
             // Default column label.
             ->set_label(label: __(
-                text: 'Profit - Margin (%) [Custom]',
+                text: $this->heading()->value(),
                 domain: 'jwws',
             ))
         ;
+    }
+
+    private function heading(): Heading {
+        return Heading::of(
+            label: 'Profit - Margin [Custom]',
+            tip: 'Expressed as a percentage, it indicates how much profit the company makes for every dollar of revenue generated.',
+        );
     }
 
     /**
@@ -42,11 +50,11 @@ class Free extends Column {
         return Template::of(path: __DIR__ . '/../../../Common/templates/template.html.php')
             ->assign(
                 key: 'value',
-                value: $value
+                value: $value,
             )
             ->assign(
                 key: 'formatted_value',
-                value: number_format(num: (float) $value, decimals: 2) . '%'
+                value: number_format(num: (float) $value, decimals: 2) . '%',
             )
             ->assign(
                 key: 'empty_char',

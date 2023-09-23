@@ -22,12 +22,12 @@ final class Editing implements Service {
         ;
     }
 
-    public function get_value(int $product_id): mixed {
-        return $this->column->get_value(product_id: $product_id);
+    public function get_value(int $id): mixed {
+        return $this->column->get_value(id: $id);
     }
 
     /**
      * Saves the value after using inline-edit.
      */
-    public function update(int $product_id, mixed $data): void {}
+    public function update(int $id, mixed $data): void {}
 }

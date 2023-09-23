@@ -1,14 +1,14 @@
 /* WP-ADMIN */
 /*----------------------------------------------------------------------------*/
 @use "sass:map";
-@use '../settings/variables';
+@use '../settings/variables' as v;
 
-table.wp-list-table mark.instock,
-span.dashicons.green {
-    color: map.get(variables.$theme-colours, "success") !important;
+span.dashicons.green ,
+table.wp-list-table mark.instock {
+    color: map.get(v.$u-colors, "success") !important;
 }
 
-table.wp-list-table mark.outofstock,
-span.dashicons.red {
-    color: map.get(variables.$theme-colours, "danger") !important;
+span.dashicons.red ,
+table.wp-list-table mark.outofstock {
+    color: map.get(v.$u-colors-50, "danger") !important;
 }

@@ -1,13 +1,24 @@
+@use "sass:map";
+
 :root {
     --grey-light: #f0f0f1;
     --grey-dark: #c3c4c7;
 }
 
-$theme-colours: (
+$u-colors: (
   "success": #198754,
   "danger": #dc3545,
   "warning": #ffc107,
   "info": #0dcaf0,
   "light": #f8f9fa,
   "dark": #212529,
+);
+
+$u-colors-50: (
+  "success": transparentize(map.get($u-colors, "success"), .5),
+  "danger": transparentize(map.get($u-colors, "danger"), .5),
+  "warning": transparentize(map.get($u-colors, "warning"), .5),
+  "info": transparentize(map.get($u-colors, "info"), .5),
+  "light": transparentize(map.get($u-colors, "light"), .5),
+  "dark": transparentize(map.get($u-colors, "dark"), .5),
 );

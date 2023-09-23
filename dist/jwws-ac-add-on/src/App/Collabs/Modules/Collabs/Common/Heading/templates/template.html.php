@@ -1,0 +1,1 @@
+<span class="tips" data-tip="<?= $tip; ?>"><?= $label; ?></span>

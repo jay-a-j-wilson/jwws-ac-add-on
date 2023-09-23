@@ -29,16 +29,16 @@ final class Editing implements Service {
         ;
     }
 
-    public function get_value(int $product_cat_id): mixed {
-        return $this->column->get_value(product_cat_id: $product_cat_id);
+    public function get_value(int $id): mixed {
+        return $this->column->get_value(id: $id);
     }
 
     /**
      * Saves the value after using inline-edit.
      */
-    public function update(int $product_cat_id, mixed $data): void {
+    public function update(int $id, mixed $data): void {
         update_term_meta(
-            term_id: $product_cat_id,
+            term_id: $id,
             meta_key: 'display_type',
             meta_value: $data,
         );

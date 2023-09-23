@@ -22,29 +22,27 @@ class Free extends Column {
             ->set_type(type: $this->uid)
             ->set_group(group: 'woocommerce')
             // Default column label.
-            ->set_label(label: __(text: 'Display Type [Custom]', domain: 'jwws'))
+            ->set_label(
+                label: __(
+                    text: 'Display Type [Custom]',
+                    domain: 'jwws',
+                ),
+            )
         ;
     }
 
-    /**
-     * Returns the display value for the column.
-     */
-    public function get_value(mixed $product_cat_id): string {
-        $value = $this->get_raw_value(product_cat_id: $product_cat_id);
+    public function get_value(mixed $id): string {
+        $value = $this->get_raw_value(id: $id);
 
-        return empty($value)
-            ? '-'
-            : ucfirst(string: $value);
+        if ($value === '') {
+            return $this->get_empty_char();
+        }
+
+        return ucfirst(string: $value);
     }
 
-    /**
-     * Get the raw, underlying value for the column.
-     *
-     * Not suitable for direct display, use get_value() for that
-     * This value will be used by 'inline-edit' and get_value().
-     */
-    public function get_raw_value(mixed $product_cat_id): mixed {
-        return Term_Meta::of(id: $product_cat_id)
+    public function get_raw_value(mixed $id): string|array {
+        return Term_Meta::of(id: $id)
             ->find_by_key(key: 'display_type')
         ;
     }

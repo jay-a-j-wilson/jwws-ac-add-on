@@ -39,7 +39,7 @@ final class Editing implements Service {
      *
      * @param mixed $data
      */
-    public function update(int $id, $data): void {
+    public function update(int $id, mixed $data): void {
         // Store the value that has been entered with inline-edit
         // For example: update_post_meta( $id, '_my_custom_field_example', $value );
     }

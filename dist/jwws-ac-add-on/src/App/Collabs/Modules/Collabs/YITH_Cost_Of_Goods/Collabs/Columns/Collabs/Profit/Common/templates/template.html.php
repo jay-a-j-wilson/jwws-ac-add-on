@@ -3,7 +3,7 @@
         <?= $empty_char; ?>
     <?php else: ?>
         <strong>
-            <span class="JW_ACA--u-colour--<?= $value >= 0 ? 'success' : 'danger'; ?>">
+            <span class="JW_ACA--u-color--<?= $value >= 0 ? 'success' : 'danger_50'; ?>">
                 <?= $formatted_value; ?>
             </span>
         </strong>

@@ -53,7 +53,7 @@ class Free extends Column {
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
      */
-    public function get_raw_value(mixed $id): string|array {
+    public function get_raw_value(mixed $id): string {
         $wizard_id = Post_Meta::of(id: $id)
             ->find_by_key(key: '_wcpw_attach_wizard')
         ;

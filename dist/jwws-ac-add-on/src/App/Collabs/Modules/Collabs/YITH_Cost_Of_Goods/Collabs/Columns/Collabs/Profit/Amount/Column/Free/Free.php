@@ -27,7 +27,7 @@ class Free extends Column {
             ->set_group(group: 'jwws_aca-yith_cost_of_goods')
             // Default column label.
             ->set_label(label: __(
-                text: 'Profit - Amount ($) [Custom]',
+                text: 'Profit - Amount [Custom]',
                 domain: 'jwws',
             ))
         ;

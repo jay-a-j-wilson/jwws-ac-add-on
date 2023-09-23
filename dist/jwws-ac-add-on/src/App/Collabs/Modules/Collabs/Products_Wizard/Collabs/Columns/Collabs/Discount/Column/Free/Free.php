@@ -5,6 +5,7 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\C
 use AC\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free\Helpers\Discount\Discount;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
+use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function wc_get_product;
 use function wp_enqueue_style;
@@ -30,10 +31,10 @@ class Free extends Column {
     /**
      * Returns the display value for the column.
      */
-    public function get_value(mixed $product_id): string {
+    public function get_value(mixed $id): string {
         return $this->render(
             discounts: $this->get_raw_value(
-                product_id: $product_id,
+                id: $id,
             ),
         );
     }
@@ -42,15 +43,15 @@ class Free extends Column {
      * Renders output.
      */
     private function render(mixed $discounts): string {
-        return empty($discounts)
-            ? '-'
+        return $discounts === ''
+            ? $this->get_empty_char()
             : Template::of(path: __DIR__ . '/templates/template.html.php')
                 ->assign(
                     key: 'discounts',
                     value: $this->format(discounts: $discounts),
                 )
                 ->output()
-            ;
+        ;
     }
 
     private function format(array $discounts): array {
@@ -66,14 +67,16 @@ class Free extends Column {
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
      */
-    public function get_raw_value(mixed $product_id): mixed {
-        $discounts = wc_get_product(the_product: $product_id)
-            ->get_meta(key: '_wcpw_discount')
+    public function get_raw_value(mixed $id): string|array {
+        $discounts = Post_Meta::of(id: $id)
+            ->find_by_key(key: '_wcpw_discount')
         ;
 
-        return $this->is_empty(discounts: $discounts)
-            ? null
-            : $discounts;
+        if ($this->is_empty(discounts: $discounts)) {
+            return '';
+        }
+
+        return $discounts;
     }
 
     /**

@@ -31,30 +31,20 @@ class Free extends Column {
         ;
     }
 
-    /**
-     * Returns the display value for the column.
-     */
-    public function get_value(mixed $product_id): string {
-        $value = $this->get_raw_value(product_id: $product_id);
+    public function get_value(mixed $id): string {
+        $value = $this->get_raw_value(id: $id);
 
-        switch ($value) {
-            case 'error_0':
-                return Display_Value::of(
-                    value: 'Attribute not selected in column settings.',
-                )
-                    ->grey()
-                ;
-
-            case 'error_1':
-                return Display_Value::of(
-                    value: "'{$this->attribute_label()}' attribute not assigned.",
-                )
-                    ->grey()
-                ;
-
-            default:
-                return (string) $value;
-        }
+        return match ($value) {
+            'error_0' => Display_Value::of(
+                value: 'Attribute not selected in column settings.',
+            )
+                ->grey(),
+            'error_1' => Display_Value::of(
+                value: "'{$this->attribute_label()}' attribute not assigned.",
+            )
+                ->grey(),
+            default   => (string) $value,
+        };
     }
 
     private function attribute_label(): string {
@@ -63,20 +53,14 @@ class Free extends Column {
         );
     }
 
-    /**
-     * Get the raw, underlying value for the column.
-     *
-     * Not suitable for direct display, use get_value() for that
-     * This value will be used by 'inline-edit' and get_value().
-     */
-    public function get_raw_value(mixed $product_id): mixed {
+    public function get_raw_value(mixed $id): string|array|int {
         $attribute = $this->get_option(key: 'product_taxonomy_display');
 
         if (empty($attribute)) {
             return 'error_0';
         }
 
-        $attributes = wc_get_product(the_product: $product_id)
+        $attributes = wc_get_product(the_product: $id)
             ->get_attributes()
         ;
 

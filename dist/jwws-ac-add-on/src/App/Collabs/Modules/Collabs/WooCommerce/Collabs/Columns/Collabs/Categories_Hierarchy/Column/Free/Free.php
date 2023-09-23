@@ -39,8 +39,8 @@ class Free extends Column {
     /**
      * Returns the display value for the column.
      */
-    public function get_value(mixed $post_id): string {
-        return $this->get_raw_value(post_id: $post_id);
+    public function get_value(mixed $id): string {
+        return $this->get_raw_value(id: $id);
     }
 
     /**
@@ -48,12 +48,12 @@ class Free extends Column {
      * Not suitable for direct display, use get_value() for that
      * This value will be used by 'inline-edit' and get_value().
      */
-    public function get_raw_value(mixed $post_id): mixed {
+    public function get_raw_value(mixed $id): mixed {
         // put all the column logic here to retrieve the value you need
         // For example: $value = get_post_meta( $post_id, '_my_custom_field_example', true );
 
         $categories = get_the_terms(
-            post: $post_id,
+            post: $id,
             taxonomy: 'product_cat',
         );
 
