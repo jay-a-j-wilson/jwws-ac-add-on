@@ -8,6 +8,7 @@ selection drop down
 - Refactor column messages to use Display_Value class.
 - Can't bulk edit after sorting
 - Ajax load accordion columns for speed
+- YITH Cost Price column with right-aligned prices
 
 Profit Margin
 - create column

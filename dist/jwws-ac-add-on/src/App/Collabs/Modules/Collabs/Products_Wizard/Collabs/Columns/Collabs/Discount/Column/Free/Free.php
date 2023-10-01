@@ -7,7 +7,6 @@ use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
-use function wc_get_product;
 use function wp_enqueue_style;
 
 /**

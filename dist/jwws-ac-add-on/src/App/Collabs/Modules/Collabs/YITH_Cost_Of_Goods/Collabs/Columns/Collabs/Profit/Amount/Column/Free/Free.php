@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Amount\Column\Free;
 
 use AC\Column;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Common\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Common\Product\Product;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use function __;
 use function wp_enqueue_style;

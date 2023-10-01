@@ -2,14 +2,14 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Margin\Column\Free;
 
-use const JWWS\ACA\ASSETS_PATH;
-use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Heading\Heading;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Common\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Common\Product\Product;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use function __;
 use function wp_enqueue_style;
+use const JWWS\ACA\ASSETS_PATH;
+use const JWWS\ACA\ASSETS_URL;
 
 /**
  * @final

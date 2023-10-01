@@ -2,10 +2,12 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Display_Type\Export;
 
+use ACP\Export\Model;
+
 /**
  * Export class. Adds export functionality to the column.
  */
-final class Export extends \ACP\Export\Model {
+final class Export extends Model {
     /**
      * @param mixed $id
      */
