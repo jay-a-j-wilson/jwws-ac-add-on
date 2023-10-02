@@ -20,9 +20,9 @@ final class Editing implements Editability, Service {
     public function __construct(private Pro $column) {}
 
     public function is_editable(int $id): bool {
-        $product = wc_get_product(the_product: $id);
-
-        return ! $product->is_type(type: ['variable', 'grouped']);
+        return ! wc_get_product(the_product: $id)
+            ->is_type(type: ['variable', 'grouped'])
+        ;
     }
 
     public function get_view(string $context): ?View {

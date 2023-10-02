@@ -3,6 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Display_Type\Column\Free;
 
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Term_Meta\Term_Meta;
 use function __;
 
@@ -20,7 +21,7 @@ class Free extends Column {
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
             ->set_type(type: $this->uid)
-            ->set_group(group: 'woocommerce')
+            ->set_group(group: Group::WOOCOMMERCE->value)
             // Default column label.
             ->set_label(
                 label: __(

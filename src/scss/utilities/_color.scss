@@ -1,0 +1,62 @@
+/* COLOUR */
+/*----------------------------------------------------------------------------*/
+@use "sass:map";
+@use "../settings/variables" as v;
+
+.JW_ACA--u-color {
+    &--secondary {
+        color: map.get(v.$u-colors, "secondary");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "secondary");
+        }
+    }
+
+    &--success {
+        color: map.get(v.$u-colors, "success");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "success");
+        }
+    }
+
+    &--danger {
+        color: map.get(v.$u-colors, "danger");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "danger");
+        }
+    }
+
+    &--warning {
+        color: map.get(v.$u-colors, "warning");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "warning");
+        }
+    }
+
+    &--info {
+        color: map.get(v.$u-colors, "info");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "info");
+        }
+    }
+
+    &--light {
+        color: map.get(v.$u-colors, "light");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "light");
+        }
+    }
+
+    &--dark {
+        color: map.get(v.$u-colors, "dark");
+
+        &_50 {
+            color: map.get(v.$u-colors-50, "dark");
+        }
+    }
+}

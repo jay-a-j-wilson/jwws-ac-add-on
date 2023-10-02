@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Group;
 
 use AC\Groups;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Group\Group as Base_Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Group as Base_Group;
 use function __;
 
 final class Group extends Base_Group {

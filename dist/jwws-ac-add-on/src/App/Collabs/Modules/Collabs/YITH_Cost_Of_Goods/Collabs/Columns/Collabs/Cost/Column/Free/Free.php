@@ -2,16 +2,13 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Cost\Column\Free;
 
-use const JWWS\ACA\ASSETS_PATH;
-use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Common\Money_Formatter\Money_Formatter;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Common\Product\Product;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Common\Product_Variation\Product_Variation;
-use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Cost\Column\Free\Helpers\Product_Variation_DTO\Product_Variation_DTO;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Global_Stylesheet\Global_Stylesheet;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product_Variation\Product_Variation;
+use JWWS\ACA\App\Common\Utils\Collection;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
-use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use WC_Product;
 use function __;
 
@@ -29,7 +26,7 @@ class Free extends Column {
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws_aca-yith_cost_of_goods')
+            ->set_group(group: Group::YITH_COST_OF_GOODS->value)
             // Default column label.
             ->set_label(label: __(
                 text: 'Cost [Custom]',
@@ -40,53 +37,52 @@ class Free extends Column {
 
     public function get_value(mixed $id): string {
         return Template::of(path: __DIR__ . '/templates/template.html.php')
-            ->assign(key: 'values', value: $this->get_raw_value(id: $id))
+            ->assign(key: 'variations', value: $this->get_raw_value(id: $id))
+            ->assign(key: 'empty_char', value: $this->get_empty_char())
             ->output()
         ;
     }
 
     public function get_raw_value(mixed $id): string|array {
-        return $this->get_costs(product: wc_get_product(the_product: $id));
+        return $this->get_data(product: wc_get_product(the_product: $id));
     }
 
-    public function get_costs(WC_Product $product): array {
-        $costs = [];
+    public function get_data(WC_Product $product): array {
+        if (! $product->is_type(type: 'variable')) {
+            $product = Product::of(id: $product->get_id());
 
-        if ($product->is_type(type: 'variable')) {
-            foreach ($product->get_children() as $child_id) {
-                $product_variation = Product_Variation::of(id: $child_id);
-
-                $costs[] = [
-                    'name' => $product_variation->name(),
-                    'cost' => $product_variation->cost(),
-                ];
-            }
-        } else {
-            $costs[] = [
-                'name' => '',
-                'cost' => Product::of(id: $product->get_id())->cost(),
+            return [
+                [
+                    'name'  => '',
+                    'value' => $product->cost(),
+                ],
             ];
         }
 
-        return $costs;
-    }
+        return Collection::map(
+            items: $product->get_children(),
+            func: function (int $child_id): array {
+                $product = Product_Variation::of(id: $child_id);
 
-    /**
-     * Enqueues CSS on the admin listings screen.
-     */
-    public function scripts(): void {
-        $this->enqueue_styles();
-    }
-
-    private function enqueue_styles(): void {
-        $path = '/css/styles.min.css';
-
-        wp_enqueue_style(
-            handle: $this->uid,
-            src: ASSETS_URL . $path,
-            ver: filemtime(
-                filename: ASSETS_PATH . $path,
-            ),
+                return [
+                    'name'  => $product->name(),
+                    'value' => $product->cost(),
+                ];
+            },
         );
+    }
+
+    public function map($items, $func) {
+        $results = [];
+
+        foreach ($items as $item) {
+            $results[] = $func($item);
+        }
+
+        return $results;
+    }
+
+    public function scripts(): void {
+        Global_Stylesheet::of(handle: $this->uid)->enqueue();
     }
 }

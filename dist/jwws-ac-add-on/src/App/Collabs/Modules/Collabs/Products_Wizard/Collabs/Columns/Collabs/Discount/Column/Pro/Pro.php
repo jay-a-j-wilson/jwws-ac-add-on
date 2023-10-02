@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Pro;
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Interfaces\Proable;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Interfaces\Proable;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free\Free;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Editing\Editing;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Export\Export;

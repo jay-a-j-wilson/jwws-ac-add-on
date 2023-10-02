@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Column\Pro;
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Interfaces\Proable;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Interfaces\Proable;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Column\Free\Free;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Editing\Editing;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Export\Export;

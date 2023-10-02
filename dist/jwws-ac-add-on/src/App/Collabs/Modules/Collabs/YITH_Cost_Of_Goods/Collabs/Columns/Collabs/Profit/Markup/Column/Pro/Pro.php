@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Markup\Column\Pro;
 
 use ACP\ConditionalFormat\ConditionalFormatTrait;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Interfaces\Proable;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Interfaces\Proable;
 use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Markup\Column\Free\Free;
 use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Markup\Editing\Editing;
 use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Markup\Export\Export;

@@ -6,6 +6,7 @@ use const JWWS\ACA\PLUGIN_DIR;
 use JWWS\ACA\App\App;
 use JWWS\ACA\Deps\JWWS\WPPF\Loader\Plugin\Standard_Plugin\Standard_Plugin;
 use JWWS\ACA\Deps\JWWS\WPPF\Loader\Standard_Loader\Standard_Loader;
+use JWWS\ACA\App\Common\Enums\Plugin_Basename;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -29,8 +30,8 @@ final class Factory {
                     fallback_name: 'Admin Columns Add-On',
                 )
                     ->add_dependencies(
-                        plugins: Standard_Plugin::of_slug(
-                            slug: 'admin-columns-pro',
+                        plugins: Standard_Plugin::of_basename(
+                            basename: Plugin_Basename::ADMIN_COLUMNS_PRO->value,
                             fallback_name: 'Admin Columns Pro',
                         ),
                     ),

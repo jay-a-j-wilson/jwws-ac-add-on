@@ -3,7 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Steps_Settings;
 
 use AC\ListScreen;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Column\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Column\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Steps_Settings\Column\Free\Free;
 
 if (! defined(constant_name: 'ABSPATH')) {

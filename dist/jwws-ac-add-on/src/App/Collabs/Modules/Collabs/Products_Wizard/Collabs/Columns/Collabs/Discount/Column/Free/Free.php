@@ -3,6 +3,7 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free;
 
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Discount\Column\Free\Helpers\Discount\Discount;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
@@ -21,15 +22,12 @@ class Free extends Column {
     ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws_aca-products_wizard')
+            ->set_group(group: Group::PRODUCTS_WIZARD->value)
             // Default column label.
             ->set_label(label: __(text: 'Discount [Custom]', domain: 'jwws'))
         ;
     }
 
-    /**
-     * Returns the display value for the column.
-     */
     public function get_value(mixed $id): string {
         return $this->render(
             discounts: $this->get_raw_value(
@@ -61,11 +59,6 @@ class Free extends Column {
         return $discounts;
     }
 
-    /**
-     * Get the raw, underlying value for the column
-     * Not suitable for direct display, use get_value() for that
-     * This value will be used by 'inline-edit' and get_value().
-     */
     public function get_raw_value(mixed $id): string|array {
         $discounts = Post_Meta::of(id: $id)
             ->find_by_key(key: '_wcpw_discount')
@@ -90,14 +83,11 @@ class Free extends Column {
         && $discounts[0]['type'] === 'percentage';
     }
 
-    /**
-     * Enqueues CSS on the admin listings screen.
-     */
     public function scripts(): void {
         $this->enqueue_styles();
     }
 
-    private function enqueue_styles(): void {
+    public function enqueue_styles(): void {
         $path = 'assets/css/styles.css';
 
         wp_enqueue_style(

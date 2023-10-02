@@ -157,6 +157,9 @@
             <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/Tests</directory>
             <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/Tests</directory>
             <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/Tests</directory>
+            <directory suffix=".php">../../dist/jwws-ac-add-on/src/App/*/*/*/*/*/*/*/*/*/*/*/*/Tests</directory>
         </exclude>
         <report>
             <html outputDirectory="../../data/phpunit/coverage/report/html" />
@@ -173,5 +176,6 @@
             name="WP_PHPUNIT__TESTS_CONFIG"
             value="dist/jwws-ac-add-on/test/PHPUnit/WordPress/wp-config.php"
         />
+        <const name="JWWS\ACA\PLUGIN_DIR" value="'jwws-ac-add-on'"/>
     </php>
 </phpunit>

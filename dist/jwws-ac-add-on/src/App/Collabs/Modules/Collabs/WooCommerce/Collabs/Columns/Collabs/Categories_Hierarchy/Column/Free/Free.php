@@ -2,14 +2,12 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Categories_Hierarchy\Column\Free;
 
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Display_Value\Display_Value;
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use function __;
 use function get_ancestors;
 use function get_term;
 use function get_the_terms;
-use function wp_enqueue_script;
-use function wp_enqueue_style;
 
 /**
  * @final
@@ -25,7 +23,7 @@ class Free extends Column {
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
             ->set_type(type: $this->uid)
-            ->set_group(group: 'woocommerce')
+            ->set_group(group: Group::WOOCOMMERCE->value)
             // Default column label.
             ->set_label(
                 label: __(

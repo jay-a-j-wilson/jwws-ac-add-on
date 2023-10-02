@@ -2,15 +2,14 @@
 
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Default_Cart_Content\Column\Free;
 
-use const JWWS\ACA\ASSETS_PATH;
-use const JWWS\ACA\ASSETS_URL;
 use AC\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Global_Stylesheet\Global_Stylesheet;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Default_Cart_Content\Column\Free\Helpers\View_Model\View_Model;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function wp_enqueue_script;
-use function wp_enqueue_style;
 
 /**
  * @final
@@ -24,11 +23,13 @@ class Free extends Column {
     ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws_aca-products_wizard')
+            ->set_group(group: Group::PRODUCTS_WIZARD->value)
             // Default column label.
-            ->set_label(label: __(
-                text: 'Default Cart Content [Custom]',
-                domain: 'jwws')
+            ->set_label(
+                label: __(
+                    text: 'Default Cart Content [Custom]',
+                    domain: 'jwws',
+                ),
             )
         ;
     }
@@ -58,20 +59,8 @@ class Free extends Column {
     }
 
     public function scripts(): void {
-        $this->enqueue_styles();
+        Global_Stylesheet::of(handle: $this->uid)->enqueue();
         $this->enqueue_scripts();
-    }
-
-    private function enqueue_styles(): void {
-        $path = '/css/styles.min.css';
-
-        wp_enqueue_style(
-            handle: $this->uid,
-            src: ASSETS_URL . $path,
-            ver: filemtime(
-                filename: ASSETS_PATH . $path,
-            ),
-        );
     }
 
     private function enqueue_scripts(): void {

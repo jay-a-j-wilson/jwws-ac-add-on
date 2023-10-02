@@ -3,13 +3,10 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Attach_Wizard\Column\Free;
 
 use AC\Column;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Repo\Subclasses\Post_Repo\Post_Repo;
-
 use function __;
-use function get_the_title;
-use function wc_get_product;
 
 /**
  * @final
@@ -23,7 +20,7 @@ class Free extends Column {
     ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws_aca-products_wizard')
+            ->set_group(group: Group::PRODUCTS_WIZARD->value)
             // Default column label.
             ->set_label(
                 label: __(
@@ -64,6 +61,7 @@ class Free extends Column {
 
         return Post_Repo::new_instance()
             ->find_by_id(id: (int) $wizard_id)
-            ->post_title;
+            ->post_title
+        ;
     }
 }

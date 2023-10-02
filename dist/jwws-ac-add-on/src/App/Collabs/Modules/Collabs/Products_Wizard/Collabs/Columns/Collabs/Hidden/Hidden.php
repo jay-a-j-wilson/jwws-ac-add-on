@@ -4,7 +4,7 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\C
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\Product;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Column\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Column\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Hidden\Column\Pro\Pro;
 
 if (! defined(constant_name: 'ABSPATH')) {

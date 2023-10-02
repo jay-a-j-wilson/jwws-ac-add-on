@@ -5,6 +5,8 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\C
 use ACP\Editing\Service;
 use ACP\Editing\View;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Attach_Wizard\Column\Pro\Pro;
+use JWWS\ACA\App\Common\Utils\Collection;
+
 use function __;
 use function get_posts;
 use function update_post_meta;

@@ -4,7 +4,7 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\Product;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Column\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Column\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Builder\Column\Pro\Pro;
 
 if (! defined(constant_name: 'ABSPATH')) {

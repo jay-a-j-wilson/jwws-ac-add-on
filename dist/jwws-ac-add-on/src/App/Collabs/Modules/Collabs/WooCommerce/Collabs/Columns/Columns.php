@@ -7,6 +7,7 @@ use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Att
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Attribute_Visibility;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Categories_Hierarchy\Categories_Hierarchy;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Display_Type\Display_Type;
+use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Price\Price;
 
 if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -31,5 +32,6 @@ final class Columns {
         Attribute_Visibility::new_instance()->hook();
         Categories_Hierarchy::new_instance()->hook();
         Display_Type::new_instance()->hook();
+        Price::new_instance()->hook();
     }
 }

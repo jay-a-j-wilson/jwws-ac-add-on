@@ -4,7 +4,8 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Display_Value\Display_Value;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use function __;
 use function ac_helper;
 use function wc_get_product;
@@ -23,7 +24,7 @@ class Free extends Column {
             // Identifier, pick an unique name. Single word, no spaces.
             // Underscores allowed.
             ->set_type(type: $this->uid)
-            ->set_group(group: 'woocommerce')
+            ->set_group(group: Group::WOOCOMMERCE->value)
             // Default column label.
             ->set_label(label: __(
                 text: 'Attribute - Builder [Custom]',

@@ -6,6 +6,7 @@
 }
 
 $u-colors: (
+  "secondary": #6c757d,
   "success": #198754,
   "danger": #dc3545,
   "warning": #ffc107,
@@ -15,6 +16,7 @@ $u-colors: (
 );
 
 $u-colors-50: (
+  "secondary": transparentize(map.get($u-colors, "secondary"), .5),
   "success": transparentize(map.get($u-colors, "success"), .5),
   "danger": transparentize(map.get($u-colors, "danger"), .5),
   "warning": transparentize(map.get($u-colors, "warning"), .5),

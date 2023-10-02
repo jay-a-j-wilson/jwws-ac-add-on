@@ -4,11 +4,13 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use AC\Helper\Select\Option;
 use AC\Type\ToggleOptions;
+use ACA\WC\Editing\Product\ProductNotSupportedReasonTrait;
 use ACP\Editing\Service;
+use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Column\Pro\Pro;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+use JWWS\ACA\App\Common\Utils\Collection;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function update_post_meta;
@@ -16,19 +18,27 @@ use function update_post_meta;
 /**
  * Editing class. Adds editing functionality to the column.
  */
-final class Editing implements Service {
+final class Editing implements Editability, Service {
+    use ProductNotSupportedReasonTrait;
+
     /**
      * @return void
      */
     public function __construct(private Pro $column) {}
 
-    public function get_view(string $context): ?View {
-        // Disables edit controls if attribute is not selected in column
-        // settings.
-        if (empty($this->column->get_option(key: 'product_taxonomy_display'))) {
-            return null;
-        }
+    /**
+     * Disables edit controls under certain conditions.
+     */
+    public function is_editable(int $id): bool {
+        $attribute_name = $this->column->get_option(
+            key: 'product_taxonomy_display',
+        );
 
+        // condition: attribute is not selected in column settings.
+        return ! ($attribute_name === '');
+    }
+
+    public function get_view(string $context): ?View {
         return (new Toggle(
             options: new ToggleOptions(
                 disabled: new Option(

@@ -4,7 +4,7 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Column
 
 use AC\ListScreen;
 use ACA\WC\ListScreen\Product;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Column\Column;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Column\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Columns\Collabs\Profit\Amount\Column\Pro\Pro;
 
 if (! defined(constant_name: 'ABSPATH')) {

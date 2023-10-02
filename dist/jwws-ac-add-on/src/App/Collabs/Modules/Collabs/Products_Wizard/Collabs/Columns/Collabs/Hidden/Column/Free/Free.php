@@ -3,7 +3,8 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Hidden\Column\Free;
 
 use AC\Column;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Heading\Heading;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Heading\Heading;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function ac_helper;
@@ -20,7 +21,7 @@ class Free extends Column {
     ) {
         $this
             ->set_type(type: $this->uid)
-            ->set_group(group: 'jwws_aca-products_wizard')
+            ->set_group(group: Group::PRODUCTS_WIZARD->value)
             // Default column label.
             ->set_label(label: __(
                 text: $this->heading()->value(),

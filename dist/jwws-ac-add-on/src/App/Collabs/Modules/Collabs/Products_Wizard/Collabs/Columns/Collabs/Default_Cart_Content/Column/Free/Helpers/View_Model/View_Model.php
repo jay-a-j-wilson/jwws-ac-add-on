@@ -28,6 +28,7 @@ final class View_Model {
         $sorted_settings = [];
 
         foreach ($steps_ids as $steps_id) {
+            // PHP Warning: Undefined array key
             $sorted_settings[] = $settings[(int) $steps_id];
         }
 
