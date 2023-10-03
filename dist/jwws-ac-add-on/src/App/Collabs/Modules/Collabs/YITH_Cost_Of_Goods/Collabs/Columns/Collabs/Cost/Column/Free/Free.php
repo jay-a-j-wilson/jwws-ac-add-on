@@ -72,16 +72,6 @@ class Free extends Column {
         );
     }
 
-    public function map($items, $func) {
-        $results = [];
-
-        foreach ($items as $item) {
-            $results[] = $func($item);
-        }
-
-        return $results;
-    }
-
     public function scripts(): void {
         Global_Stylesheet::of(handle: $this->uid)->enqueue();
     }

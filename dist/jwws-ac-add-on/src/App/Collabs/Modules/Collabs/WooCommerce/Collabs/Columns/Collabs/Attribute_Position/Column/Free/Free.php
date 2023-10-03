@@ -44,7 +44,7 @@ class Free extends Column {
                 value: "'{$this->attribute_label()}' attribute not assigned.",
             )
                 ->grey(),
-            default   => (string) $value,
+            default   => $value,
         };
     }
 
@@ -54,7 +54,7 @@ class Free extends Column {
         );
     }
 
-    public function get_raw_value(mixed $id): string|array|int {
+    public function get_raw_value(mixed $id): string|array {
         $attribute = $this->get_option(key: 'product_taxonomy_display');
 
         if (empty($attribute)) {
@@ -69,7 +69,7 @@ class Free extends Column {
             return 'error_1';
         }
 
-        return $attributes[$attribute]->get_position();
+        return (string) $attributes[$attribute]->get_position();
     }
 
     /**

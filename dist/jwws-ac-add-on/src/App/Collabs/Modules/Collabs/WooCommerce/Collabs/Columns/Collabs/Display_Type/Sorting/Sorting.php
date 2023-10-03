@@ -11,19 +11,15 @@ use ACP\Sorting\Type\DataType;
  * Sorting class. Adds sorting functionality to the column.
  */
 final class Sorting extends AbstractModel {
-    private Column $column;
-
     /**
      * @return void
      */
-    public function __construct(Column $column) {
+    public function __construct(readonly private Column $column) {
         parent::__construct(
             data_type: new DataType(
                 value: DataType::STRING,
             ),
         );
-
-        $this->column = $column;
     }
 
     /**

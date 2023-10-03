@@ -31,9 +31,6 @@ class Free extends Column {
         ;
     }
 
-    /**
-     * Returns the display value for the column.
-     */
     public function get_value(mixed $id): string {
         $value = $this->get_raw_value(id: $id);
 
