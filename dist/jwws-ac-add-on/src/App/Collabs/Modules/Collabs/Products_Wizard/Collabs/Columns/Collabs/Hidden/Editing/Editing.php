@@ -9,7 +9,7 @@ use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Hidden\Column\Pro\Pro;
 use function __;
-use function update_post_meta;
+use function wc_get_product;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -38,18 +38,29 @@ final class Editing implements Service {
         ;
     }
 
-    public function get_value(int $id): mixed {
-        return $this->column->get_value(id: $id);
+    /**
+     * Retrieves the value for editing.
+     *
+     * For example: get_post_meta($id, '_my_custom_field_example', true);
+     */
+    public function get_value(int $id): string {
+        return $this->column->get_raw_value(id: $id);
     }
 
     /**
      * Saves the value after using inline-edit.
+     *
+     * Store the value that has been entered with inline-edit.
+     * For example: update_post_meta( $id, '_my_custom_field_example', $value );
      */
     public function update(int $id, mixed $data): void {
-        update_post_meta(
-            post_id: $id,
-            meta_key: '_is_hidden_product',
-            meta_value: $data,
-        );
+        $product = wc_get_product(the_product: $id);
+        $data === ''
+            ? $product->delete_meta_data(key: $this->column->meta_key())
+            : $product->update_meta_data(
+                key: $this->column->meta_key(),
+                value: $data,
+            );
+        $product->save();
     }
 }

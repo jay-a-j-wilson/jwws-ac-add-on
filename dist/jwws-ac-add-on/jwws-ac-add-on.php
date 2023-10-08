@@ -9,7 +9,7 @@ use function define;
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      4.5.1
+ * Version:      4.5.2
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later

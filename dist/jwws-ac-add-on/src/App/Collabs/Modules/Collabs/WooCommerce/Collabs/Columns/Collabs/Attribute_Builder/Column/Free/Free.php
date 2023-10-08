@@ -35,7 +35,7 @@ class Free extends Column {
 
     public function get_value(mixed $id): string {
         return match ($this->get_raw_value(id: $id)) {
-            'No'      => ac_helper()->icon->no(tooltip: __(text: 'No')),
+            ''      => ac_helper()->icon->no(tooltip: __(text: 'No')),
             'Yes'     => ac_helper()->icon->yes(tooltip: __(text: 'Yes')),
             'error_0' => Display_Value::of(
                 value: 'Attribute not selected in column settings',

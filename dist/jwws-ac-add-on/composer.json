@@ -25,7 +25,9 @@
             "packages": [
                 "jay-a-j-wilson/jwws-wp-plugin-framework"
             ],
-            "delete_vendor_packages": true
+            "delete_vendor_packages": true,
+            "include_author": false,
+            "include_modified_date": false
         }
     },
     "scripts": {

@@ -3,8 +3,10 @@
 namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Hidden\Column\Free;
 
 use AC\Column;
+use Exception;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Heading\Heading;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function ac_helper;
@@ -30,6 +32,10 @@ class Free extends Column {
         ;
     }
 
+    public function meta_key(): string {
+        return '_is_hidden_product';
+    }
+
     private function heading(): Heading {
         return Heading::of(
             label: 'Hidden [Custom]',
@@ -45,15 +51,14 @@ class Free extends Column {
         };
     }
 
+    /**
+     * TODO: Investigate return error best practices.
+     *
+     * @throws Exception
+     */
     public function get_raw_value(mixed $id): string {
-        $is_hidden_product = Post_Meta::of(id: $id)
-            ->find_by_key(key: '_is_hidden_product')
+        return wc_get_product(the_product: $id)
+            ->get_meta(key: $this->meta_key())
         ;
-
-        if ($is_hidden_product === '') {
-            return '';
-        }
-
-        return $is_hidden_product;
     }
 }
