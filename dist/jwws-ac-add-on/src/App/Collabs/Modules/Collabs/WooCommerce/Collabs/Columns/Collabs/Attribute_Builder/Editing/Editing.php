@@ -43,7 +43,7 @@ final class Editing implements Editability, Service {
         return (new Toggle(
             options: new ToggleOptions(
                 disabled: new Option(
-                    value: '',
+                    value: 'No',
                     label: __(text: 'No'),
                 ),
                 enabled: new Option(
