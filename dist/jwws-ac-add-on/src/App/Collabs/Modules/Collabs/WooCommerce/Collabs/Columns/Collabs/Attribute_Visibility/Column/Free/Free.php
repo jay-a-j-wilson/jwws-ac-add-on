@@ -77,8 +77,6 @@ class Free extends Column {
             return 'error_1';
         }
 
-        Error_Logger::log_verbose($product->attribute(key: $attribute)->get_visible());
-
         return $product->attribute(key: $attribute)->get_visible()
             ? '1'
             : '0';

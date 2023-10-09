@@ -9,7 +9,11 @@ use ACP\Editing\Service;
 use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Column\Pro\Pro;
+use JWWS\ACA\App\Common\Utils\Collection;
+use JWWS\ACA\Deps\JWWS\WPPF\Collection\Standard_Collection\Standard_Collection;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function update_post_meta;
@@ -54,7 +58,34 @@ final class Editing implements Editability, Service {
         return $this->column->get_raw_value(id: $id);
     }
 
+    // /**
+    //  * Saves the value after using inline-edit.
+    //  */
+    // public function update(int $id, mixed $data): void {
+    //     if ($this->column->attribute_name() === '') {
+    //         return;
+    //     }
+    //     $product = Product::of(id: $id);
+    //     $x       =  $product
+    //         ->attribute(key: $this->column->attribute_name())
+    //         // ->set_visible(value: false)
+    //     ;
+    //     Error_Logger::log_verbose($x);
+    //     $x->set_visible(value: false);
+    //     Error_Logger::log_verbose($x);
+    //     $product->set_attributes(
+    //         raw_attributes: array_merge(
+    //             $product->get_attributes(),
+    //             [
+    //                 $x,
+    //             ],
+    //         ),
+    //     );
+    //     $product->save();
+    // }
+
     /**
+     * TODO: Standard_Collection->each() to handle array keys.
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
@@ -62,13 +93,16 @@ final class Editing implements Editability, Service {
             ->find_by_key(key: '_product_attributes')
         ;
 
-        // Loop through product attributes
-        foreach ($attributes as $key => $value) {
-            if ($key === $this->column->attribute_name()) {
-                $attributes[$key]['is_visible'] = (int) $data;
+        $valid_attributes = Standard_Collection::of(...$attributes)
+            ->filter_by_key(
+                callback: fn (string $key): bool =>
+                    $key === $this->column->attribute_name(),
+            )
+        ;
 
-                break;
-            }
+        // Loop through product attributes
+        foreach ($valid_attributes as $key => $value) {
+            $attributes[$key]['is_visible'] = (int) $data;
         }
 
         // Set updated attributes back in database

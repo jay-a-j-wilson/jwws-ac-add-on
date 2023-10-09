@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product;
+namespace JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Simple;
 
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Traits\Profits\Profits;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Traits\Profits\Sub_Value_Objects\Profit\Profit;
-use WC_Product;
+use WC_Product_Simple;
 use WC_Product_Attribute;
 
-final class Product extends WC_Product {
+final class Simple extends WC_Product_Simple {
     use Profits;
 
     public static function of(int $id): self {
         return new self(
-            product: wc_get_product(the_product: $id)->id,
+            product: $id,
         );
     }
 

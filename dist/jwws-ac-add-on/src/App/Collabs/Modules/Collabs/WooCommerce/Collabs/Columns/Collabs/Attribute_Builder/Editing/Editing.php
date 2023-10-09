@@ -9,12 +9,11 @@ use ACP\Editing\Service;
 use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product_Variable\Product_Variable;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product_Attribute\Product_Attribute;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Builder\Column\Pro\Pro;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
-use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
-use function get_terms;
-use function wp_set_object_terms;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -31,12 +30,8 @@ final class Editing implements Editability, Service {
      * Disables edit controls under certain conditions.
      */
     public function is_editable(int $id): bool {
-        $attribute_name = $this->column->get_option(
-            key: 'product_taxonomy_display',
-        );
-
         // condition: attribute is not selected in column settings.
-        return ! ($attribute_name === '');
+        return $this->column->attribute_name() !== '';
     }
 
     public function get_view(string $context): ?View {
@@ -65,52 +60,21 @@ final class Editing implements Editability, Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        $attr = $this->column->get_option(key: 'product_taxonomy_display');
+        $product = wc_get_product(the_product: $id)->is_type(type: 'variable')
+            ? Product_Variable::of(id: $id)
+            : Product::of(id: $id);
 
-        $attrs = Post_Meta::of(id: $id)
-            ->find_by_key(key: '_product_attributes')
-        ;
-
-        // Converts $attrs to array if empty string.
-        // Possible refactor upstream.
-        if (empty($attrs)) {
-            $attrs = [];
-        }
-
-        if (empty($data)) {
-            unset($attrs[$attr]);
-        } else {
-            $terms = get_terms(args: [
-                'taxonomy'   => $attr,
-                'hide_empty' => false,
-            ]);
-
-            foreach ($terms as $term) {
-                if ($term->name === $data) {
-                    wp_set_object_terms(
-                        object_id: $id,
-                        terms: [$term->term_id],
-                        taxonomy: $term->taxonomy,
-                    );
-
-                    $attrs[$attr] = [
-                        'name'          => $attr,
-                        'value'         => '',
-                        'position'      => $attrs[$attr]['position']     ?? 0,
-                        'is_visible'    => $attrs[$attr]['is_visible']   ?? 0,
-                        'is_variation'  => $attrs[$attr]['is_variation'] ?? 0,
-                        'is_taxonomy'   => $attrs[$attr]['is_taxonomy']  ?? 1,
-                    ];
-
-                    break;
-                }
-            }
-        }
-
-        update_post_meta(
-            post_id: $id,
-            meta_key: '_product_attributes',
-            meta_value: $attrs,
-        );
+        $data === ''
+            ? $product->delete_attribute(key: $this->column->attribute_name())
+            : $product->update_attribute(
+                key: $this->column->attribute_name(),
+                value: Product_Attribute::of(
+                    term: get_term_by(
+                        field: 'name',
+                        value: 'Yes',
+                        taxonomy: $this->column->attribute_name(),
+                    ),
+                ),
+            );
     }
 }

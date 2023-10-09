@@ -6,9 +6,12 @@ use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Options\Options;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+
 use function __;
 use function ac_helper;
-use function wc_get_product;
 
 /**
  * @final
@@ -35,7 +38,7 @@ class Free extends Column {
 
     public function get_value(mixed $id): string {
         return match ($this->get_raw_value(id: $id)) {
-            'No'      => ac_helper()->icon->no(tooltip: __(text: 'No')),
+            ''      => ac_helper()->icon->no(tooltip: __(text: 'No')),
             'Yes'     => ac_helper()->icon->yes(tooltip: __(text: 'Yes')),
             'error_0' => Display_Value::of(
                 value: 'Attribute not selected in column settings',
@@ -47,22 +50,27 @@ class Free extends Column {
         };
     }
 
-    public function get_raw_value(mixed $id): string|array {
-        $attribute = $this->get_option(key: 'product_taxonomy_display');
+    public function attribute_name(): string {
+        return Options::of(column: $this)
+            ->option(key: 'product_taxonomy_display')
+        ;
+    }
 
-        if (empty($attribute)) {
+    public function get_raw_value(mixed $id): string|array {
+        Error_Logger::log(wc_get_product($id));
+        $attribute = $this->attribute_name();
+
+        if ($attribute === '') {
             return 'error_0';
         }
 
-        $product = wc_get_product(the_product: $id);
+        $product = Product::of(id: $id);
 
-        $attributes = $product->get_attributes();
-
-        if (! array_key_exists(key: $attribute, array: $attributes)) {
+        if (! $product->has_attribute(key: $attribute)) {
             return '';
         }
 
-        if (count($attributes[$attribute]->get_options()) > 1) {
+        if (count($product->attribute(key: $attribute)->get_options()) > 1) {
             return 'error_1';
         }
 
