@@ -7,10 +7,9 @@ use ACP\Editing\Service;
 use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Number;
-use Exception;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Position\Column\Pro\Pro;
-use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
-use function update_post_meta;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -27,12 +26,8 @@ final class Editing implements Editability, Service {
      * Disables edit controls under certain conditions.
      */
     public function is_editable(int $id): bool {
-        $attribute_name = $this->column->get_option(
-            key: 'product_taxonomy_display',
-        );
-
         // condition: attribute is not selected in column settings.
-        return ! ($attribute_name === '');
+        return $this->column->attribute_name() !== '';
     }
 
     public function get_view(string $context): ?View {
@@ -49,26 +44,21 @@ final class Editing implements Editability, Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        $attributes = Post_Meta::of(id: $id)
-            ->find_by_key(key: '_product_attributes')
-        ;
-
-        $option = $this->column->get_option(key: 'product_taxonomy_display');
-
-        foreach ($attributes as $key => $value) {
-            if ($key === $option) {
-                // Set the new value in the array
-                $attributes[$key]['position'] = $data;
-
-                break;
-            }
+        if ($this->column->attribute_name() === '') {
+            return;
         }
 
-        // Set updated attributes back in database
-        update_post_meta(
-            post_id: $id,
-            meta_key: '_product_attributes',
-            meta_value: $attributes,
+        $product = Product::of(id: $id);
+        $product->set_attributes(
+            raw_attributes: array_merge(
+                $product->get_attributes(),
+                [
+                    $product
+                        ->attribute(key: $this->column->attribute_name())
+                        ->set_position(value: $data),
+                ],
+            ),
         );
+        $product->save();
     }
 }

@@ -32,10 +32,6 @@ class Free extends Column {
         ;
     }
 
-    public function meta_key(): string {
-        return '_is_hidden_product';
-    }
-
     private function heading(): Heading {
         return Heading::of(
             label: 'Hidden [Custom]',
@@ -60,5 +56,9 @@ class Free extends Column {
         return wc_get_product(the_product: $id)
             ->get_meta(key: $this->meta_key())
         ;
+    }
+
+    public function meta_key(): string {
+        return '_is_hidden_product';
     }
 }

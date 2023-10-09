@@ -3,13 +3,12 @@
 namespace JWWS\ACA;
 
 use JWWS\ACA\App\Factory\Factory as App_Factory;
-
 use function define;
 
 /**
  * Plugin Name:  Admin Columns - Add On
  * Description:  Adds new columns.
- * Version:      4.5.3
+ * Version:      4.5.3b
  * Requires PHP: 8.1
  * Author:       Jay Wilson
  * License:      GPLv2 or later

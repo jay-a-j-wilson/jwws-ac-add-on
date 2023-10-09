@@ -6,9 +6,11 @@ use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Options\Options;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
+
 use function __;
-use function array_key_exists;
-use function wc_get_product;
 
 /**
  * @final
@@ -55,22 +57,29 @@ class Free extends Column {
         );
     }
 
-    public function get_raw_value(mixed $id): string|array {
-        $attribute = $this->get_option(key: 'product_taxonomy_display');
+    public function attribute_name(): string {
+        return Options::of(column: $this)
+            ->option(key: 'product_taxonomy_display')
+        ;
+    }
 
-        if (empty($attribute)) {
+
+    public function get_raw_value(mixed $id): string {
+        $attribute = $this->attribute_name();
+
+        if ($attribute === '') {
             return 'error_0';
         }
 
-        $attributes = wc_get_product(the_product: $id)
-            ->get_attributes()
-        ;
+        $product = Product::of(id: $id);
 
-        if (! array_key_exists(key: $attribute, array: $attributes)) {
+        if (! $product->has_attribute(key: $attribute)) {
             return 'error_1';
         }
 
-        return ($attributes[$attribute]->get_visible() == 1)
+        Error_Logger::log_verbose($product->attribute(key: $attribute)->get_visible());
+
+        return $product->attribute(key: $attribute)->get_visible()
             ? '1'
             : '0';
     }

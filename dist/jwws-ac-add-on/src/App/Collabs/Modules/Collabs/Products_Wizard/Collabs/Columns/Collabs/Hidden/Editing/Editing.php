@@ -57,7 +57,7 @@ final class Editing implements Service {
         $product = wc_get_product(the_product: $id);
         $data === ''
             ? $product->delete_meta_data(key: $this->column->meta_key())
-            : $product->update_meta_data(
+            : $product->update_meta_data (
                 key: $this->column->meta_key(),
                 value: $data,
             );

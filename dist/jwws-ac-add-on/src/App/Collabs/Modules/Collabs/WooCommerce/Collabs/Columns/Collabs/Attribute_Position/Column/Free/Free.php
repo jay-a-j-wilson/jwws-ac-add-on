@@ -6,8 +6,9 @@ use AC\Column;
 use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Options\Options;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
 use function __;
-use function wc_get_product;
 
 /**
  * @final
@@ -44,32 +45,39 @@ class Free extends Column {
                 value: "'{$this->attribute_label()}' attribute not assigned.",
             )
                 ->grey(),
-            default   => $value,
+            default => $value,
         };
     }
 
     private function attribute_label(): string {
         return wc_attribute_label(
-            name: $this->get_option(key: 'product_taxonomy_display'),
+            name: $this->attribute_name(),
         );
     }
 
-    public function get_raw_value(mixed $id): string|array {
-        $attribute = $this->get_option(key: 'product_taxonomy_display');
+    public function attribute_name(): string {
+        return Options::of(column: $this)
+            ->option(key: 'product_taxonomy_display')
+        ;
+    }
 
-        if (empty($attribute)) {
+    public function get_raw_value(mixed $id): string|array {
+        $attribute = $this->attribute_name();
+
+        if ($attribute === '') {
             return 'error_0';
         }
 
-        $attributes = wc_get_product(the_product: $id)
-            ->get_attributes()
-        ;
+        $product = Product::of(id: $id);
 
-        if (! array_key_exists(key: $attribute, array: $attributes)) {
+        if (! $product->has_attribute(key: $attribute)) {
             return 'error_1';
         }
 
-        return (string) $attributes[$attribute]->get_position();
+        return (string) $product
+            ->attribute(key: $attribute)
+            ->get_position()
+        ;
     }
 
     /**
