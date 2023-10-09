@@ -10,8 +10,6 @@ use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Toggle;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Visibility\Column\Pro\Pro;
-use JWWS\ACA\App\Common\Utils\Collection;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function update_post_meta;
@@ -31,12 +29,8 @@ final class Editing implements Editability, Service {
      * Disables edit controls under certain conditions.
      */
     public function is_editable(int $id): bool {
-        $attribute_name = $this->column->get_option(
-            key: 'product_taxonomy_display',
-        );
-
         // condition: attribute is not selected in column settings.
-        return ! ($attribute_name === '');
+        return $this->column->attribute_name() !== '';
     }
 
     public function get_view(string $context): ?View {
@@ -68,11 +62,9 @@ final class Editing implements Editability, Service {
             ->find_by_key(key: '_product_attributes')
         ;
 
-        $option = $this->column->get_option(key: 'product_taxonomy_display');
-
         // Loop through product attributes
         foreach ($attributes as $key => $value) {
-            if ($key === $option) {
+            if ($key === $this->column->attribute_name()) {
                 $attributes[$key]['is_visible'] = (int) $data;
 
                 break;
