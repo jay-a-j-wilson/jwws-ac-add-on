@@ -6,8 +6,6 @@ use AC\Column;
 use Exception;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Heading\Heading;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
-use JWWS\ACA\Deps\JWWS\WPPF\WordPress\Meta\Subclasses\Post_Meta\Post_Meta;
 use function __;
 use function ac_helper;
 

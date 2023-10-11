@@ -9,6 +9,9 @@ if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+/**
+ * @codeCoverageIgnore
+ */
 abstract class Group {
     /**
      * Factory method.

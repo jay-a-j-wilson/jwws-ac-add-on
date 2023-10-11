@@ -7,7 +7,7 @@ use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Options\Options;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
 use function __;
 
 /**
@@ -68,7 +68,7 @@ class Free extends Column {
             return 'error_0';
         }
 
-        $product = Product::of(id: $id);
+        $product = Product_Factory::of(id: $id)->create();
 
         if (! $product->has_attribute(key: $attribute)) {
             return 'error_1';

@@ -4,12 +4,10 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\C
 
 use ACP\Editing\Service;
 use ACP\Editing\View;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Products_Wizard\Collabs\Columns\Collabs\Attach_Wizard\Column\Pro\Pro;
-use JWWS\ACA\App\Common\Utils\Collection;
-
 use function __;
 use function get_posts;
-use function update_post_meta;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -54,10 +52,12 @@ final class Editing implements Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        update_post_meta(
-            post_id: $id,
-            meta_key: '_wcpw_attach_wizard',
-            meta_value: $data,
-        );
+        Product_Factory::of(id: $id)
+            ->create()
+            ->update_metadata(
+                key: $this->column->meta_key(),
+                value: $data,
+            )
+        ;
     }
 }

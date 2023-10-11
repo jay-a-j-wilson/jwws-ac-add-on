@@ -7,9 +7,7 @@ use ACA\WC\Settings\Product\Attributes;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Display_Value\Display_Value;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Options\Options;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
-
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
 use function __;
 use function ac_helper;
 
@@ -38,7 +36,7 @@ class Free extends Column {
 
     public function get_value(mixed $id): string {
         return match ($this->get_raw_value(id: $id)) {
-            ''      => ac_helper()->icon->no(tooltip: __(text: 'No')),
+            ''        => ac_helper()->icon->no(tooltip: __(text: 'No')),
             'Yes'     => ac_helper()->icon->yes(tooltip: __(text: 'Yes')),
             'error_0' => Display_Value::of(
                 value: 'Attribute not selected in column settings',
@@ -57,14 +55,13 @@ class Free extends Column {
     }
 
     public function get_raw_value(mixed $id): string|array {
-        Error_Logger::log(wc_get_product($id));
         $attribute = $this->attribute_name();
 
         if ($attribute === '') {
             return 'error_0';
         }
 
-        $product = Product::of(id: $id);
+        $product = Product_Factory::of(id: $id)->create();
 
         if (! $product->has_attribute(key: $attribute)) {
             return '';

@@ -42,7 +42,7 @@ class Free extends Column {
         return ucfirst(string: $value);
     }
 
-    public function get_raw_value(mixed $id): string|array {
+    public function get_raw_value(mixed $id): string {
         return Term_Meta::of(id: $id)
             ->find_by_key(key: 'display_type')
         ;

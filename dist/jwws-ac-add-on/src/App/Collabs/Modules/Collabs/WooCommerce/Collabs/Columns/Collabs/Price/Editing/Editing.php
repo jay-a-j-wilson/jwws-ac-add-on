@@ -6,6 +6,7 @@ use ACA\WC\Editing\Product\ProductNotSupportedReasonTrait;
 use ACP\Editing\Service;
 use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Price\Column\Pro\Pro;
 
 /**
@@ -20,8 +21,9 @@ final class Editing implements Editability, Service {
     public function __construct(private Pro $column) {}
 
     public function is_editable(int $id): bool {
-        return ! wc_get_product(the_product: $id)
-            ->is_type(type: ['variable', 'grouped'])
+        return Product_Factory::of(id: $id)
+            ->create()
+            ->is_not_type('variable', 'grouped')
         ;
     }
 
@@ -37,10 +39,12 @@ final class Editing implements Editability, Service {
     }
 
     public function update(int $id, mixed $data): void {
-        update_post_meta(
-            post_id: $id,
-            meta_key: 'price',
-            meta_value: $data,
-        );
+        Product_Factory::of(id: $id)
+            ->create()
+            ->update_metadata(
+                key: $this->column->meta_key(),
+                value: $data,
+            )
+        ;
     }
 }

@@ -14,6 +14,9 @@
         <!-- all -->
         <testsuite name="all">
             <directory suffix=".php">
+                ../../dist/jwws-ac-add-on/src/App/Tests
+            </directory>
+            <directory suffix=".php">
                 ../../dist/jwws-ac-add-on/src/App/*/Tests
             </directory>
             <directory suffix=".php">

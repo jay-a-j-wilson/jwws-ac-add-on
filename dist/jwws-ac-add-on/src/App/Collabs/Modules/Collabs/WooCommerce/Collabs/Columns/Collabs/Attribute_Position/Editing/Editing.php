@@ -7,9 +7,8 @@ use ACP\Editing\Service;
 use ACP\Editing\Service\Editability;
 use ACP\Editing\View;
 use ACP\Editing\View\Number;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
 use JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Collabs\Attribute_Position\Column\Pro\Pro;
-use JWWS\ACA\Deps\JWWS\WPPF\Logger\Error_Logger\Error_Logger;
 
 /**
  * Editing class. Adds editing functionality to the column.
@@ -24,9 +23,10 @@ final class Editing implements Editability, Service {
 
     /**
      * Disables edit controls under certain conditions.
+     *
+     * Condition: Attribute is not selected in column settings.
      */
     public function is_editable(int $id): bool {
-        // condition: attribute is not selected in column settings.
         return $this->column->attribute_name() !== '';
     }
 
@@ -44,21 +44,12 @@ final class Editing implements Editability, Service {
      * Saves the value after using inline-edit.
      */
     public function update(int $id, mixed $data): void {
-        if ($this->column->attribute_name() === '') {
-            return;
-        }
-
-        $product = Product::of(id: $id);
-        $product->set_attributes(
-            raw_attributes: array_merge(
-                $product->get_attributes(),
-                [
-                    $product
-                        ->attribute(key: $this->column->attribute_name())
-                        ->set_position(value: $data),
-                ],
-            ),
-        );
-        $product->save();
+        Product_Factory::of(id: $id)
+            ->create()
+            ->update_attribute_position(
+                attribute: $this->column->attribute_name(),
+                position: (int) $data,
+            )
+        ;
     }
 }

@@ -49,7 +49,7 @@ class Free extends Column {
      */
     public function get_raw_value(mixed $id): string {
         $wizard_id = Post_Meta::of(id: $id)
-            ->find_by_key(key: '_wcpw_attach_wizard')
+            ->find_by_key(key: $this->meta_key())
         ;
 
         if ($wizard_id === '') {
@@ -60,5 +60,9 @@ class Free extends Column {
             ->find_by_id(id: (int) $wizard_id)
             ->post_title
         ;
+    }
+
+    public function meta_key(): string {
+        return '_wcpw_attach_wizard';
     }
 }

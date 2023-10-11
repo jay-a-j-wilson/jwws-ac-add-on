@@ -12,7 +12,7 @@ final class Display_Value {
      */
     public static function of(string $value): self {
         return new self(
-            value: $value
+            value: $value,
         );
     }
 
@@ -22,17 +22,21 @@ final class Display_Value {
     private function __construct(private readonly string $value) {}
 
     /**
-     * Rename to 'secondary'
+     * Rename to 'secondary'.
      */
     public function grey(): string {
-        return "<span style=\"color: #999\">{$this->value}<span>";
+        return $this->render_html(hex_code: '#999');
     }
 
     public function success(): string {
-        return "<span style=\"color: #46b450\">{$this->value}<span>";
+        return $this->render_html(hex_code: '#46b450');
     }
 
     public function danger(): string {
-        return "<span style=\"color: #dc3232\">{$this->value}<span>";
+        return $this->render_html(hex_code: '#dc3232');
+    }
+
+    private function render_html(string $hex_code): string {
+        return "<span style=\"color: {$hex_code}\">{$this->value}<span>";
     }
 }

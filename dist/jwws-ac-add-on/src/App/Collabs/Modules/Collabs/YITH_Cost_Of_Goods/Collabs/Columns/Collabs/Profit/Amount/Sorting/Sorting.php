@@ -4,8 +4,8 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\YITH_Cost_Of_Goods\Collabs\Column
 
 use AC\Column;
 use ACP\Sorting\Type\DataType;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Sorting_Model\Sorting_Model;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Product;
 use JWWS\ACA\App\Common\Utils\Collection;
 
 /**

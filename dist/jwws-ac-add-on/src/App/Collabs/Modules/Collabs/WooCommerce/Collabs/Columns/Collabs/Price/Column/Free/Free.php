@@ -4,11 +4,12 @@ namespace JWWS\ACA\App\Collabs\Modules\Collabs\WooCommerce\Collabs\Columns\Colla
 
 use AC\Column;
 use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Group\Enums\Group;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product\Product;
-use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\Product_Variation\Product_Variation;
-use JWWS\ACA\App\Common\Utils\Collection;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Factory\Product_Factory;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Subclasses\Simple\Simple;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Subclasses\Variable\Variable;
+use JWWS\ACA\App\Collabs\Modules\Collabs\Common\Classes\WooCommerce\Product\Subclasses\Variation\Variation;
+use JWWS\ACA\Deps\JWWS\WPPF\Collection\Standard_Collection\Standard_Collection;
 use JWWS\ACA\Deps\JWWS\WPPF\Template\Template;
-use WC_Product;
 use function __;
 
 /**
@@ -43,36 +44,28 @@ class Free extends Column {
     }
 
     public function get_raw_value(mixed $id): string|array {
-        // return $this->get_prices(product: Product::of(id: $id));
-        return $this->get_data(product: wc_get_product(the_product: $id));
+        $product = Product_Factory::of(id: $id)->create();
+
+        return ! $product->has_child()
+            ? [$this->view_model(product: $product)]
+            : Standard_Collection::of(...$product->get_children())
+                ->map(callback: fn (int $child_id): array => $this->view_model(
+                    product: Product_Factory::of(id: $child_id)->create(),
+                ))
+                ->to_array()
+        ;
     }
 
-    public function get_data(WC_Product $product): array {
-        if (! $product->is_type(type: 'variable')) {
-            $product = Product::of(id: $product->get_id());
+    private function view_model(Simple|Variable|Variation $product): array {
+        return [
+            'name'          => $product->variation_name(),
+            'price'         => $product->get_price(),
+            'regular_price' => $product->get_regular_price(),
+            'sale_price'    => $product->get_sale_price(),
+        ];
+    }
 
-            return [
-                [
-                    'name'          => '',
-                    'price'         => $product->get_price(),
-                    'regular_price' => $product->get_regular_price(),
-                    'sale_price'    => $product->get_sale_price(),
-                ],
-            ];
-        }
-
-        return Collection::map(
-            items: $product->get_children(),
-            func: function (int $child_id): array {
-                $product = Product_Variation::of(id: $child_id);
-
-                return [
-                    'name'          => $product->name(),
-                    'price'         => $product->get_price(),
-                    'regular_price' => $product->get_regular_price(),
-                    'sale_price'    => $product->get_sale_price(),
-                ];
-            },
-        );
+    public function meta_key(): string {
+        return 'price';
     }
 }

@@ -9,6 +9,9 @@ if (! defined(constant_name: 'ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+/**
+ * @codeCoverageIgnore
+ */
 abstract class Sorting_Model extends AbstractModel {
     /**
      * Sorts the array and return all id's to the main query.

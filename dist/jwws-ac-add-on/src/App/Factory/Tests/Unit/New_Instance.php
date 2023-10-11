@@ -2,11 +2,11 @@
 
 namespace JWWS\ACA\App\Factory\Tests\Unit;
 
-use JWWS\ACA\App\Factory\Factory;
+use JWWS\ACA\App\Factory\App_Factory;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \JWWS\ACA\App\Factory\Factory
+ * @covers \JWWS\ACA\App\Factory\App_Factory
  *
  * @internal
  */
@@ -16,8 +16,8 @@ final class New_Instance extends TestCase {
      */
     public function pass(): void {
         self::assertInstanceOf(
-            expected: Factory::class,
-            actual: Factory::new_instance(),
+            expected: App_Factory::class,
+            actual: App_Factory::new_instance(),
         );
     }
 }
